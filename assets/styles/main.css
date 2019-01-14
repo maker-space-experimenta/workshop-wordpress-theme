@@ -1,0 +1,86 @@
+.ms-header {
+    height: 100vh;
+    display: block;
+}
+
+.ms-header .ms-header-title-image {
+    position: absolute;
+    top:0;
+    left: 0;
+    
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ms-header .ms-header-prism {
+    position: absolute;
+    top:0;
+    left: 0;
+    background: url(../images/maker-space-header.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    height: 100%;
+    width: 100%;
+
+    z-index: 10;
+}
+.ms-header .ms-header-blog-info {
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 15;
+    height: 100%;
+    width: 100%;
+}
+
+.ms-nav-dark-color {
+    background-color: rgb(0, 0, 0)
+}
+
+@font-face { font-family: dinot; src: url('../fonts/DINOT.woff2'); } 
+@font-face { font-family: dinot; font-weight: bold; src: url('../fonts/DINOT-Bold.woff2');}
+
+* {
+    font-family: dinot;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: dinot;
+    font-weight: bold;
+}
+
+#tribe-events a {
+    color: rgb(0, 176, 160) !important;
+}
+
+.tribe-event-featured {
+    background: rgba(161, 198, 57, 0.3) !important;
+    color: #000 !important;
+}
+
+.tribe-event-featured .tribe-events-content,
+.tribe-event-featured .tribe-events-event-meta {
+    color: #000 !important;
+}
+
+
+.ms-devices-list {
+
+}
+
+.ms-devices-list img {
+    max-width: 100%;
+}
+
+
+.ms-devices-list .ms-devices-list-footer {
+    font-size: 75%;
+}
+
+.ms-devices-list .ms-devices-list-annotation {
+    font-size: 75%;
+}
