@@ -24,18 +24,80 @@
             <p>
                 Willkommen beim Maker Space der Experimenta Heilbronn. Der Maker Space ist eine offene Werkstatt im
                 Erdgeschoss der Experimenta. Hier treffen sich Menschen zum basteln, diskutieren, austauschen und
-                lernen. Neben regelmäßigen Workshops zu versschiedenen Themen wird hier an eigenen Projekten
+                lernen. Neben regelmäßigen Workshops zu verschiedenen Themen wird hier an eigenen Projekten
                 gearbeitet. Dazu stehen viele versschiedene Maschinen zur freien Nutzung zur Verfügung.
             </p>
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/buildings.png" class="rounded mx-auto mg-fluid img-thumbnail float-right" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col order-2 order-lg-1">
             <p>
                 Der Maker Space befindet sich im Hagenbucher, dem Altbau der Experimenta, im Erdgeschoss und ist über
-                den Haupteingang zu erreichen.
+                den Haupteingang zu erreichen. 
+                Jeder ist eingeladen zu kommen und an seinen Projekten zu arbeiten, sich mit anderen Auszutauschen und wohl zu fühlen.
             </p>
             <p>
-                <a href="/open" class="btn btn-link">Öffnungszeiten</a>
+                Die Öffnungszeiten erlauben es auch in den Abendstunden zusammen an Projekten zu tüfteln und sich nach der Arbeit zu treffen
+                und kreativ tätig zu werden. 
+            </p>
+            <p>
+                <h4>Öffnungszeiten</h4>
+                <table>
+                    <tr><td>Montag</td><td>geschlossen</td></tr>
+                    <tr><td class="pr-2">Dienstag bis Freitag</td><td>15:00 - 22:00 geöffnet</td></tr>
+                    <tr><td>Samstag</td><td>15:00 - 22:00 geöffnet (Abweichend bei Workshop)</td></tr>
+                    <tr><td>Sonntag</td><td>geschlossen</td></tr>
+                </table>
             </p>
 
+        </div>
+        <div class="col-12 col-lg-6 order-1 order-lg-2 mb-5">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/b1.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
+                            <h5>löten lernen</h5>
+                            <p>In kleinen Workshops können alle den Umgang mit dem Lötkolben lernen.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/b2.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
+                            <h5>kleine Projekte</h5>
+                            <p>Für den Einstieg haben wir verschiedene Kleinstprojekte in der Schublade.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/b3.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
+                            <h5>eigene Projekte</h5>
+                            <p>Ein fliegender Getränkekasten? Kein Problem.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/b4.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
+                            <h5>kreativ sein</h5>
+                            <p>Ein Gerät, dass WLAN-Stärke auf farbigen LEDs anzeigt.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
