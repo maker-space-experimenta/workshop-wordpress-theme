@@ -1,5 +1,11 @@
+
+body {
+    background: rgba(0,0,0,0.08); /* #f8f9fa!important;*/
+}
+
+
 .ms-header {
-    height: 100vh;
+    height: calc(100vh - 76px);
     display: block;
 }
 
@@ -83,4 +89,20 @@ h1,h2,h3,h4,h5,h6 {
 
 .ms-devices-list .ms-devices-list-annotation {
     font-size: 75%;
+}
+
+.no-textdecoration {
+    text-decoration: none !important;
+}
+
+.wp-block-table {
+    width: 100% !important;
+}
+
+.wp-block-table td {
+    width: 50%;
+}
+
+h3 {
+    margin-top: .75rem !important;
 }

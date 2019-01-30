@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
 
-<div class="container mt-5" style="min-height: 100vh">
+<div class="container mt-5 pb-5" style="min-height: 100vh">
     <div class="row">
         <div class="col">
             <?php while ( have_posts() ) : the_post(); ?>

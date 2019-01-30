@@ -6,3 +6,6 @@ Version: 0.0.1
 Tags: bootstrap
 */
 
+.c-pointer {
+    cursor: pointer;
+}
