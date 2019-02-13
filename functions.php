@@ -27,6 +27,4 @@ function register_my_menus() {
 add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 
 
-
-
  ?>
