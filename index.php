@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="ms-header">
+<div class="ms-header d-none d-lg-block">
     <div style="background-image: url(<?php header_image(); ?>);" class="ms-header-title-image"></div>
     <div class="ms-header-prism"></div>
     <div class="ms-header-blog-info d-flex align-items-center">
@@ -126,7 +126,7 @@
 <div class="pt-5">
     <div class="container">
         <div class="row pb-5">
-            <div class="col p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
                 <div class=" p-4 d-flex flex-column">
                     <h2 style="z-index: 20;">Workshops</h2>
                     <p style="z-index: 20;">
@@ -136,13 +136,13 @@
                     </p>
                     <a href="/events" class="btn btn-link text-light mt-auto" style="z-index: 20;">Workshops ansehen
                         und buchen</a>
-                    <div style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
+                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
                 </div>
 
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/workshop.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
-            <div class="col p-0 d-flex flex-column" style="background: rgb(0, 176, 160);">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(0, 176, 160);">
                 <div class=" p-4 d-flex flex-column">
                     <h2 style="z-index: 20;">Projekte</h2>
                     <p style="z-index: 20;">
@@ -153,13 +153,13 @@
                     <a href="http://localhost:8080/category/projekte/" style="z-index: 20;" class="btn btn-link text-light mt-auto">
                         Abgeschlossene Projekte ansehen
                     </a>
-                    <div style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 176, 160); width: 50px; height: 50px;"></div>
+                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 176, 160); width: 50px; height: 50px;"></div>
                 </div>
 
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/matelight_header.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
-            <div class="col p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
                 <div class=" p-4 d-flex flex-column">
                     <h2 style="z-index: 20;">Ausstattung</h2>
                     <p style="z-index: 20;">
@@ -170,7 +170,7 @@
                     </p>
                     <a href="/devices/" class="btn btn-link text-light mt-auto" style="z-index: 20;">Geräteliste
                         ansehen</a>
-                    <div style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
+                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
                 </div>
 
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/3D_printing.jpg" class="mt-auto w-100"
@@ -190,7 +190,7 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col d-flex flex-column justify-content-between p-0">
+                        <div class="col-12 col-xl-3 d-flex flex-column justify-content-between p-0">
                             <a href="/locations/digitallabor/" class="no-textdecoration">
                                 <div class="text-dark pr-2" style="border-right: solid 5px rgb(0,0,255);">
                                     <h5 class="mb-1">Digitallabor</h5>
@@ -220,9 +220,9 @@
                             </a>
                         </div>
 
-                        <div class="col-6"><object data="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan.svg"></object></div>
+                        <div class=" col-12 col-xl-6"><object data="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan.svg"></object></div>
                         
-                        <div class="col d-flex flex-column justify-content-between p-0">
+                        <div class="col-12 col-xl-3 d-flex flex-column justify-content-between p-0">
                                 <a href="/locations/tonstudio/" class="no-textdecoration">
                                     <div class="text-dark pl-2" style="border-left: solid 5px rgb(255, 99, 0);">
                                         <h5 class="mb-1">Tonstudio</h5>
@@ -268,12 +268,12 @@
         <div class="row">
 
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <div class="col-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'"
+            <div class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'"
                 style="cursor: pointer;">
                 <?php if ( has_post_thumbnail() ): ?>
-                <div class="" style="height: 250px; background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
+                <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
                 <?php else: ?>
-                <div class="" style="height: 250px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
+                <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
                 <?php endif; ?>
 
                 <div class="bg-white flex-fill p-2">
