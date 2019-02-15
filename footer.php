@@ -26,10 +26,19 @@
 
                 <h6 class="text-uppercase" style="color: #404040;">Die experimenta </h6>
 
-                <ul class="list-group">
+                <?php $menu_items = wp_get_nav_menu_items('menu_die_experimenta') ?>
 
-                    <li class="list-group-item bg-transparent pl-0 text-light"><a
-                            href="http://www.experimenta.science/wir-ueber-uns" class="text-white">Wir über uns</a></li>
+                <ul class="list-group">
+                <?php foreach ($menu_items as $menu_item): ?>
+
+                <li class="list-group-item bg-transparent pl-0 text-light">
+                    <a href="<?php echo get_post_meta($menu_item->ID, '_menu_item_url', true) ?>" class="text-white"><?php echo $menu_item->title ?></a>
+                </li>
+
+                <?php endforeach; ?>
+                </ul>
+
+                <!--
                     <li class="list-group-item bg-transparent pl-0 text-light"><a
                             href="http://www.experimenta.science/leitung" class="text-white">Leitung</a></li>
                     <li class="list-group-item bg-transparent pl-0 text-light"><a
@@ -41,7 +50,7 @@
                             href="http://www.experimenta.science/oeffnungszeiten-anfahrt"
                             class="text-white">Öffnungszeiten &amp; Anfahrt</a></li>
 
-                </ul>
+                 -->
 
             </div>
             <div class="col">
@@ -49,7 +58,19 @@
 
                 <h6 class="text-uppercase" style="color: #404040;">Quick Links </h6>
 
+                <?php $menu_items = wp_get_nav_menu_items('menu_quick_links') ?>
+
                 <ul class="list-group">
+                <?php foreach ($menu_items as $menu_item): ?>
+
+                <li class="list-group-item bg-transparent pl-0 text-light">
+                    <a href="<?php echo get_post_meta($menu_item->ID, '_menu_item_url', true) ?>" class="text-white"><?php echo $menu_item->title ?></a>
+                </li>
+
+                <?php endforeach; ?>
+                </ul>
+
+                <!-- <ul class="list-group">
 
                     <li class="list-group-item bg-transparent pl-0 text-light"><a href="http://www.experimenta.science/jobs"
                             class="text-white">Jobs</a></li>
@@ -62,7 +83,7 @@
                     <li class="list-group-item bg-transparent pl-0 text-light"><a href="http://www.experimenta.science/impressum"
                             class="text-white">Impressum</a></li>
 
-                </ul>
+                </ul> -->
             </div>
 
             <div class="col"></div>
