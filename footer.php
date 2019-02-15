@@ -3,7 +3,7 @@
 
     <div class="container pt-5">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-lg-3">
                 <div class="p-0 mb-3">
                     <span style="color: white;">Gefördert durch:</span>
                 </div>
@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-12 col-lg-3">
                 <hr style="border-top-color: #6c6d74;" />
 
                 <h6 class="text-uppercase" style="color: #404040;">Die experimenta </h6>
@@ -53,7 +53,7 @@
                  -->
 
             </div>
-            <div class="col">
+            <div class="col-12 col-lg-3">
                 <hr style="border-top-color: #6c6d74;" />
 
                 <h6 class="text-uppercase" style="color: #404040;">Quick Links </h6>
@@ -86,7 +86,29 @@
                 </ul> -->
             </div>
 
-            <div class="col"></div>
+            <div class="col-12 col-lg-3">
+                <hr style="border-top-color: #6c6d74;" />
+
+                <h6 class="text-uppercase" style="color: #404040;">Bildnachweise</h6>
+            
+                <?php $images_used = get_used_images(); ?>
+                <?php if ($images_used): ?>
+
+                <ul class="list-group" style="color: #404040;">
+                <?php foreach ($images_used as $image): ?>
+
+                <li class="list-group-item bg-transparent p-0">
+                    <span><?php echo $image['name'] ?></span> by 
+                    <span><?php echo $image['creator'] ?><span> 
+                    (<span><?php echo $image['license'] ?><span>)
+                </li>
+
+                <?php endforeach; ?>
+                </ul>
+
+                <?php endif; ?>
+            
+            </div>
 
         </div>
     </div>

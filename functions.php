@@ -27,4 +27,23 @@ function register_my_menus() {
 add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 
 
+
+require_once(get_template_directory() . '/image-management.php');
+
+function use_image($name, $creator, $license) {
+  $manager = ImageManager::instance();
+  $manager->add_image(array(
+    "name"    => $name,
+    "creator" => $creator,
+    "license" => $license
+  ));
+}
+
+function get_used_images() {
+  $manager = ImageManager::instance();
+  return $manager->get_images();
+}
+
+
+
  ?>

@@ -14,6 +14,9 @@
 </head>
 <body>
 
+<?php global $used_images; ?>
+<?php $used_images = array(); ?>
+
 <?php
     $margin_top = 0;
     if(is_user_logged_in()):

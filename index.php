@@ -77,6 +77,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
+                            <?php use_image("Löten lernen", "Leon Hellmich", "cc-by-nc") ?>)
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b1.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
@@ -85,6 +86,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
+                            <?php use_image('LED-Wolf', 'Leon Hellmich', 'cc-by-nc') ?>)
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b2.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
@@ -93,6 +95,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
+                            <?php use_image('Mate-Hovercraft', 'Leon Hellmich', 'cc-by-nc') ?>)
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b3.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
@@ -101,6 +104,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
+                            <?php use_image('WLAN-RSSI-Visualizer', 'Franz Imschweiler', 'cc-by-nc') ?>)
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b4.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
