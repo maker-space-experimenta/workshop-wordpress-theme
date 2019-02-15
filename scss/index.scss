@@ -1,0 +1,47 @@
+
+$enable-rounded: false;
+
+$theme-colors: (
+    "primary":    rgb(152, 203, 78),
+    // "secondary":  $secondary,
+    // "success":    $success,
+    // "info":       $info,
+    // "warning":    $warning,
+    // "danger":     $danger,
+    // "light":      $light,
+    // "dark":       $dark
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@import "tribe-calendar.custom.scss";
+@import "wordpress.custom.scss";
+@import "makerspace-theme.scss";
+
+
+@font-face { font-family: dinot; src: url('../fonts/DINOT.woff2'); } 
+@font-face { font-family: dinot; font-weight: bold; src: url('../fonts/DINOT-Bold.woff2');}
+
+* {
+    font-family: dinot;
+}
+
+body {
+    background: rgba(0,0,0,0.08); /* #f8f9fa!important;*/
+}
+
+
+
+.no-textdecoration {
+    text-decoration: none !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: dinot;
+    font-weight: bold;
+}
+
+h3 {
+    margin-top: .75rem !important;
+}

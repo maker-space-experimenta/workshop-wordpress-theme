@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
 
-        <link href="<?php echo get_template_directory_uri() ?>/assets/styles/bootstrap.css" rel="stylesheet">
+        <!-- <link href="<?php echo get_template_directory_uri() ?>/assets/styles/bootstrap.css" rel="stylesheet"> -->
         <link href="<?php echo get_template_directory_uri() ?>/assets/styles/main.css" rel="stylesheet">
 
         <script src="<?php echo get_template_directory_uri() ?>/assets/scripts/jquery.slim.min.js"></script>

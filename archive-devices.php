@@ -2,71 +2,187 @@
 
 
 <form class="form-inline ml-auto" method="GET">
-<div class="container mt-5">
-    <div class="row">
-        <div class="col p-0">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-none p-0">
-
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button onclick="window.location.href = '/devices'" type="button"
-                        class="btn btn-outline-secondary active" style="border-color: #ced4da;">Alle</button>
-                    <button onclick="window.location.href = '/locations/makerspace'" type="button"
-                        class="btn btn-outline-secondary <?php if(get_queried_object()->term_id == 38) { echo 'active'; } ?>"
-                        style="border-color: #ced4da;">Maker Space</button>
-                    <button onclick="window.location.href = '/locations/sfz'" type="button"
-                        class="btn btn-outline-secondary <?php if(get_queried_object()->term_id == 39) { echo 'active'; } ?>"
-                        style="border-color: #ced4da;">Schüler Forschungszentrum</button>
-                </div>
+    <div class="container mt-5 d-none">
+        <div class="row">
+            <div class="col">
+                <!-- <div class="btn-group" role="group" aria-label="Basic example">
+                <button onclick="window.location.href = '/devices'" type="button"
+                    class="btn btn-outline-secondary active" style="border-color: #ced4da;">Alle</button>
+                <button onclick="window.location.href = '/locations/makerspace'" type="button"
+                    class="btn btn-outline-secondary <?php if(get_queried_object()->term_id == 38) { echo 'active'; } ?>"
+                    style="border-color: #ced4da;">Maker Space</button>
+                <button onclick="window.location.href = '/locations/sfz'" type="button"
+                    class="btn btn-outline-secondary <?php if(get_queried_object()->term_id == 39) { echo 'active'; } ?>"
+                    style="border-color: #ced4da;">Schüler Forschungszentrum</button>
+            </div> -->
+            </div>
+            <div class="col p-1">
 
                 <div class="input-group ml-auto">
-                    <input type="text" class="form-control" name="s" placeholder="" aria-label="suchen" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="border-color: #ced4da;">suchen</button>
+                    <input type="text" class="form-control" name="s" placeholder="" aria-label="suchen"
+                        aria-describedby="basic-addon2">
 
-                        <button id="devices-list-view-button" type="button" class="btn btn-outline-light" style="border-color: #ced4da;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/baseline-view_list-24px.svg" />
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2"
+                            style="border-color: #ced4da;">suchen</button>
+
+                        <button id="filter-view-button" type="button" class="btn btn-outline-light"
+                            style="border-color: #ced4da;">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/filter-variant-24px.svg" />
                         </button>
-                        <button id="devices-gallery-view-button" type="button" class="btn btn-outline-light" style="border-color: #ced4da;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/baseline-view_module-24px.svg" />
-                        </button>
+
+                        <!-- <button id="devices-list-view-button" type="button" class="btn btn-outline-light" style="border-color: #ced4da;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/baseline-view_list-24px.svg" />
+                    </button>
+                    <button id="devices-gallery-view-button" type="button" class="btn btn-outline-light" style="border-color: #ced4da;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/baseline-view_module-24px.svg" />
+                    </button> -->
                     </div>
                 </div>
+
+            </div>
+        </div>
+
+        <div class="ms-filter row"><div class="col">Räume</div></div>
+        <div class="ms-filter row">
+                <?php
+                $terms = get_terms( array(
+                    'taxonomy' => 'locations',
+                    'hide_empty' => true,
+                    ) );
                 
-            </nav>
+                foreach ($terms as $term):
+            ?>
+            <?php if ( !$term->parent ): ?>
+            <div class="col">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="btn_ms_filter col bg-light text-center p-2 m-1 text-nowrap c-pointer font-weight-bold"><?php echo $term->name ?></div>
+                    </div>
+                    <div class="row">
+
+                        <?php
+                                $child_terms = get_terms( array(
+                                'taxonomy' => 'locations',
+                                'hide_empty' => true,
+                                'child_of' => $term->term_id
+                                ) );
+                            
+                            foreach ($child_terms as $child_term):
+                        ?>
+
+                        <div class="btn_ms_filter col-4 bg-light text-center p-2 m-1 text-nowrap c-pointer "><?php echo $child_term->name ?></div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+            <?php endforeach; ?>
             
+            <!-- <div class="col bg-light text-center p-2 m-1 text-nowrap c-pointer">Schüler Forschungszentrum</div> -->
+        </div>
+
+        <div class="ms-filter row mt-4"><div class="col">Kategorien</div></div>
+        <div class="ms-filter row" id="filter_term_device_categories">
+            <?php
+                $terms = get_terms( array(
+                    'taxonomy' => 'device_categories',
+                    'hide_empty' => false,
+                    ) );
+                
+                foreach ($terms as $term):
+            ?>
+            <div class="col">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="btn_ms_filter col bg-light text-center p-2 m-1 text-nowrap c-pointer"><?php echo $term->name ?></div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+
         </div>
     </div>
-    <div class="row" id="filter_term_device_categories">
-        <?php
-            $terms = get_terms( array(
-                'taxonomy' => 'device_categories',
-                'hide_empty' => true,
-                ) );
-            
-            foreach ($terms as $term):
-        ?>
-            <div class="btn-category col bg-light text-center p-2 m-1 text-nowrap" data-value="<?php echo $term->name ?>" >
-                <span><?php echo $term->name ?></span>
-            </div>
-        <?php endforeach; ?>
 
-    </div>
-</div>
-<input type="hidden" name="category_name" id="input_category_name" />
+    <input type="hidden" name="category_name" id="input_category_name" />
+    <input type="hidden" name="category_name" id="input_locations" />
 
 </form>
+
+<script>
+    (function () {
+        'use strict';
+
+        window.addEventListener('load', function () {
+            console.log('load');
+
+            $('#filter-view-button').on('click', function (event) {
+                $('.ms-filter').toggleClass('d-none');
+            });
+
+            $('.btn_ms_filter').on('click', function (event) {
+                
+                $(event.currentTarget).toggleClass('bg-primary');
+                $(event.currentTarget).toggleClass('bg-light');
+                $(event.currentTarget).toggleClass('text-light');
+            })
+
+
+            $('#filter_term_device_categories .btn-category').on('click', function (event) {
+                let value = $(event.currentTarget).attr('data-value');
+                value = value + ',' + $('#input_category_name').val();
+
+                console.log("value", value);
+
+                $(event.currentTarget).children('input').val(value);
+                $(event.currentTarget).toggleClass('bg-primary');
+                $(event.currentTarget).toggleClass('bg-light');
+                $(event.currentTarget).toggleClass('text-light');
+            });
+
+            $('#devices-gallery-view-button').on('click', function (event) {
+                console.log('gallery');
+
+                event.stopPropagation();
+                event.preventDefault();
+
+                $('#devices-gallery-view').removeClass('d-none');
+                $('#devices-list-view').addClass('d-none');
+            });
+
+            $('#devices-list-view-button').on('click', function (event) {
+                event.stopPropagation();
+                event.preventDefault();
+
+                $('#devices-gallery-view').addClass('d-none');
+                $('#devices-list-view').removeClass('d-none');
+            });
+
+        });
+    })();
+</script>
+
+<hr />
 
 
 <div class="container mt-5">
 
     <div class="row" id="devices-gallery-view">
-        <?php while ( have_posts() ) : the_post(); ?>
+        <?php 
+            $posts = get_posts( array(
+                'post_type'         => 'devices',
+                'posts_per_page'    =>  -1,
+                'orderby'           => 'title',
+                'order'              => 'ASC'
+            ));
+
+            while ( have_posts() ) : the_post(); 
+        ?>
         <div class="col-3 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'"
             style="cursor: pointer;">
             <?php if ( has_post_thumbnail() ): ?>
             <div class=""
-                style="height: 250px; background-image: url(<?php the_post_thumbnail_url( 'medium' ); ?>); background-size: cover; background-position: center;">
+                style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php the_post_thumbnail_url( 'medium' ); ?>); background-size: cover; background-position: center;">
             </div>
             <?php else: ?>
             <div class=""
@@ -143,6 +259,7 @@
         <div class="col">
             <div class="ms-devices-list">
 
+                <?php $posts = query_posts( $query_string . '&orderby=title&order=asc' ); ?>
                 <?php while ( have_posts() ) : the_post(); ?>
 
                 <a href="<?php echo get_permalink(); ?>" class="text-dark" style="text-decoration:none;">
@@ -237,46 +354,7 @@
     </div>
 </div>
 
-<script>
-    (function () {
-        'use strict';
 
-        window.addEventListener('load', function () {
-            console.log('load');
-
-            $('#filter_term_device_categories .btn-category').on('click', function (event) {
-                let value = $(event.currentTarget).attr('data-value');
-                value = value + ',' + $('#input_category_name').val();
-
-                console.log("value", value);
-
-                $(event.currentTarget).children('input').val(value);
-                $(event.currentTarget).toggleClass('bg-primary');
-                $(event.currentTarget).toggleClass('bg-light');
-                $(event.currentTarget).toggleClass('text-light');
-            });
-
-            $('#devices-gallery-view-button').on('click', function (event) {
-                console.log('gallery');
-
-                event.stopPropagation();
-                event.preventDefault();
-
-                $('#devices-gallery-view').removeClass('d-none');
-                $('#devices-list-view').addClass('d-none');
-            });
-
-            $('#devices-list-view-button').on('click', function (event) {
-                event.stopPropagation();
-                event.preventDefault();
-
-                $('#devices-gallery-view').addClass('d-none');
-                $('#devices-list-view').removeClass('d-none');
-            });
-
-        });
-    })();
-</script>
 
 
 
