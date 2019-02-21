@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <div class="ms-header d-none d-lg-block">
+    <?php use_image("Jugendliche arbeiten an einem Steckbrett", "Leon Hellmich", "cc-by-nc") ?>)
     <div style="background-image: url(<?php header_image(); ?>);" class="ms-header-title-image"></div>
     <div class="ms-header-prism"></div>
     <div class="ms-header-blog-info d-flex align-items-center">
@@ -143,6 +144,7 @@
                     <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
                 </div>
 
+                <?php use_image('Workshop auf der Maker Faire 2018', 'Jonathan Günz', 'cc-by-nc') ?>)
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/workshop.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
@@ -160,6 +162,7 @@
                     <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 176, 160); width: 50px; height: 50px;"></div>
                 </div>
 
+                <?php use_image('Matelight', 'Jonathan Günz', 'cc-by-nc') ?>)
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/matelight_header.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
@@ -177,6 +180,7 @@
                     <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
                 </div>
 
+                <?php use_image('3D Drucker', 'Franz Imschweiler', 'cc-by-nc') ?>)
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/3D_printing.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
@@ -196,7 +200,7 @@
                     <div class="row">
                         <div class="col-12 col-xl-3 d-flex flex-column justify-content-between p-0">
                             <a href="/locations/digitallabor/" class="no-textdecoration">
-                                <div class="text-dark pr-2" style="border-right: solid 5px rgb(0,0,255);">
+                                <div class="text-dark pr-2" style="border-right: solid 7px rgb(229, 0, 91);">
                                     <h5 class="mb-1">Digitallabor</h5>
                                     <div class="text-right">
                                         Mit 3D-Drucker und CNC-Technologie gibt es hier Möglichekeiten zur digitalen Fertigung.
@@ -205,7 +209,7 @@
                             </a>
 
                             <a href="/locations/elektroniklabor/" class="no-textdecoration">
-                                <div class="text-dark pr-2" style="border-right: solid 5px rgb(255, 0, 0);">
+                                <div class="text-dark pr-2" style="border-right: solid 7px rgb(239, 125, 0);">
                                     <h5 class="mb-1">Elektroniklabor</h5>
                                     <div class="text-right">
                                         Hier gibt es Lötplätze und Material um Schaltungen aufzubauen und zu testen.
@@ -214,7 +218,7 @@
                             </a>
                             
                             <a href="/locations/werkstatt/" class="no-textdecoration">
-                                <div class="text-dark pr-2" style="border-right: solid 5px rgb(0, 255, 0);">
+                                <div class="text-dark pr-2" style="border-right: solid 7px rgb(255, 237, 0);">
                                     <h5 class="mb-1">Werkstatt</h5>
                                     <div class="text-right">
                                         In der Werkstatt wird es Möglichekeiten zur Holzbearbeitung geben.
@@ -224,11 +228,14 @@
                             </a>
                         </div>
 
-                        <div class=" col-12 col-xl-6"><object data="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan.svg"></object></div>
+                        <div class=" col-12 col-xl-6">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan-2.svg"
+                                 style="display: block; max-width: 100%; max-height: 100%; min-width: 100%; min-height: 100%; width: auto; height: auto;" />
+                        </div>
                         
                         <div class="col-12 col-xl-3 d-flex flex-column justify-content-between p-0">
                                 <a href="/locations/tonstudio/" class="no-textdecoration">
-                                    <div class="text-dark pl-2" style="border-left: solid 5px rgb(255, 99, 0);">
+                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(15, 182, 204);">
                                         <h5 class="mb-1">Tonstudio</h5>
                                         <div>
                                             Eigene Aufnahmen einspielen und bearbeiten ist in der Tonstudio möglich.
@@ -237,7 +244,7 @@
                                 </a>
     
                                 <a href="/locations/medienlabor/" class="no-textdecoration">
-                                    <div class="text-dark pl-2" style="border-left: solid 5px rgb(255, 141, 0);">
+                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(0, 102, 83);">
                                         <h5 class="mb-1">Medienlabor</h5>
                                         <div>
                                             Filme vor dem GreenScreen und professionell Fotos aufnehmen geht im Medienlabor.
@@ -246,7 +253,7 @@
                                 </a>
                                 
                                 <a href="/locations/textillabor/" class="no-textdecoration">
-                                    <div class="text-dark pl-2" style="border-left: solid 5px rgb(255, 255, 0);">
+                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(188, 207, 0);">
                                         <h5 class="mb-1">Textillabor</h5>
                                         <div>
                                             Textildruck sowie Näh- und Stickarbeiten können im Textillabor erledigt werden.
