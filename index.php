@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <div class="ms-header d-none d-lg-block">
-    <?php use_image("Jugendliche arbeiten an einem Steckbrett", "Leon Hellmich", "cc-by-nc") ?>)
-    <div style="background-image: url(<?php header_image(); ?>);" class="ms-header-title-image"></div>
+    <?php use_image("Jugendliche arbeiten an einem Steckbrett", "Leon Hellmich", "cc-by-nc") ?>
+    <div style="background-image: url(<?php header_image(); ?>;" class="ms-header-title-image"></div>
     <div class="ms-header-prism"></div>
     <div class="ms-header-blog-info d-flex align-items-center">
         <div class="container">
@@ -22,28 +22,22 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Die High-Tech-Werkstatt für alle</h1>
+                <h1>Die Werkstatt für alle Maker und Kreativen</h1>
                 <p>
-                    Willkommen beim Maker Space der Experimenta Heilbronn. Der Maker Space ist eine offene Werkstatt im
-                    Erdgeschoss der Experimenta. Hier treffen sich Menschen zum basteln, diskutieren, austauschen und
-                    lernen. Neben regelmäßigen Workshops zu verschiedenen Themen wird hier an eigenen Projekten
-                    gearbeitet. Dazu stehen viele versschiedene Maschinen zur freien Nutzung zur Verfügung.
+                    Willkommen beim Maker Space der experimenta Heilbronn.  Wir sind eine offene Werkstatt, mit vielfältiger Ausstattung. 
+                    Bei uns treffen sich Menschen zum Werken, Austauschen und Lernen. Neben regelmäßigen Workshops zu verschiedenen Themen, 
+                    wird hier an eigenen Projekten gearbeitet. Der Maker Space bietet hierfür eine Vielzahl an Geräten, Werkzeugen und Materialien.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col order-2 order-lg-1">
                 <p>
-                    Der Maker Space befindet sich im Hagenbucher, dem Altbau der Experimenta, im Erdgeschoss und ist
-                    über
-                    den Haupteingang zu erreichen.
-                    Jeder ist eingeladen zu kommen und an seinen Projekten zu arbeiten, sich mit anderen Auszutauschen
-                    und wohl zu fühlen.
+                    Der Maker Space, mit einer Fläche von 450 m², befindet sich im Erdgeschoss des historischen Gebäudes „Hagenbucher“ am Experimenta-Platz.
+                    Hier ist jeder eingeladen mitzumachen oder einfach mal vorbei zu schauen, um sich zu informieren und die Möglichkeiten auszukundschaften.
                 </p>
                 <p>
-                    Die Öffnungszeiten erlauben es auch in den Abendstunden zusammen an Projekten zu tüfteln und sich
-                    nach der Arbeit zu treffen
-                    und kreativ tätig zu werden.
+                    Angepasst an unsere Zielgruppe, erlauben es unsere Öffnungszeiten auch in den Abendstunden aktiv und kreativ zu sein.
                 </p>
                 <p>
                     <h4>Öffnungszeiten</h4>
@@ -58,7 +52,7 @@
                         </tr>
                         <tr>
                             <td>Samstag</td>
-                            <td>15:00 - 22:00 geöffnet (Abweichend bei Workshop)</td>
+                            <td>15:00 - 22:00 geöffnet (abweichend bei Workshops)</td>
                         </tr>
                         <tr>
                             <td>Sonntag</td>
@@ -78,7 +72,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <?php use_image("Löten lernen", "Leon Hellmich", "cc-by-nc") ?>)
+                            <?php use_image("Löten lernen", "Leon Hellmich", "cc-by-nc") ?>
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b1.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
@@ -87,7 +81,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <?php use_image('LED-Wolf', 'Leon Hellmich', 'cc-by-nc') ?>)
+                            <?php use_image('LED-Wolf', 'Leon Hellmich', 'cc-by-nc') ?>
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b2.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
@@ -96,7 +90,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <?php use_image('Mate-Hovercraft', 'Leon Hellmich', 'cc-by-nc') ?>)
+                            <?php use_image('Mate-Hovercraft', 'Leon Hellmich', 'cc-by-nc') ?>
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b3.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
@@ -105,7 +99,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <?php use_image('WLAN-RSSI-Visualizer', 'Franz Imschweiler', 'cc-by-nc') ?>)
+                            <?php use_image('WLAN-RSSI-Visualizer', 'Franz Imschweiler', 'cc-by-nc') ?>
                             <img src="<?php echo get_template_directory_uri() ?>/assets/images/b4.jpg" class="d-block w-100"
                                 alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
@@ -131,56 +125,58 @@
 <div class="pt-5">
     <div class="container">
         <div class="row pb-5">
-            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(15, 182, 204);">
                 <div class=" p-4 d-flex flex-column">
-                    <h2 style="z-index: 20;">Workshops</h2>
-                    <p style="z-index: 20;">
-                        Mit regelmäßigen Workshops fällt es leicht in ein neues Thema einzusteigen. Deswegen finden
-                        regelmäßig Workshops zu unterschiedlichen Themen statt. Ob arbeiten mit Textilien oder Technik
-                        oder beidem. Auch der Umgang mit den Geräten wir in kleinen Workshops erlernt.
+                    <h2 class="text-white" style="z-index: 20;">Workshops</h2>
+                    <p class="text-white" style="z-index: 20;">
+                        Mit angeleiteten Workshops fällt es leichter in ein neues Thema einzusteigen. 
+                        Deswegen finden regelmäßig Einführungen in unterschiedliche Inhalte statt. 
+                        Auch der Umgang mit unseren Geräten und Werkzeugen kann in kompakten Einheiten erlernt werden.
                     </p>
                     <a href="/events" class="btn btn-link text-light mt-auto" style="z-index: 20;">Workshops ansehen
                         und buchen</a>
-                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
+                    <div class="d-none d-xl-block" 
+                         style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(15, 182, 204); width: 50px; height: 50px;"></div>
                 </div>
 
-                <?php use_image('Workshop auf der Maker Faire 2018', 'Jonathan Günz', 'cc-by-nc') ?>)
+                <?php use_image('Workshop auf der Maker Faire 2018', 'Jonathan Günz', 'cc-by-nc') ?>
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/workshop.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
-            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(0, 176, 160);">
-                <div class=" p-4 d-flex flex-column">
-                    <h2 style="z-index: 20;">Projekte</h2>
-                    <p style="z-index: 20;">
-                        Im Maker Space dreht sich alles um die Projekte. Jeder kann seine eigenen Projekte mitbringen
-                        und bearbeiten. Gruppen können gemeinsam an Projekten arbeiten. Jedes Thema und jede Idee ist
-                        willkommen.
-                    </p>
-                    <a href="http://localhost:8080/category/projekte/" style="z-index: 20;" class="btn btn-link text-light mt-auto">
-                        Abgeschlossene Projekte ansehen
-                    </a>
-                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 176, 160); width: 50px; height: 50px;"></div>
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(0, 102, 83);">
+                <div class=" p-4 d-flex flex-column flex-fill">
+                    <div class="text-white" style="z-index: 20;"><h2>Projekte</h2></div>
+                    <div class="text-white flex-fill" style="z-index: 20;">
+                        Im Maker Space dreht sich alles um Projekte. Jeder kann sich verwirklichen und seine Ideen nach eigenen Vorstellungen voranbringen. 
+                        Es wird eigenverantwortlich gearbeitet, und dennoch wird gegenseitige Unterstützung innerhalb der Community großgeschrieben. 
+                        Alle Themen und Ideen sind willkommen.
+                    </div>
+                    <div class="mt-auto"  style="z-index: 20;">
+                        <a href="http://localhost:8080/category/projekte/" class="btn btn-link text-light mt-auto">
+                            Abgeschlossene Projekte ansehen
+                        </a>
+                    </div>
+                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 102, 83); width: 50px; height: 50px;"></div>
                 </div>
 
-                <?php use_image('Matelight', 'Jonathan Günz', 'cc-by-nc') ?>)
+                <?php use_image('Matelight', 'Jonathan Günz', 'cc-by-nc') ?>
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/matelight_header.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
-            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(188, 207, 0);">
                 <div class=" p-4 d-flex flex-column">
-                    <h2 style="z-index: 20;">Ausstattung</h2>
-                    <p style="z-index: 20;">
-                        Selbst ausprobieren und eigenständig arbeiten können. Das ist es, was den Maker Space ausmacht.
-                        Um das zu tun haben wir viele Geräte, Maschinen sowie Material vor Ort. Mit den Führerscheinen
-                        für
-                        Geräte und Maschinen stellen wir sicher, dass alle im Maker Space ohne Gefahr arbeiten können.
+                    <h2 class="text-white" style="z-index: 20;">Ausstattung</h2>
+                    <p class="text-white" style="z-index: 20;">
+                        Selbst ausprobieren und die Befähigung zum eigenständigen Arbeiten, - das ist, was den Maker Space ausmacht. 
+                        Um dies zu erreichen, haben wir zahlreiche Geräte, Maschinen und Werkzeuge, sowie eine solide Grundausstattung an Materialien vorrätig. 
+                        Durch die Geräteführerscheine stellen wir sicher, dass in den Werkräumen fachkundig und ohne Gefahr gearbeitet werden kann.
                     </p>
                     <a href="/devices/" class="btn btn-link text-light mt-auto" style="z-index: 20;">Geräteliste
                         ansehen</a>
-                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(161, 198, 57); width: 50px; height: 50px;"></div>
+                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(188, 207, 0); width: 50px; height: 50px;"></div>
                 </div>
 
-                <?php use_image('3D Drucker', 'Franz Imschweiler', 'cc-by-nc') ?>)
+                <?php use_image('3D Drucker', 'Franz Imschweiler', 'cc-by-nc') ?>
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/3D_printing.jpg" class="mt-auto w-100"
                     style="z-index: 5;" />
             </div>
@@ -198,10 +194,11 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12 col-xl-3 d-flex flex-column justify-content-between p-0">
+
+                        <div class="col-12 col-xl-3 order-1 order-xl-1 d-flex flex-column justify-content-between p-0">
                             <a href="/locations/digitallabor/" class="no-textdecoration">
-                                <div class="text-dark pr-2" style="border-right: solid 7px rgb(229, 0, 91);">
-                                    <h5 class="mb-1">Digitallabor</h5>
+                                <div class="text-dark pr-2 border-right border-color-digital border-wo-ist-was">
+                                    <h5 class="mb-1 text-right">Digitallabor</h5>
                                     <div class="text-right">
                                         Mit 3D-Drucker und CNC-Technologie gibt es hier Möglichekeiten zur digitalen Fertigung.
                                     </div>
@@ -210,7 +207,7 @@
 
                             <a href="/locations/elektroniklabor/" class="no-textdecoration">
                                 <div class="text-dark pr-2" style="border-right: solid 7px rgb(239, 125, 0);">
-                                    <h5 class="mb-1">Elektroniklabor</h5>
+                                    <h5 class="mb-1 text-right">Elektroniklabor</h5>
                                     <div class="text-right">
                                         Hier gibt es Lötplätze und Material um Schaltungen aufzubauen und zu testen.
                                     </div>
@@ -219,7 +216,7 @@
                             
                             <a href="/locations/werkstatt/" class="no-textdecoration">
                                 <div class="text-dark pr-2" style="border-right: solid 7px rgb(255, 237, 0);">
-                                    <h5 class="mb-1">Werkstatt</h5>
+                                    <h5 class="mb-1 text-right">Werkstatt</h5>
                                     <div class="text-right">
                                         In der Werkstatt wird es Möglichekeiten zur Holzbearbeitung geben.
 
@@ -228,12 +225,12 @@
                             </a>
                         </div>
 
-                        <div class=" col-12 col-xl-6">
+                        <div class=" col-12 col-xl-6 order-3 order-xl-2">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan-2.svg"
                                  style="display: block; max-width: 100%; max-height: 100%; min-width: 100%; min-height: 100%; width: auto; height: auto;" />
                         </div>
                         
-                        <div class="col-12 col-xl-3 d-flex flex-column justify-content-between p-0">
+                        <div class="col-12 col-xl-3 order-2 order-xl-3 d-flex flex-column justify-content-between p-0">
                                 <a href="/locations/tonstudio/" class="no-textdecoration">
                                     <div class="text-dark pl-2" style="border-left: solid 7px rgb(15, 182, 204);">
                                         <h5 class="mb-1">Tonstudio</h5>
@@ -282,7 +279,7 @@
             <div class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'"
                 style="cursor: pointer;">
                 <?php if ( has_post_thumbnail() ): ?>
-                <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
+                <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_the_post_thumbnail_url(); ?>; background-size: cover; background-position: center;"></div>
                 <?php else: ?>
                 <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
                 <?php endif; ?>

@@ -1,0 +1,19 @@
+$enable-rounded: false;
+
+$theme-colors: (
+    "primary":    rgb(152, 203, 78),
+    // "secondary":  $secondary,
+    // "success":    $success,
+    // "info":       $info,
+    // "warning":    $warning,
+    // "danger":     $danger,
+    // "light":      $light,
+    "dark":         #666,
+    
+    "digital":      rgb(229, 0, 91),
+    "elektronik":   rgb(239, 125, 0),
+    "werkstatt":    rgb(255, 237, 0),
+    "tonstudio":    rgb(15, 182, 204),
+    "medienlabor":  rgb(0, 102, 83),
+    "textillabor":  rgb(188, 207, 0),
+);
