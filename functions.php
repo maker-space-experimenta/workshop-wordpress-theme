@@ -44,6 +44,44 @@ function get_used_images() {
   return $manager->get_images();
 }
 
+function get_timetable_devices($device_id, $date) {
+    $timetable = array();
+
+    for ($i = 0; $i < 14; $i++) {
+        array_push($timetable, array(
+            "hour" => $timetable->length,
+            "closed" => 1,
+            "booked" => 0
+        ));
+    }
+
+
+    for ($i = 0; $i < 4; $i++) {
+        array_push($timetable, array(
+            "hour" => $timetable->length,
+            "closed" => 0,
+            "booked" => 0
+        ));
+    }
+    for ($i = 0; $i < 4; $i++) {
+        array_push($timetable, array(
+            "hour" => $timetable->length,
+            "closed" => 0,
+            "booked" => 1
+        ));
+    }
+
+
+    for ($i = 0; $i < 2; $i++) {
+        array_push($timetable, array(
+            "hour" => $timetable->length,
+            "closed" => 1,
+            "booked" => 0
+        ));
+    }
+
+    return $timetable;
+}
 
 
  ?>

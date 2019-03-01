@@ -1,0 +1,30 @@
+@import "_variables.scss";
+
+
+.device-card {
+
+  .device-card-thumbnail {
+    height: 250px;
+    background-color: rgba(0,0,0,0.3);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .device-closed {
+    height: 10px;
+    width: calc(100% / 24);
+    background: rgb(180, 180, 180);
+  }
+
+  .device-free {
+    height: 10px;
+    width: calc(100% / 24);
+    background: rgb(0, 255, 0);
+  }
+
+  .device-booked {
+    height: 10px;
+    width: calc(100% / 24);
+    background: rgb(255, 0, 0);
+  }
+}

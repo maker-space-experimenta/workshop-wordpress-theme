@@ -124,8 +124,8 @@
                     style="cursor: pointer;">
 
                     <?php if ( has_post_thumbnail() ): ?>
-                    <div class=""
-                        style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php the_post_thumbnail_url( 'medium' ); ?>); background-size: cover; background-position: center;">
+                    <div class="device-card-thumbnail"
+                        style="background-image: url(<?php the_post_thumbnail_url( 'medium' ); ?>);">
                     </div>
                     <?php else: ?>
                     <div class=""
@@ -143,79 +143,18 @@
                         <div class="p-1 pl-2 pr-2 bg-white text-secondary">
                             <?php echo get_the_term_list( $post->ID, 'locations', 'Standort ', '')  ?>
                         </div>
-                        <div class="d-none ">
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="00 - 01 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="01 - 02 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="02 - 03 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="03 - 04 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="04 - 05 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="05 - 06 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="06 - 07 Uhr geschlossen">
-                            </div>
-                            <div class="bg-danger" style="height: 10px; width: calc(100% / 24);"
-                                title="07 - 08 Uhr reserviert">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="08 - 09 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="09 - 10 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="10 - 11 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="11 - 12 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="12 - 13 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="13 - 14 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="14 - 15 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="15 - 16 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="16 - 17 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="17 - 18 Uhr frei">
-                            </div>
-                            <div class="bg-success" style="height: 10px; width: calc(100% / 24);"
-                                title="18 - 19 Uhr frei">
-                            </div>
-                            <div class="bg-danger" style="height: 10px; width: calc(100% / 24);"
-                                title="19 - 20 Uhr reserviert">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="20 - 21 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="21 - 22 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="22 - 23 Uhr geschlossen">
-                            </div>
-                            <div class="bg-info" style="height: 10px; width: calc(100% / 24);"
-                                title="23 - 00 Uhr geschlossen">
-                            </div>
+                        <div class="d-none">
+                            <?php $timetable = get_timetable_devices($post->ID, getdate()) ?>
+                            <?php foreach ($timetable as $hour): ?>
+
+                                <?php if ($hour["closed"] == 1): ?>
+                                    <div class="device-closed" title="<?php echo $hour->hour ?> - <?php echo $hour->hour ++ ?> Uhr geschlossen"></div>
+                                <?php elseif ($hour["booked"] == 1): ?>
+                                    <div class="device-booked" title="<?php echo $hour ?> - <?php echo $hour ++ ?> Uhr gebucht"></div>
+                                <?php else: ?>
+                                    <div class="device-free" title="<?php echo $hour ?> - <?php echo $hour ++ ?> Uhr frei"></div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 
 @import "_variables.scss";
 
+@import "makerspace-theme-archive-devices.scss";
+
 .ms-header {
     height: calc(100vh - 76px);
     display: block;
@@ -93,24 +95,4 @@ h1,h2,h3,h4,h5,h6 {
 
 .border-right {
     border-right-style: solid !important;
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
-
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-    
 }

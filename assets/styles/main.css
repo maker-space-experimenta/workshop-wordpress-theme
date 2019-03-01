@@ -7487,6 +7487,27 @@ a.text-textillabor:hover, a.text-textillabor:focus {
 .wp-block-table td {
   width: 50%; }
 
+.device-card .device-card-thumbnail {
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-position: center; }
+
+.device-card .device-closed {
+  height: 10px;
+  width: calc(100% / 24);
+  background: #b4b4b4; }
+
+.device-card .device-free {
+  height: 10px;
+  width: calc(100% / 24);
+  background: lime; }
+
+.device-card .device-booked {
+  height: 10px;
+  width: calc(100% / 24);
+  background: red; }
+
 .ms-header {
   height: calc(100vh - 76px);
   display: block; }
