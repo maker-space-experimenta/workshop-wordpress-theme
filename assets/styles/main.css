@@ -7622,8 +7622,7 @@ a.text-textillabor:hover, a.text-textillabor:focus {
   z-index: 1000;
   position: fixed;
   position: sticky;
-  top: 0;
-  width: 100vw; }
+  top: 0; }
   .ms-navbar .nav-img {
     height: 24px;
     width: auto; }
