@@ -84,4 +84,4 @@ function get_timetable_devices($device_id, $date) {
 }
 
 
- ?>
+show_admin_bar(false);

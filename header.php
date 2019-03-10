@@ -17,22 +17,17 @@
 <?php global $used_images; ?>
 <?php $used_images = array(); ?>
 
-<?php
-    $margin_top = 0;
-    if(is_user_logged_in()):
-        $margin_top = 32;
-    endif;
-?>
 
-<div class="position-sticky d-flex align-items-center" style="background: #000; z-index: 1000; top: <?php echo $margin_top; ?>px;">
-    <div class="container" >
+
+<div class="d-flex align-items-center ms-navbar">
+    <div class="container-fluid w-100" >
 
         <nav class="ms-navigation ms-nav-dark-color pl-0 navbar navbar-expand-lg navbar-dark bg-none ">
 
             <a style="width: 400px; font-weight: bold; font-size: 30px;" class="navbar-brand text-light" href="/">
-               
+
                Maker Space
-               
+
                <!--
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/maker-space.svg" style="max-height: 50px;" alt="<?php echo get_bloginfo( 'name' ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" />
                 -->
@@ -44,7 +39,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav w-100">
 
                     <?php
                         $menu_name = 'header-menu';
@@ -63,6 +58,30 @@
 
                     <?php endforeach; ?>
 
+
+
+                    <?php if(!is_user_logged_in()): ?>
+
+                        <li class="nav-item ml-auto" class="open-sidemenu c-pointer">
+                            <a class="nav-link" href="/wp-admin">login</a>
+                        </li>
+
+                    <?php else: ?>
+
+                        <li class="nav-item ml-auto dropdown dropleft">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="nav-img" src="<?php echo get_avatar_url(get_current_user_id())  ?>" />
+                                <?php echo get_the_author_meta('display_name', get_current_user_id())  ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/wp-admin">Mein Dashboard</a>
+                                <a class="dropdown-item" href="/wp-admin/profile.php">Mein Profil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/wp-login.php?action=logout">Logout</a>
+                            </div>
+                        </li>
+                    <?php endif; ?>
+                
                 </ul>
             </div>
         </nav>

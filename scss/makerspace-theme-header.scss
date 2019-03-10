@@ -1,0 +1,43 @@
+@import "_variables.scss";
+
+
+.ms-header {
+  height: calc(100vh - 76px);
+  display: block;
+
+  .ms-header-title-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .ms-header-prism {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/maker-space-header.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 10;
+  }
+
+  .ms-header-blog-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    height: 100%;
+    width: 100%;
+  }
+}

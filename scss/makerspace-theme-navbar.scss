@@ -1,0 +1,33 @@
+
+@import "_variables.scss";
+
+
+.ms-navbar {
+  background: map-get($map: $theme-colors, $key: 'black');
+  z-index: 1000;
+  position: fixed;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+
+  .nav-img {
+      height: 24px;
+      width: auto;
+  }
+}
+
+.ms-sidemenu {
+  background: map-get($map: $theme-colors, $key: 'black');
+  position: fixed;
+  top:71px;
+  right: 0;
+  max-width: 350px;
+  width: 100vw;
+  height: calc(100vh - 71px);
+  z-index: 1000;
+
+  .list-group-item:hover {
+    background: rgba(152, 203, 78, 0.5);
+  }
+}
+

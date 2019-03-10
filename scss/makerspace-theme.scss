@@ -2,50 +2,9 @@
 @import "_variables.scss";
 
 @import "makerspace-theme-archive-devices.scss";
+@import "makerspace-theme-navbar.scss";
+@import "makerspace-theme-header";
 
-.ms-header {
-    height: calc(100vh - 76px);
-    display: block;
-}
-
-.ms-header .ms-header-title-image {
-    position: absolute;
-    top:0;
-    left: 0;
-    
-    height: 100%;
-    width: 100%;
-    z-index: 5;
-    
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.ms-header .ms-header-prism {
-    position: absolute;
-    top:0;
-    left: 0;
-    background: url(../images/maker-space-header.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-    height: 100%;
-    width: 100%;
-
-    z-index: 10;
-}
-.ms-header .ms-header-blog-info {
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 15;
-    height: 100%;
-    width: 100%;
-}
-
-.ms-nav-dark-color {
-    background-color: rgb(0, 0, 0)
-}
 
 @font-face { font-family: dinot; src: url('../fonts/DINOT.woff2'); } 
 @font-face { font-family: dinot; font-weight: bold; src: url('../fonts/DINOT-Bold.woff2');}
@@ -96,3 +55,6 @@ h1,h2,h3,h4,h5,h6 {
 .border-right {
     border-right-style: solid !important;
 }
+
+
+
