@@ -8,7 +8,7 @@
                 Die Nutzung des Maker Space ist kostenlos. Alle Geräte und Räume können innerhalb der Öffnungszeiten frei genutzt werden.
             </p>
             <p>
-                Wir halten viele Materialien im Maker Spacvorrätig. Dennoch sollte Material für größere, eigene Projekte selbst beschafft und mitgebracht werden.
+                Wir halten viele Materialien im Maker Space vorrätig. Dennoch sollte Material für größere, eigene Projekte selbst beschafft und mitgebracht werden.
             </p>
             <p>
                 Wir wollen gerne, dass Projekte umgesetzt werden können. Wenn ein Projekt an Materialkosten scheitert, wende dich an uns. 
