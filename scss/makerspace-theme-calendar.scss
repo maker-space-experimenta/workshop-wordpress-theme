@@ -1,0 +1,15 @@
+@import "_variables.scss";
+
+
+
+.list-group {
+  .ms-highlight {
+    border-left: solid 7px map-get($map: $theme-colors, $key: 'digital') !important;
+  }
+
+  .ms-full {
+    opacity: 0.7;
+  }
+
+}
+

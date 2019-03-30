@@ -5,11 +5,10 @@
     <div class="row">
         <div class="col">
             <p>
-                Die Nutzung des Maker Space ist grundsätzlich kostenlos. Alle Geräte und Räume können innerhalb der Öffnungszeiten frei genutzt werden.
+                Die Nutzung des Maker Space ist kostenlos. Alle Geräte und Räume können innerhalb der Öffnungszeiten frei genutzt werden.
             </p>
             <p>
-                Für verschiedenes Material wird ein Unkostenbeitrag erhoben. Welche Preise für das Material erhoben werden, kannst du der Preisliste entnehmen. 
-                Wenn es Fragen zu den Preisen oder zur Bezahlung gibt, wende dich an einen Mitarbeitenden des Maker Space.
+                Wir halten viele Materialien im Maker Spacvorrätig. Dennoch sollte Material für größere, eigene Projekte selbst beschafft und mitgebracht werden.
             </p>
             <p>
                 Wir wollen gerne, dass Projekte umgesetzt werden können. Wenn ein Projekt an Materialkosten scheitert, wende dich an uns. 

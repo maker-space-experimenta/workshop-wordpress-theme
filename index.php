@@ -25,7 +25,7 @@
                 <h1>Die Werkstatt für alle Maker und Kreativen</h1>
                 <p>
                     Willkommen beim Maker Space der experimenta Heilbronn.  Wir sind eine offene Werkstatt, mit vielfältiger Ausstattung. 
-                    Bei uns treffen sich Menschen zum Werken, Austauschen und Lernen. Neben regelmäßigen Workshops zu verschiedenen Themen, 
+                    Bei uns treffen sich Menschen ab 14 Jahre zum Werken, Austauschen und Lernen. Neben regelmäßigen Workshops zu verschiedenen Themen,
                     wird hier an eigenen Projekten gearbeitet. Der Maker Space bietet hierfür eine Vielzahl an Geräten, Werkzeugen und Materialien.
                 </p>
             </div>
@@ -37,7 +37,7 @@
                     Hier ist jeder eingeladen mitzumachen oder einfach mal vorbei zu schauen, um sich zu informieren und die Möglichkeiten auszukundschaften.
                 </p>
                 <p>
-                    Angepasst an unsere Zielgruppe, erlauben es unsere Öffnungszeiten auch in den Abendstunden aktiv und kreativ zu sein.
+                    Unsere Öffnungszeiten erlauben es auch in den Abendstunden aktiv und kreativ zu sein.
                 </p>
                 <p>
                     <h4>Öffnungszeiten</h4>
@@ -47,12 +47,8 @@
                             <td>geschlossen</td>
                         </tr>
                         <tr>
-                            <td class="pr-2">Dienstag bis Freitag</td>
+                            <td class="pr-2">Dienstag bis Samstag</td>
                             <td>15:00 - 22:00 geöffnet</td>
-                        </tr>
-                        <tr>
-                            <td>Samstag</td>
-                            <td>15:00 - 22:00 geöffnet (abweichend bei Workshops)</td>
                         </tr>
                         <tr>
                             <td>Sonntag</td>
@@ -198,7 +194,7 @@
                         <div class="col-12 col-xl-3 order-1 order-xl-1 d-flex flex-column justify-content-between p-0">
                             <a href="/locations/digitallabor/" class="no-textdecoration">
                                 <div class="text-dark pr-2 border-right border-color-digital border-wo-ist-was">
-                                    <h5 class="mb-1 text-right">Digitallabor</h5>
+                                    <h5 class="mb-1 text-right">Digitalwerkstatt</h5>
                                     <div class="text-right">
                                         Mit 3D-Drucker und CNC-Technologie gibt es hier Möglichekeiten zur digitalen Fertigung.
                                     </div>
@@ -207,7 +203,7 @@
 
                             <a href="/locations/elektroniklabor/" class="no-textdecoration">
                                 <div class="text-dark pr-2" style="border-right: solid 7px rgb(239, 125, 0);">
-                                    <h5 class="mb-1 text-right">Elektroniklabor</h5>
+                                    <h5 class="mb-1 text-right">Elektronikwerkstatt</h5>
                                     <div class="text-right">
                                         Hier gibt es Lötplätze und Material um Schaltungen aufzubauen und zu testen.
                                     </div>
@@ -216,7 +212,7 @@
                             
                             <a href="/locations/werkstatt/" class="no-textdecoration">
                                 <div class="text-dark pr-2" style="border-right: solid 7px rgb(255, 237, 0);">
-                                    <h5 class="mb-1 text-right">Werkstatt</h5>
+                                    <h5 class="mb-1 text-right">Holzwerkstatt</h5>
                                     <div class="text-right">
                                         In der Werkstatt wird es Möglichekeiten zur Holzbearbeitung geben.
 
@@ -226,32 +222,25 @@
                         </div>
 
                         <div class=" col-12 col-xl-6 order-3 order-xl-2">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan-2.svg"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan-3.svg"
                                  style="display: block; max-width: 100%; max-height: 100%; min-width: 100%; min-height: 100%; width: auto; height: auto;" />
                         </div>
+
                         
                         <div class="col-12 col-xl-3 order-2 order-xl-3 d-flex flex-column justify-content-between p-0">
                                 <a href="/locations/tonstudio/" class="no-textdecoration">
-                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(15, 182, 204);">
-                                        <h5 class="mb-1">Tonstudio</h5>
+                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(15, 3, 178);">
+                                        <h5 class="mb-1">Medienwerkstatt</h5>
                                         <div>
                                             Eigene Aufnahmen einspielen und bearbeiten ist in der Tonstudio möglich.
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="/locations/medienlabor/" class="no-textdecoration">
-                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(0, 102, 83);">
-                                        <h5 class="mb-1">Medienlabor</h5>
-                                        <div>
                                             Filme vor dem GreenScreen und professionell Fotos aufnehmen geht im Medienlabor.
                                         </div>
                                     </div>
                                 </a>
                                 
                                 <a href="/locations/textillabor/" class="no-textdecoration">
-                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(188, 207, 0);">
-                                        <h5 class="mb-1">Textillabor</h5>
+                                    <div class="text-dark pl-2" style="border-left: solid 7px rgb(0, 102, 84);">
+                                        <h5 class="mb-1">Textilwerkstatt</h5>
                                         <div>
                                             Textildruck sowie Näh- und Stickarbeiten können im Textillabor erledigt werden.
                                         </div>
