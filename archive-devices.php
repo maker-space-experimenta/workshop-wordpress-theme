@@ -4,7 +4,7 @@
 
 <?php 
     $posts = get_posts( array(
-        'post_type'         => 'ms_inventory',
+        'post_type'         => 'devices',
         'posts_per_page'    =>  -1,
         'orderby'           => 'title',
         'order'              => 'ASC'
