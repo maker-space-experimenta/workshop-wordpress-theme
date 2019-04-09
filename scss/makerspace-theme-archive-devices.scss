@@ -28,3 +28,19 @@
     background: rgb(255, 0, 0);
   }
 }
+
+.ms_inventory {
+  display: none !important;
+}
+
+.show-makerspace {
+  .room_12 {
+    display: block !important;
+  }
+}
+
+.show-sfz {
+  .room_13 {
+    display: block !important;
+  }
+}

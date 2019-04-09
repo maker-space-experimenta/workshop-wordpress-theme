@@ -2,11 +2,9 @@
 
 
 
-
-
 <?php 
     $posts = get_posts( array(
-        'post_type'         => 'devices',
+        'post_type'         => 'ms_inventory',
         'posts_per_page'    =>  -1,
         'orderby'           => 'title',
         'order'              => 'ASC'
@@ -14,7 +12,88 @@
 ?>
 
 
-<div class="container-fluid mt-5">
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <a href="#makerspace" id="tab-makerspace" class="c-pointer p-3 justify-content-center align-items-center d-flex bg-primary text-light">Maker Space</a>
+        </div>
+        <div class="col">
+            <a href="#sfz" id="tab-sfz" class="c-pointer p-3 justify-content-center align-items-center d-flex border border-secondary">Schüler Forschungszentrum</a>
+        </div>
+    </div>
+
+    <!--<div id="sfz-domains" class="row mt-5">
+        <div class="col">
+            <a href="#sfz" id="sfz-domain-biology" class="c-pointer p-3 justify-content-center align-items-center d-flex border border-secondary">Biologie</a>
+        </div>
+        <div class="col">
+            <a href="#sfz" id="sfz-domain-chemistry" class="c-pointer p-3 justify-content-center align-items-center d-flex border border-secondary">Chemie</a>
+        </div>
+        <div class="col">
+            <a href="#sfz" id="sfz-domain-physics" class="c-pointer p-3 justify-content-center align-items-center d-flex border border-secondary">Physik</a>
+        </div>
+        <div class="col">
+            <a href="#sfz" id="sfz-domain-technics" class="c-pointer p-3 justify-content-center align-items-center d-flex border border-secondary">Technik</a>
+        </div>
+    </div>-->
+
+    <div class="row mt-5 ms-device-list show-makerspace">
+        <?php foreach($posts as $post): ?>
+            <?php $rooms = get_the_terms( $post->ID, 'locations')  ?>
+            <?php $device_categories = get_the_terms( $post->ID, 'device_categories')  ?>
+
+            <div class="col col-xl-3 col-md-6 ms_inventory <?php foreach($rooms as $room) { echo "room_".$room->term_id . ' '; if ($room->parent) { echo "room_".$room->parent . ' '; } } ?>">
+
+                    <div class="device-card mb-5 d-flex flex-column"
+                         data-rooms="<?php foreach($rooms as $room) { echo $room->term_id . ','; if ($room->parent) { echo $room->parent . ','; } } ?>"
+                         data-categories="<?php foreach($device_categories as $cat) { echo $cat->term_id . ','; if ($cat->parent) { echo $cat->parent . ','; } } ?>"
+                         style="cursor: pointer;">
+
+                        <?php if ( has_post_thumbnail() ): ?>
+                            <div class="device-card-thumbnail"
+                                 style="background-image: url(<?php the_post_thumbnail_url( 'medium' ); ?>);">
+                            </div>
+                        <?php else: ?>
+                            <div class=""
+                                 style="height: 250px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;">
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="bg-white flex-fill p-2 overflow-hidden text-nowrap">
+                            <h5 class="" title="<?php the_title() ?>">
+                                <?php the_title() ?>
+                            </h5>
+                        </div>
+                        <div class="p-0 pt-auto" style="font-size: 0.72rem;">
+                            <!-- <div class="p-1 pl-2 pr-2 bg-white text-secondary">Führerschein 01-001</div> -->
+                            <div class="p-1 pl-2 pr-2 bg-white text-secondary">
+                                <?php echo get_the_term_list( $post->ID, 'locations', 'Standort ', '')  ?>
+                            </div>
+                            <div class="d-none">
+                                <?php $timetable = get_timetable_devices($post->ID, getdate()) ?>
+                                <?php foreach ($timetable as $hour): ?>
+
+                                    <?php if ($hour["closed"] == 1): ?>
+                                        <div class="device-closed" title="<?php echo $hour->hour ?> - <?php echo $hour->hour ++ ?> Uhr geschlossen"></div>
+                                    <?php elseif ($hour["booked"] == 1): ?>
+                                        <div class="device-booked" title="<?php echo $hour ?> - <?php echo $hour ++ ?> Uhr gebucht"></div>
+                                    <?php else: ?>
+                                        <div class="device-free" title="<?php echo $hour ?> - <?php echo $hour ++ ?> Uhr frei"></div>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+
+<div class="container-fluid mt-5  d-none">
     <div class="row">
 
         <div class="col-12 col-md-4 col-lg-2">
@@ -55,7 +134,7 @@
                             'taxonomy' => 'locations',
                             'hide_empty' => true,
                             ) );
-                        
+
                         foreach ($terms as $term):
                     ?>
                     <?php if ( !$term->parent ): ?>
@@ -73,7 +152,7 @@
                                     'child_of' => $term->term_id
                                 );
                                 $child_terms = get_terms( $args );
-                                
+
                                 foreach ($child_terms as $child_term):
                             ?>
 
@@ -97,7 +176,7 @@
                         'taxonomy' => 'device_categories',
                         'hide_empty' => false,
                         ) );
-                    
+
                     foreach ($terms as $term):
                     ?>
                     <div data-category-id="<?php echo $term->term_id ?>"
@@ -176,6 +255,44 @@
 <script>
     (function () {
         'use strict';
+
+        let currentUrl = null;
+
+        function showMakerspace() {
+            $('.ms-device-list').addClass('show-makerspace');
+            $('.ms-device-list').removeClass('show-sfz');
+
+            $('#tab-makerspace').addClass('bg-primary').addClass('text-light').removeClass('border').removeClass('border-secondary');
+            $('#tab-sfz').removeClass('bg-primary').removeClass('text-light').addClass('border').addClass('border-secondary');
+
+            $('#sfz-domains').addClass('d-none');
+        }
+
+        function showSzf () {
+            $('.ms-device-list').removeClass('show-makerspace');
+            $('.ms-device-list').addClass('show-sfz');
+
+            $('#tab-makerspace').removeClass('bg-primary').removeClass('text-light').addClass('border').addClass('border-secondary');
+            $('#tab-sfz').addClass('bg-primary').addClass('text-light').removeClass('border').removeClass('border-secondary');
+
+            $('#sfz-domains').removeClass('d-none');
+        }
+
+        setInterval(function () {
+            if (window.location.hash != currentUrl) {
+                currentUrl = window.location.hash;
+
+                console.log(currentUrl);
+                if (currentUrl == "#sfz") {
+                    showSzf();
+                } else {
+                    showMakerspace();
+                }
+            }
+        }, 10);
+
+
+
 
         var filter_rooms = [];
         var filter_categories = [];
