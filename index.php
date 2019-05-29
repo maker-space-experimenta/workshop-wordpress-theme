@@ -129,7 +129,7 @@
                         Deswegen finden regelmäßig Einführungen in unterschiedliche Inhalte statt. 
                         Auch der Umgang mit unseren Geräten und Werkzeugen kann in kompakten Einheiten erlernt werden.
                     </p>
-                    <a href="/events" class="btn btn-link text-light mt-auto" style="z-index: 20;">Workshops ansehen
+                    <a href="https://www.experimenta.science/die-experimenta/veranstaltungskalender/veranstaltungskategorie?category=54" class="btn btn-link text-light mt-auto" style="z-index: 20;">Workshops ansehen
                         und buchen</a>
                     <div class="d-none d-xl-block" 
                          style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(15, 182, 204); width: 50px; height: 50px;"></div>
@@ -148,7 +148,7 @@
                         Alle Themen und Ideen sind willkommen.
                     </div>
                     <div class="mt-auto"  style="z-index: 20;">
-                        <a href="http://localhost:8080/category/projekte/" class="btn btn-link text-light mt-auto">
+                        <a href="/category/projekte/" class="btn btn-link text-light mt-auto">
                             Abgeschlossene Projekte ansehen
                         </a>
                     </div>
@@ -188,32 +188,32 @@
             <div class="col">
                 <h2>Wo ist was</h2>
 
-                <div class="container-fluid">
+                <div class="container-fluid mt-3 mt-md-3">
                     <div class="row">
 
-                        <div class="col-12 col-xl-3 order-1 order-xl-1 d-flex flex-column justify-content-between p-0">
+                        <div class="col-12 col-xl-3 order-2 order-xl-1 d-flex flex-column justify-content-between p-0 wiw-liste">
                             <a href="/locations/digitallabor/" class="no-textdecoration">
-                                <div class="text-dark pr-2 border-right border-color-digital border-wo-ist-was">
-                                    <h5 class="mb-1 text-right">Digitalwerkstatt</h5>
-                                    <div class="text-right">
+                                <div class="text-dark pl-2 pr-2 border-right border-wo-ist-was border-color-digital">
+                                    <h5 class="mb-1">Digitalwerkstatt</h5>
+                                    <div class="">
                                         Mit 3D-Drucker und CNC-Technologie gibt es hier Möglichekeiten zur digitalen Fertigung.
                                     </div>
                                 </div>
                             </a>
 
                             <a href="/locations/elektroniklabor/" class="no-textdecoration">
-                                <div class="text-dark pr-2" style="border-right: solid 7px rgb(239, 125, 0);">
-                                    <h5 class="mb-1 text-right">Elektronikwerkstatt</h5>
-                                    <div class="text-right">
+                                <div class="text-dark pl-2 pr-2 border-right border-wo-ist-was border-color-elektronik">
+                                    <h5 class="mb-1">Elektronikwerkstatt</h5>
+                                    <div class="">
                                         Hier gibt es Lötplätze und Material um Schaltungen aufzubauen und zu testen.
                                     </div>
                                 </div>
                             </a>
                             
                             <a href="/locations/werkstatt/" class="no-textdecoration">
-                                <div class="text-dark pr-2" style="border-right: solid 7px rgb(255, 237, 0);">
-                                    <h5 class="mb-1 text-right">Holzwerkstatt</h5>
-                                    <div class="text-right">
+                                <div class="text-dark  pl-2 pr-2 border-right border-wo-ist-was border-color-holz">
+                                    <h5 class="mb-1">Holzwerkstatt</h5>
+                                    <div class="">
                                         In der Werkstatt wird es Möglichekeiten zur Holzbearbeitung geben.
 
                                     </div>
@@ -221,13 +221,13 @@
                             </a>
                         </div>
 
-                        <div class=" col-12 col-xl-6 order-3 order-xl-2">
+                        <div class=" col-12 col-xl-6 order-1 order-xl-2  mb-4 mb-md-0">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan-3.svg"
                                  style="display: block; max-width: 100%; max-height: 100%; min-width: 100%; min-height: 100%; width: auto; height: auto;" />
                         </div>
 
                         
-                        <div class="col-12 col-xl-3 order-2 order-xl-3 d-flex flex-column justify-content-between p-0">
+                        <div class="col-12 col-xl-3 order-3 order-xl-3 d-flex flex-column justify-content-between p-0 wiw-liste">
                                 <a href="/locations/tonstudio/" class="no-textdecoration">
                                     <div class="text-dark pl-2" style="border-left: solid 7px rgb(15, 3, 178);">
                                         <h5 class="mb-1">Medienwerkstatt</h5>
@@ -268,7 +268,7 @@
             <div class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'"
                 style="cursor: pointer;">
                 <?php if ( has_post_thumbnail() ): ?>
-                <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_the_post_thumbnail_url(); ?>; background-size: cover; background-position: center;"></div>
+                <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
                 <?php else: ?>
                 <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
                 <?php endif; ?>

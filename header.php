@@ -1,7 +1,10 @@
 <html style="margin: 0 !important;"> 
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
+        <meta name="google-site-verification" content="xGu-GJN36MCN0-9aTYEr38Ttyvaidkk0ZnRYACsdTTU" />
 
+        <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/assets/images/favicon.png">
         <!-- <link href="<?php echo get_template_directory_uri() ?>/assets/styles/bootstrap.css" rel="stylesheet"> -->
         <link href="<?php echo get_template_directory_uri() ?>/assets/styles/main.css" rel="stylesheet">
 
@@ -11,6 +14,7 @@
         <script src="<?php echo get_template_directory_uri() ?>/assets/scripts/svg.min.js"></script>
 
     <?php wp_head(); ?>
+
 </head>
 <body>
 
@@ -23,7 +27,7 @@
 
         <nav class="ms-navigation ms-nav-dark-color pl-0 navbar navbar-expand-lg navbar-dark bg-none ">
 
-            <a style="width: 400px; font-weight: bold; font-size: 30px;" class="navbar-brand text-light" href="/">
+            <a style="width: 400px; max-width: 50vw; font-weight: bold; font-size: 30px;" class="navbar-brand text-light" href="/">
 
                Maker Space
 
@@ -62,7 +66,7 @@
 
     </div>
 
-    <div class="" style="position: absolute; right: 10px;">
+    <div class="d-none d-md-block" style="position: absolute; right: 10px;">
         <?php if(!is_user_logged_in()): ?>
 
             <a class="nav-link" href="/wp-admin">login</a>
