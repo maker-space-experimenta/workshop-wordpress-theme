@@ -7650,7 +7650,7 @@ a.text-textillabor:hover, a.text-textillabor:focus {
     background: rgba(152, 203, 78, 0.5); }
 
 .ms-header {
-  height: calc(100vh - 76px);
+  height: 100vh;
   display: block; }
   .ms-header .ms-header-title-image {
     position: absolute;

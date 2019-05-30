@@ -1,7 +1,7 @@
 
 <?php get_header(); ?>
 
-<div class="" style="height: 450px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/maker-space-theke-small.png); background-size: cover; background-position: center;"></div>
+<div class="" style="height: 450px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/header-04.jpg); background-size: cover; background-position: center;"></div>
 
 <div class="container mt-5 pb-5" style="min-height: 100vh">
     <div class="row">
