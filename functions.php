@@ -83,5 +83,29 @@ function get_timetable_devices($device_id, $date) {
     return $timetable;
 }
 
+function make_href_root_relative($input) { 
+  return preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $input); 
+}
+function root_relative_permalinks($input) {
+  return make_href_root_relative($input); 
+}
+
+add_filter( 'day_link', 'root_relative_permalinks');
+add_filter( 'year_link', 'root_relative_permalinks');
+add_filter( 'post_link', 'root_relative_permalinks');
+add_filter( 'page_link', 'root_relative_permalinks');
+add_filter( 'term_link', 'root_relative_permalinks');
+add_filter( 'month_link', 'root_relative_permalinks');
+add_filter( 'search_link', 'root_relative_permalinks');
+add_filter( 'the_content', 'root_relative_permalinks');
+add_filter( 'the_permalink', 'root_relative_permalinks');
+add_filter( 'get_shortlink', 'root_relative_permalinks');
+add_filter( 'post_type_link', 'root_relative_permalinks');
+add_filter( 'attachment_link', 'root_relative_permalinks');
+add_filter( 'get_pagenum_link', 'root_relative_permalinks');
+add_filter( 'wp_get_attachment_url', 'root_relative_permalinks');
+add_filter( 'post_type_archive_link', 'root_relative_permalinks');
+add_filter( 'get_comments_pagenum_link', 'root_relative_permalinks');
+
 
 show_admin_bar(false);
