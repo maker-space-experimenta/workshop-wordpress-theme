@@ -106,6 +106,7 @@ add_filter( 'get_pagenum_link', 'root_relative_permalinks');
 add_filter( 'wp_get_attachment_url', 'root_relative_permalinks');
 add_filter( 'post_type_archive_link', 'root_relative_permalinks');
 add_filter( 'get_comments_pagenum_link', 'root_relative_permalinks');
+add_filter( 'get_template_directory_uri', 'root_relative_permalinks');
 
 
 show_admin_bar(false);

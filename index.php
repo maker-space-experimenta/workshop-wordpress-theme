@@ -7,8 +7,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 text-light text-uppercase">
-                    <span style="font-size: 25px; ">Der Maker Space <br />in der Experimenta Heilbronn</span>
-                    <h1>
+                    <span style="font-size: 30px; ">Der Maker Space <br />in der Experimenta Heilbronn</span>
+                    <h1 style="font-size: 55px;">
                         <?php bloginfo('description'); ?>
                     </h1>
                 </div>
@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div class="bg-white pt-5">
+<div class="pt-5">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -47,7 +47,7 @@
                         </tr>
                         <tr>
                             <td class="pr-2">Dienstag bis Samstag</td>
-                            <td>15:00 - 22:00 geöffnet</td>
+                            <td>15:00 - 22:00 geöffnet <br />(auch an Feiertagen und Ferien)</td>
                         </tr>
                         <tr>
                             <td>Sonntag</td>
@@ -113,7 +113,7 @@
     </div>
 </div>
 
-<div class="pt-5">
+<div class="pt-5 bg-white">
     <div class="container">
         <div class="row pb-5">
             <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(15, 182, 204);">
@@ -178,7 +178,7 @@
 </div>
 
 
-<div class="bg-white pt-5 pb-5">
+<div class="pt-5 pb-5">
     <div class="container">
         <div class="row pb-3">
             <div class="col-12">
@@ -194,7 +194,7 @@
                         <div class="text-dark pl-2 pr-2 border-right border-wo-ist-was border-color-digital">
                             <h5 class="mb-1">Digitalwerkstatt</h5>
                             <div class="">
-                                Mit 3D-Drucker und CNC-Technologie gibt es hier Möglichekeiten zur digitalen Fertigung.
+                                Mit 3D-Drucker und CNC-Technologie gibt es hier Möglichkeiten zur digitalen Fertigung.
                             </div>
                         </div>
                     </a>
@@ -205,7 +205,7 @@
                         <div class="text-dark pl-2 pr-2 border-right border-wo-ist-was border-color-elektronik">
                             <h5 class="mb-1">Elektronikwerkstatt</h5>
                             <div class="">
-                                Hier gibt es Lötplätze und Material um Schaltungen aufzubauen und zu testen.
+                                Hier gibt es Lötplätze und Material, um Schaltungen aufzubauen und zu testen.
                             </div>
                         </div>
                     </a>
@@ -216,8 +216,7 @@
                         <div class="text-dark  pl-2 pr-2 border-right border-wo-ist-was border-color-holz">
                             <h5 class="mb-1">Holzwerkstatt</h5>
                             <div class="">
-                                In der Werkstatt wird es Möglichekeiten zur Holzbearbeitung geben.
-
+                                In der Werkstatt gibt es Möglichkeiten zur Holzbearbeitung.
                             </div>
                         </div>
                     </a>
@@ -234,8 +233,8 @@
                     <div class="text-dark pl-2" style="border-left: solid 7px rgb(15, 3, 178);">
                         <h5 class="mb-1">Medienwerkstatt</h5>
                         <div>
-                            Eigene Aufnahmen einspielen und bearbeiten ist in der Tonstudio möglich.
-                            Filme vor dem GreenScreen und professionell Fotos aufnehmen geht im Medienlabor.
+                            Eigene Aufnahmen einspielen und bearbeiten ist in der Tonkabine möglich.
+                            Zum Aufnehmen von Filmen und Fotos steht ein Fotstudio bereit.
                         </div>
                     </div>
                 </a>
@@ -244,7 +243,7 @@
                     <div class="text-dark pl-2" style="border-left: solid 7px rgb(0, 102, 84);">
                         <h5 class="mb-1">Textilwerkstatt</h5>
                         <div>
-                            Textildruck sowie Näh- und Stickarbeiten können im Textillabor erledigt werden.
+                            Näh- und Stickarbeiten sowie Textildruck können hier realisiert werden.
                         </div>
                     </div>
                 </a>
@@ -256,6 +255,35 @@
     </div>
 </div>
 </div>
+
+
+<div class="pt-5 pb-5 bg-white">
+    <div class="container">
+        <div class="row pb-3">
+            <div class="col">
+                <h2>Preise</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Die Nutzung des Maker Space ist kostenlos. Alle Geräte  und Räume können innerhalb der Öffnungszeiten frei genutzt werden.</p>
+
+                <p>Wir halten viele Materialien im Maker Space vorrätig.  Diese 
+                Materialien können kostenlos genutzt werden. Dennoch sollte Material für
+                größere, eigene Projekte selbst beschafft  und mitgebracht werden. 
+                Gerne können wir bei der Auswahl und Bestellung helfen und unsere 
+                Erfahrung mit einbringen.</p>
+
+                <p>Wir wollen gerne, dass Projekte umgesetzt werden können.  Wenn ein 
+                Projekt an Materialkosten scheitert, wende dich an uns. Eventuell können
+                wir gemeinsam eine Lösung finden, wie  dein Projekt trotzdem umgesetzt 
+                werden kann.             </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="pt-5 pb-5">
     <div class="container">
