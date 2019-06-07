@@ -42,16 +42,12 @@
                     <h4>Öffnungszeiten</h4>
                     <table>
                         <tr>
-                            <td>Montag</td>
-                            <td>geschlossen</td>
+                            <td class="pr-2 align-text-top">Dienstag bis Samstag</td>
+                            <td class="align-text-top">15:00 - 22:00 geöffnet <br />(auch an Feiertagen und Ferien)</td>
                         </tr>
                         <tr>
-                            <td class="pr-2">Dienstag bis Samstag</td>
-                            <td>15:00 - 22:00 geöffnet <br />(auch an Feiertagen und Ferien)</td>
-                        </tr>
-                        <tr>
-                            <td>Sonntag</td>
-                            <td>geschlossen</td>
+                            <td class="align-text-top">Sonntag und Montag</td>
+                            <td class="align-text-top">geschlossen</td>
                         </tr>
                     </table>
                 </p>
@@ -116,24 +112,24 @@
 <div class="pt-5 bg-white">
     <div class="container">
         <div class="row pb-5">
-            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(15, 182, 204);">
-                <div class=" p-4 d-flex flex-column">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
+                <div class=" p-4 d-flex flex-column flex-fill">
                     <h2 class="text-white" style="z-index: 20;">Workshops</h2>
-                    <p class="text-white" style="z-index: 20;">
+                    <p class="text-white flex-fill" style="z-index: 20;">
                         Mit angeleiteten Workshops fällt es leichter in ein neues Thema einzusteigen.
                         Deswegen finden regelmäßig Einführungen in unterschiedliche Inhalte statt.
                         Auch der Umgang mit unseren Geräten und Werkzeugen kann in kompakten Einheiten erlernt werden.
                     </p>
                     <a href="https://www.experimenta.science/die-experimenta/veranstaltungskalender/veranstaltungskategorie?category=54" class="btn btn-link text-light mt-auto" style="z-index: 20;">Workshops ansehen
                         und buchen</a>
-                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(15, 182, 204); width: 50px; height: 50px;"></div>
+                    <!-- <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(15, 182, 204); width: 50px; height: 50px;"></div> -->
                 </div>
 
                 <!-- <?php use_image('Workshop auf der Maker Faire 2018', 'Jonathan Günz', 'cc-by-nc') ?>
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/workshop.jpg" class="mt-auto w-100"
                     style="z-index: 5;" /> -->
             </div>
-            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(0, 102, 83);">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(0, 176, 160);">
                 <div class=" p-4 d-flex flex-column flex-fill">
                     <div class="text-white" style="z-index: 20;">
                         <h2>Projekte</h2>
@@ -148,14 +144,14 @@
                             Abgeschlossene Projekte ansehen
                         </a>
                     </div>
-                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 102, 83); width: 50px; height: 50px;"></div>
+                    <!-- <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 102, 83); width: 50px; height: 50px;"></div> -->
                 </div>
 
                 <!-- <?php use_image('Matelight', 'Jonathan Günz', 'cc-by-nc') ?>
                 <img src="<?php echo get_template_directory_uri() ?>/assets/images/matelight_header.jpg" class="mt-auto w-100"
                     style="z-index: 5;" /> -->
             </div>
-            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(188, 207, 0);">
+            <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
                 <div class=" p-4 d-flex flex-column">
                     <h2 class="text-white" style="z-index: 20;">Ausstattung</h2>
                     <p class="text-white" style="z-index: 20;">
@@ -165,7 +161,7 @@
                     </p>
                     <a href="/devices/" class="btn btn-link text-light mt-auto" style="z-index: 20;">Geräteliste
                         ansehen</a>
-                    <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(188, 207, 0); width: 50px; height: 50px;"></div>
+                    <!-- <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(188, 207, 0); width: 50px; height: 50px;"></div> -->
                 </div>
 
                 <!-- <?php use_image('3D Drucker', 'Franz Imschweiler', 'cc-by-nc') ?>
@@ -176,7 +172,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="pt-5 pb-5">
     <div class="container">
@@ -254,36 +249,32 @@
         </div>
     </div>
 </div>
-</div>
-
 
 <div class="pt-5 pb-5 bg-white">
     <div class="container">
         <div class="row pb-3">
             <div class="col">
-                <h2>Preise</h2>
+                <h2>Was kostet der Maker Space</h2>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <p>Die Nutzung des Maker Space ist kostenlos. Alle Geräte  und Räume können innerhalb der Öffnungszeiten frei genutzt werden.</p>
+                <p>Die Nutzung des Maker Space ist kostenlos. Alle Geräte und Räume können innerhalb der Öffnungszeiten frei genutzt werden.</p>
 
-                <p>Wir halten viele Materialien im Maker Space vorrätig.  Diese 
-                Materialien können kostenlos genutzt werden. Dennoch sollte Material für
-                größere, eigene Projekte selbst beschafft  und mitgebracht werden. 
-                Gerne können wir bei der Auswahl und Bestellung helfen und unsere 
-                Erfahrung mit einbringen.</p>
+                <p>Wir halten viele Materialien im Maker Space vorrätig. Diese
+                    Materialien können kostenlos genutzt werden. Dennoch sollte Material für
+                    größere, eigene Projekte selbst beschafft und mitgebracht werden.
+                    Gerne können wir bei der Auswahl und Bestellung helfen und unsere
+                    Erfahrung mit einbringen.</p>
 
-                <p>Wir wollen gerne, dass Projekte umgesetzt werden können.  Wenn ein 
-                Projekt an Materialkosten scheitert, wende dich an uns. Eventuell können
-                wir gemeinsam eine Lösung finden, wie  dein Projekt trotzdem umgesetzt 
-                werden kann.             </p>
+                <p>Wir wollen gerne, dass Projekte umgesetzt werden können. Wenn ein
+                    Projekt an Materialkosten scheitert, wende dich an uns. Eventuell können
+                    wir gemeinsam eine Lösung finden, wie dein Projekt trotzdem umgesetzt
+                    werden kann. </p>
             </div>
         </div>
     </div>
 </div>
-
-
 
 <div class="pt-5 pb-5">
     <div class="container">
@@ -333,6 +324,5 @@
         </div>
     </div>
 </div>
-
 
 <?php get_footer(); ?>

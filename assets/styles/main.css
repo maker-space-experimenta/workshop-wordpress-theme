@@ -25,7 +25,7 @@
   --warning: #ffc107;
   --danger: #dc3545;
   --light: white;
-  --dark: #666;
+  --dark: #212529;
   --black: #222;
   --digital: #e5005b;
   --elektronik: #ef7d00;
@@ -1197,19 +1197,19 @@ pre {
 .table-dark,
 .table-dark > th,
 .table-dark > td {
-  background-color: #d4d4d4; }
+  background-color: #c1c2c3; }
 
 .table-dark th,
 .table-dark td,
 .table-dark thead th,
 .table-dark tbody + tbody {
-  border-color: #afafaf; }
+  border-color: #8c8e90; }
 
 .table-hover .table-dark:hover {
-  background-color: #c7c7c7; }
+  background-color: #b4b5b6; }
   .table-hover .table-dark:hover > td,
   .table-hover .table-dark:hover > th {
-    background-color: #c7c7c7; }
+    background-color: #b4b5b6; }
 
 .table-black,
 .table-black > th,
@@ -1977,26 +1977,26 @@ fieldset:disabled a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #666;
-  border-color: #666; }
+  background-color: #212529;
+  border-color: #212529; }
   .btn-dark:hover {
     color: #fff;
-    background-color: #535353;
-    border-color: #4d4d4d; }
+    background-color: #101214;
+    border-color: #0a0c0d; }
   .btn-dark:focus, .btn-dark.focus {
-    box-shadow: 0 0 0 0.2rem rgba(125, 125, 125, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(66, 70, 73, 0.5); }
   .btn-dark.disabled, .btn-dark:disabled {
     color: #fff;
-    background-color: #666;
-    border-color: #666; }
+    background-color: #212529;
+    border-color: #212529; }
   .btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active,
   .show > .btn-dark.dropdown-toggle {
     color: #fff;
-    background-color: #4d4d4d;
-    border-color: #464646; }
+    background-color: #0a0c0d;
+    border-color: #050506; }
     .btn-dark:not(:disabled):not(.disabled):active:focus, .btn-dark:not(:disabled):not(.disabled).active:focus,
     .show > .btn-dark.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(125, 125, 125, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(66, 70, 73, 0.5); }
 
 .btn-black {
   color: #fff;
@@ -2307,25 +2307,25 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5); }
 
 .btn-outline-dark {
-  color: #666;
-  border-color: #666; }
+  color: #212529;
+  border-color: #212529; }
   .btn-outline-dark:hover {
     color: #fff;
-    background-color: #666;
-    border-color: #666; }
+    background-color: #212529;
+    border-color: #212529; }
   .btn-outline-dark:focus, .btn-outline-dark.focus {
-    box-shadow: 0 0 0 0.2rem rgba(102, 102, 102, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5); }
   .btn-outline-dark.disabled, .btn-outline-dark:disabled {
-    color: #666;
+    color: #212529;
     background-color: transparent; }
   .btn-outline-dark:not(:disabled):not(.disabled):active, .btn-outline-dark:not(:disabled):not(.disabled).active,
   .show > .btn-outline-dark.dropdown-toggle {
     color: #fff;
-    background-color: #666;
-    border-color: #666; }
+    background-color: #212529;
+    border-color: #212529; }
     .btn-outline-dark:not(:disabled):not(.disabled):active:focus, .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-dark.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(102, 102, 102, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5); }
 
 .btn-outline-black {
   color: #222;
@@ -3836,13 +3836,13 @@ input[type="button"].btn-block {
 
 .badge-dark {
   color: #fff;
-  background-color: #666; }
+  background-color: #212529; }
   a.badge-dark:hover, a.badge-dark:focus {
     color: #fff;
-    background-color: #4d4d4d; }
+    background-color: #0a0c0d; }
   a.badge-dark:focus, a.badge-dark.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(102, 102, 102, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.5); }
 
 .badge-black {
   color: #fff;
@@ -4011,13 +4011,13 @@ input[type="button"].btn-block {
     color: #6c6c6c; }
 
 .alert-dark {
-  color: #353535;
-  background-color: #e0e0e0;
-  border-color: #d4d4d4; }
+  color: #111315;
+  background-color: #d3d3d4;
+  border-color: #c1c2c3; }
   .alert-dark hr {
-    border-top-color: #c7c7c7; }
+    border-top-color: #b4b5b6; }
   .alert-dark .alert-link {
-    color: #1c1c1c; }
+    color: black; }
 
 .alert-black {
   color: #121212;
@@ -4298,15 +4298,15 @@ input[type="button"].btn-block {
     border-color: #858585; }
 
 .list-group-item-dark {
-  color: #353535;
-  background-color: #d4d4d4; }
+  color: #111315;
+  background-color: #c1c2c3; }
   .list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {
-    color: #353535;
-    background-color: #c7c7c7; }
+    color: #111315;
+    background-color: #b4b5b6; }
   .list-group-item-dark.list-group-item-action.active {
     color: #fff;
-    background-color: #353535;
-    border-color: #353535; }
+    background-color: #111315;
+    border-color: #111315; }
 
 .list-group-item-black {
   color: #121212;
@@ -5050,12 +5050,12 @@ button.bg-light:focus {
   background-color: #e6e6e6 !important; }
 
 .bg-dark {
-  background-color: #666 !important; }
+  background-color: #212529 !important; }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus {
-  background-color: #4d4d4d !important; }
+  background-color: #0a0c0d !important; }
 
 .bg-black {
   background-color: #222 !important; }
@@ -5171,7 +5171,7 @@ button.bg-textillabor:focus {
   border-color: white !important; }
 
 .border-dark {
-  border-color: #666 !important; }
+  border-color: #212529 !important; }
 
 .border-black {
   border-color: #222 !important; }
@@ -7439,10 +7439,10 @@ a.text-light:hover, a.text-light:focus {
   color: #d9d9d9 !important; }
 
 .text-dark {
-  color: #666 !important; }
+  color: #212529 !important; }
 
 a.text-dark:hover, a.text-dark:focus {
-  color: #404040 !important; }
+  color: black !important; }
 
 .text-black {
   color: #222 !important; }
@@ -7754,13 +7754,8 @@ h1, h2, h3, h4, h5, h6 {
     border-left-style: none !important; } }
 
 @font-face {
-  font-family: dinot;
-  src: url("../fonts/DINOT.woff2"); }
-
-@font-face {
-  font-family: dinot;
-  font-weight: bold;
-  src: url("../fonts/DINOT-Bold.woff2"); }
+  font-family: 'dinot';
+  src: url("../fonts/DINOT.eot?#iefix") format("embedded-opentype"), url("../fonts/DINOT.woff") format("woff"), url("../fonts/DINOT.ttf") format("truetype"), url("../fonts/DINOT.svg#svgFontName") format("svg"); }
 
 * {
   font-family: dinot; }

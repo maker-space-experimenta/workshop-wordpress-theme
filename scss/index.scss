@@ -10,8 +10,18 @@
 @import "makerspace-theme.scss";
 
 
-@font-face { font-family: dinot; src: url('../fonts/DINOT.woff2'); } 
-@font-face { font-family: dinot; font-weight: bold; src: url('../fonts/DINOT-Bold.woff2');}
+// @font-face { font-family: dinot; src: url('../fonts/DINOT.woff2'); } 
+// @font-face { font-family: dinot; font-weight: bold; src: url('../fonts/DINOT-Bold.woff2');}
+
+@font-face {
+    font-family: 'dinot';
+    src: url('../fonts/DINOT.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/DINOT.woff') format('woff'), 
+         url('../fonts/DINOT.ttf')  format('truetype'),
+         url('../fonts/DINOT.svg#svgFontName') format('svg');
+    }
+
+
 
 * {
     font-family: dinot;
