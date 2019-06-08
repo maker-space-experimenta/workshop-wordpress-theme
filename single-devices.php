@@ -6,25 +6,50 @@
 <div class="" style="height: 450px; background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>); background-size: cover; background-position: center;"></div>
 <?php endif; ?>   
 
+
 <div style="min-height: 100vh">
+
     <div class="container mt-5">
         <div class="row">
             <div class="col">
+                <h1><?php the_title() ?></h1>
 
-                <h1>
-                    <?php the_title() ?>
-                </h1>
-                <p>
-                    <?php the_content(); ?>
-                </p>
+                <?php the_content(); ?>
+            </div>
 
+            <div class="col-12 col-xl-4 col-md-6">
+                <div class="card p-3">
+                    <h4 class="mb-3"> Technische Daten </h4>
+
+                    <?php $cfields = get_post_custom() ?>
+
+                    <table>
+                        <tbody>
+                            <?php foreach($cfields as $key => $value):
+
+                            preg_match('/table_(.*)/', $key, $matches);
+
+                            if (count($matches) > 0):
+
+                                $key = str_replace("table_", "", $key);
+                                $key = str_replace("_", " ", $key);
+                            ?>
+
+                            <tr>
+                                <td class="pr-5 pb-3"><?php echo $key ?></td>
+                                <?php if (is_array($value)): ?><td class="pb-3"><?php echo join(', ', $value) ?></td>
+                                <?php else: ?><td class="pb-3"><?php echo $value ?></td><?php endif; ?>
+                            </tr>
+                            
+                            <?php endif; endforeach; ?>
+                        <tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
-    <?php 
-
-    $posttags = get_the_tags();
+    <?php $posttags = get_the_tags();
     if ($posttags):
     ?>
 

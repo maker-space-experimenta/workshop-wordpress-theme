@@ -1,3 +1,4 @@
+<!-- template: code of conduct -->
 
 <?php get_header(); ?>
 

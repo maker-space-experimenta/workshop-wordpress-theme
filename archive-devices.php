@@ -44,7 +44,7 @@
             <?php $rooms = get_the_terms( $post->ID, 'locations')  ?>
             <?php $device_categories = get_the_terms( $post->ID, 'device_categories')  ?>
 
-            <div class="col col-xl-3 col-md-6">
+            <div class="col col-xl-3 col-md-6"  onclick="window.location.href = '<?php echo get_permalink(); ?>'">
 
                     <div class="device-card mb-5 d-flex flex-column"
                          data-rooms="<?php foreach($rooms as $room) { echo $room->term_id . ','; if ($room->parent) { echo $room->parent . ','; } } ?>"
