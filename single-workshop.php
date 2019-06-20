@@ -35,7 +35,9 @@
     
     $sql_registrations = "SELECT SUM(mse_cal_workshop_registration_count) as mse_cal_reg_count FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_post_id = %d";
     $count = $wpdb->get_var( $wpdb->prepare($sql_registrations, get_the_ID()) );
-    $free_seats = $free_seats - $count;
+    if (!is_null($count)) {
+        $free_seats = $free_seats - $count;
+    }
     ?>
 
 

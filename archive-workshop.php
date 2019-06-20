@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-
-
-
-
 <?php 
     $posts = get_posts( array(
         'post_type'         => 'workshop',
