@@ -6,6 +6,7 @@
 <?php while (have_posts()) : the_post(); ?>
 
     <?php $free_seats = get_post_meta($post->ID, 'workshop_option_free_seats', true)  ?>
+    <?php $register_successfull = false; ?>
 
     <?php
 
@@ -30,7 +31,11 @@
         );
 
         if ($wpdb->query($query)) {
-            echo 'Sie wurden erfolgreich angemeldet.';
+        ?>      
+            <div class="alert alert-success mt-3" role="alert">
+                <div class="container"><div class="row"><div class="col font-weight-bold">Die Anmeldung wurde erfolgreich gespeichert!</div></div></div>
+            </div>
+        <?php
         }
     }
 
@@ -97,11 +102,11 @@
                         <tr>
                             <td class="pr-3 font-weight-bold">Freie Plätze:</td>
                             <td>
-
                                 <span class="">
-                                    <?php if ($free_seats) : echo $free_seats . ' freie Plätze';
-                                    endif; ?>
-                                    <?php if (!$free_seats) : ?> Workshop ausgebucht <?php endif; ?>
+                                    <?php 
+                                        if ($free_seats > 0) { echo $free_seats . ' freie Plätze'; } 
+                                        else { echo "Workshop ausgebucht"; }
+                                    ?>
                                 </span>
                             </td>
                         </tr>

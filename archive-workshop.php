@@ -6,7 +6,7 @@
         'posts_per_page'    =>  -1,
         'orderby'           => 'meta_key',
         'meta_key'          => 'workshop_start',
-        'order'             => 'DESC'
+        'order'             => 'ASC',
     ));
 ?>
 
@@ -19,10 +19,16 @@
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
+                <?php $start_date = get_post_meta($post->ID, 'workshop_start', true) ?>
+
+                <?php if ( $start_date->format('Y-m-d') >= date( 'Y-m-d') ): ?>
+
+                <?php $end_date = get_post_meta($post->ID, 'workshop_end', true) ?>
                 <?php $rooms = get_the_terms( $post->ID, 'locations')  ?>
                 <?php $device_categories = get_the_terms( $post->ID, 'device_categories')  ?>
                 <?php $highlight = get_post_meta( $post->ID, 'workshop_option_highlight', true)  ?>
                 <?php $free_seats = get_post_meta( $post->ID, 'workshop_option_free_seats', true)  ?>
+
                 <?php
                     $sql_registrations = "SELECT SUM(mse_cal_workshop_registration_count) as mse_cal_reg_count FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_post_id = %d";
                     $count = $wpdb->get_var( $wpdb->prepare($sql_registrations, get_the_ID()) );
@@ -65,8 +71,10 @@
                             <div class="d-flex justify-content-between">
                                 <h5 class="mb-1"><?php echo $post->post_title ?></h5>
                                 <span>
-                                    <?php if ($free_seats): echo $free_seats . ' freie Plätze'; endif; ?>
-                                    <?php if (!$free_seats): ?> Workshop ausgebucht <?php endif; ?>
+                                    <?php 
+                                        if ($free_seats > 0) { echo $free_seats . ' freie Plätze'; } 
+                                        else { echo "Workshop ausgebucht"; }
+                                    ?>
                                 </span>
                             </div>
                             <p class="mb-1"><?php echo get_the_excerpt($post->ID) ?></small></p>
@@ -75,6 +83,8 @@
 
 
                 </a>
+
+                <?php endif; ?>
                 <?php endwhile; ?>
             </div>
         </div>
