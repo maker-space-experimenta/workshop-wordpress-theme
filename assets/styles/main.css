@@ -7679,8 +7679,12 @@ a.text-textillabor:hover, a.text-textillabor:focus {
     height: 100%;
     width: 100%; }
 
-.list-group .ms-highlight {
-  border-left: solid 7px #e5005b !important; }
+.list-group .list-group-item {
+  border-left: solid 7px rgba(0, 0, 0, 0); }
+  .list-group .list-group-item .ms-thumbnail {
+    min-height: 100px; }
+  .list-group .list-group-item.ms-highlight {
+    border-left: solid 7px #e5005b !important; }
 
 .list-group .ms-full {
   opacity: 0.7; }

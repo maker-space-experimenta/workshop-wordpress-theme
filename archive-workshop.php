@@ -27,40 +27,45 @@
                 <?php $device_categories = get_the_terms( $post->ID, 'device_categories')  ?>
                 <?php $highlight = get_post_meta( $post->ID, 'workshop_option_highlight', true)  ?>
                 <?php $free_seats = get_post_meta( $post->ID, 'workshop_option_free_seats', true)  ?>
+                <?php
+                    $sql_registrations = "SELECT SUM(mse_cal_workshop_registration_count) as mse_cal_reg_count FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_post_id = %d";
+                    $count = $wpdb->get_var( $wpdb->prepare($sql_registrations, get_the_ID()) );
+                    $free_seats = $free_seats - $count;
+                ?>
 
-                <a href="<?php echo get_permalink(); ?>" class="list-group-item list-group-item-action mb-3 <?php if($highlight) { echo 'ms-highlight'; } ?> <?php if(!$free_seats) { echo 'ms-full'; } ?> ">
+                <a href="<?php echo get_permalink(); ?>" style="padding: 0;" class="list-group-item list-group-item-action mb-3 <?php if($highlight) { echo 'ms-highlight'; } ?> <?php if(!$free_seats) { echo 'ms-full'; } ?> ">
                     <div class="d-flex flex-column flex-xl-row">
                         <div class="col-12 col-xl-2 d-flex flex-row flex-xl-column w-100">
-                            <?php $start_date = get_post_meta($post->ID, 'workshop_start', true) ?>
-                            <?php $end_date = get_post_meta($post->ID, 'workshop_end', true) ?>
-
-                            <?php if($start_date ): ?>
-
-                                <div class="w-100"><?php echo $start_date->format('d.m.Y') ?></div>
-
-                                <?php if ($end_date && $start_date->format('d.m.Y') != $end_date->format('d.m.Y')): ?>
-                                    <div class="w-100"><?php echo $end_date->format('d.m.Y'); ?></div>
-                                <?php endif; ?>
-
-                            <?php endif; ?>
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <div class="ms-thumbnail" style="height: 100%; width: 100%; background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
+                            <?php endif; ?>  
                         </div>
 
-                        <div class="col-12 col-xl-2 d-flex flex-row flex-xl-column w-100">
+                        <div class="col-12 col-xl-2 d-flex flex-row flex-xl-column w-100 p-2">
                             <?php $start_date = get_post_meta($post->ID, 'workshop_start', true) ?>
                             <?php $end_date = get_post_meta($post->ID, 'workshop_end', true) ?>
 
                             <?php if($start_date ): ?>
 
-                                <div class="w-100"><?php echo $start_date->format('H:i') ?> Uhr</div>
-
-                                <?php if ($end_date): ?>
+                                <?php if ($end_date && $start_date->format('d.m.Y') != $end_date->format('d.m.Y')): ?>
+                                    <div class="w-100">
+                                        <span class="font-weight-bold"><?php echo $start_date->format('d.m.Y'); ?></span>
+                                        <span><?php echo $start_date->format('H:i') ?></span>
+                                    </div>
+                                    <div class="w-100">
+                                        <span class="font-weight-bold"><?php echo $end_date->format('d.m.Y'); ?></span>
+                                        <span><?php echo $end_date->format('H:i') ?></span>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="w-100 font-weight-bold"><?php echo $end_date->format('d.m.Y'); ?></div>
+                                    <div class="w-100"><?php echo $start_date->format('H:i') ?> Uhr</div>
                                     <div class="w-100"><?php echo $end_date->format('H:i'); ?> Uhr</div>
                                 <?php endif; ?>
 
                             <?php endif; ?>
                         </div>
 
-                        <div class="col w-100 justify-content-between">
+                        <div class="col w-100 justify-content-between p-2">
                             <div class="d-flex justify-content-between">
                                 <h5 class="mb-1"><?php echo $post->post_title ?></h5>
                                 <span>
@@ -80,131 +85,5 @@
 
     </div>
 </div>
-
-
-<script>
-    (function () {
-        'use strict';
-
-        var filter_rooms = [];
-        var filter_categories = [];
-
-        function toggleClasses(elem) {
-            $(elem).toggleClass('bg-primary');
-            $(elem).toggleClass('bg-light');
-            $(elem).toggleClass('text-light');
-        }
-
-        function toggleId(arr, id) {
-            var found = false;
-            if (arr.indexOf(id) == -1) {
-                arr.push(id);
-            } else {
-                arr.splice(arr.indexOf(id), 1);
-            }
-
-            return arr;
-        }
-
-        function deployFilters() {
-            console.log('deploy filters');
-            console.log('rooms: ', filter_rooms);
-            console.log('categories:', filter_categories);
-
-
-            $('.device-card').removeClass('d-none');
-            $('.device-card').addClass('d-flex');
-
-            if (filter_rooms.length == 0 && filter_categories.length == 0)
-                return;
-
-            console.log('filters found');
-            $('.device-card').each(function (index, elem) {
-                var visible = false;
-
-                filter_rooms.forEach(function (room_id) {
-                    if ($(elem).attr('data-rooms').indexOf(room_id) > -1)
-                        visible = true;
-                });
-
-                if (filter_rooms.length > 0) {
-                    filter_categories.forEach(function (cat_id) {
-                        if ($(elem).attr('data-categories').indexOf(cat_id) == -1)
-                            visible = false;
-                    });
-                } else {
-                    filter_categories.forEach(function (cat_id) {
-                        if ($(elem).attr('data-categories').indexOf(cat_id) > -1)
-                            visible = true;
-                    });
-                }
-
-
-                if (!visible) {
-                    $(elem).addClass('d-none');
-                    $(elem).removeClass('d-flex');
-                    console.log("room not found", elem);
-                }
-
-            });
-
-        }
-
-        window.addEventListener('load', function () {
-            console.log('load');
-
-            $('.filter_room').on('click', function (event) {
-                var room_id = $(event.currentTarget).attr('data-room-id');
-                toggleClasses(event.currentTarget);
-
-                toggleId(filter_rooms, room_id);
-                deployFilters();
-            });
-
-
-
-            $('.filter_category').on('click', function (event) {
-                var cat_id = $(event.currentTarget).attr('data-category-id');
-
-                toggleClasses(event.currentTarget);
-                toggleId(filter_categories, cat_id);
-                deployFilters();
-            });
-
-            $('#filter_term_device_categories .btn-category').on('click', function (event) {
-                let value = $(event.currentTarget).attr('data-value');
-                value = value + ',' + $('#input_category_name').val();
-
-                console.log("value", value);
-
-                $(event.currentTarget).children('input').val(value);
-                $(event.currentTarget).toggleClass('bg-primary');
-                $(event.currentTarget).toggleClass('bg-light');
-                $(event.currentTarget).toggleClass('text-light');
-            });
-
-            $('#devices-gallery-view-button').on('click', function (event) {
-                console.log('gallery');
-
-                event.stopPropagation();
-                event.preventDefault();
-
-                $('#devices-gallery-view').removeClass('d-none');
-                $('#devices-list-view').addClass('d-none');
-            });
-
-            $('#devices-list-view-button').on('click', function (event) {
-                event.stopPropagation();
-                event.preventDefault();
-
-                $('#devices-gallery-view').addClass('d-none');
-                $('#devices-list-view').removeClass('d-none');
-            });
-
-        });
-    })();
-</script>
-
-
 
 <?php get_footer(); ?>

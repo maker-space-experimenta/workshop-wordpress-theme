@@ -22,7 +22,7 @@ function register_my_menus() {
     );
     add_theme_support( 'custom-header', $args );
     
-    add_theme_support( 'post-thumbnails', array ( 'post','work','devices' ));
+    add_theme_support( 'post-thumbnails', array ( 'post','work','devices', 'workshop' ));
 }
 add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 
