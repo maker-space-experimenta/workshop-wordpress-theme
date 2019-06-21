@@ -1,14 +1,18 @@
+<?php global $wpdb; ?>
+
 <?php get_header(); ?>
 
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <?php $free_seats = get_post_meta($post->ID, 'workshop_option_free_seats', true)  ?>
-    <?php $register_successfull = false; ?>
+    <?php 
+    $free_seats = get_post_meta($post->ID, 'workshop_option_free_seats', true);
+    $register_successfull = false;
 
-    <?php if (isset($_POST["mse-event-register"])) : ?>
+    $id = get_the_ID();
 
-        <?php
+    if (isset($_POST["mse-event-register"])) :
+
         $sql  = "INSERT INTO makerspace_calendar_workshop_registrations (";
         $sql .= "mse_cal_workshop_post_id, ";
         $sql .= "mse_cal_workshop_registration_email,  ";
@@ -18,19 +22,19 @@
 
         $sql .= "VALUES( %d, %s, %s, %s, %d ) ";
 
-        $query = $wpdb->prepare(
+        $query_add_registration = $wpdb->prepare(
             $sql,
-            get_the_ID(),
+            $id,
             $_POST["mse-event-email"],
             $_POST["mse-event-firstname"],
             $_POST["mse-event-lastname"],
-            $_POST["mse-event-count"],
+            $_POST["mse-event-count"]
         );
 
-        $query_result = $wpdb->query($query);
+        $query_add_registration_result = $wpdb->query($query_add_registration);
         ?>
 
-        <?php if ($query_result) : ?>
+        <?php if ($query_add_registration_result) : ?>
             <div class="alert alert-success mt-3" role="alert">
                 <div class="container">
                     <div class="row">
@@ -61,14 +65,11 @@
         </div>
 
 
-        <div class="row border border-bottom-0 bg-white mt-3">
-
-            <div class="col-6 p-3">
-                <?php $start_date = get_post_meta($post->ID, 'workshop_start', true) ?>
-                <?php $end_date = get_post_meta($post->ID, 'workshop_end', true) ?>
-
-                <?php if ($start_date) : ?>
-
+        <?php $start_date = get_post_meta($post->ID, 'workshop_start', true) ?>
+        <?php $end_date = get_post_meta($post->ID, 'workshop_end', true) ?>
+        <?php if ($start_date) : ?>
+            <div class="row border border-bottom-0 bg-white mt-3">
+                <div class="col-6 p-3">
                     <table>
                         <tr>
                             <td class="pr-3 font-weight-bold">Beginn:</td>
@@ -85,19 +86,9 @@
                             </td>
                         </tr>
                     </table>
+                </div>
 
-                <?php endif; ?>
-            </div>
-
-
-
-
-            <div class="col-6 p-3">
-                <?php $start_date = get_post_meta($post->ID, 'workshop_start', true) ?>
-                <?php $end_date = get_post_meta($post->ID, 'workshop_end', true) ?>
-
-                <?php if ($start_date) : ?>
-
+                <div class="col-6 p-3">
                     <table>
                         <tr>
                             <td class="pr-3 font-weight-bold">Freie Plätze:</td>
@@ -120,9 +111,9 @@
                         </tr>
                     </table>
 
-                <?php endif; ?>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
 
         <div class="row border border-top-0 border-bottom-0 bg-white">
             <div class="col-1 p-3 ms-author-avatar">
