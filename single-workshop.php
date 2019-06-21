@@ -1,17 +1,14 @@
 <?php get_header(); ?>
 
-<?php try { ?>
-
 
 <?php while (have_posts()) : the_post(); ?>
 
     <?php $free_seats = get_post_meta($post->ID, 'workshop_option_free_seats', true)  ?>
     <?php $register_successfull = false; ?>
 
-    <?php
+    <?php if (isset($_POST["mse-event-register"])) : ?>
 
-    if (isset($_POST["mse-event-register"])) {
-
+        <?php
         $sql  = "INSERT INTO makerspace_calendar_workshop_registrations (";
         $sql .= "mse_cal_workshop_post_id, ";
         $sql .= "mse_cal_workshop_registration_email,  ";
@@ -30,24 +27,27 @@
             $_POST["mse-event-count"],
         );
 
-        if ($wpdb->query($query)) {
-        ?>      
-            <div class="alert alert-success mt-3" role="alert">
-                <div class="container"><div class="row"><div class="col font-weight-bold">Die Anmeldung wurde erfolgreich gespeichert!</div></div></div>
-            </div>
-        <?php
-        }
-    }
+        $query_result = $wpdb->query($query);
+        ?>
 
-    
+        <?php if ($query_result) : ?>
+            <div class="alert alert-success mt-3" role="alert">
+                <div class="container">
+                    <div class="row">
+                        <div class="col font-weight-bold">Die Anmeldung wurde erfolgreich gespeichert!</div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php
     $sql_registrations = "SELECT SUM(mse_cal_workshop_registration_count) as mse_cal_reg_count FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_post_id = %d";
-    $count = $wpdb->get_var( $wpdb->prepare($sql_registrations, get_the_ID()) );
+    $count = $wpdb->get_var($wpdb->prepare($sql_registrations, get_the_ID()));
     if (!is_null($count)) {
         $free_seats = $free_seats - $count;
     }
     ?>
-
-
 
     <?php if (has_post_thumbnail()) : ?>
         <div class="" style="height: 450px; background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
@@ -103,9 +103,12 @@
                             <td class="pr-3 font-weight-bold">Freie Plätze:</td>
                             <td>
                                 <span class="">
-                                    <?php 
-                                        if ($free_seats > 0) { echo $free_seats . ' freie Plätze'; } 
-                                        else { echo "Workshop ausgebucht"; }
+                                    <?php
+                                    if ($free_seats > 0) {
+                                        echo $free_seats . ' freie Plätze';
+                                    } else {
+                                        echo "Workshop ausgebucht";
+                                    }
                                     ?>
                                 </span>
                             </td>
@@ -148,63 +151,56 @@
 
 
         <?php if ($free_seats > 0) : ?>
-        <form method="post" action="<?php echo get_permalink(); ?>">
-            <div class="row mt-5">
-                <div class="12">
-                    <h3>Anmeldung zum Workshop</h3>
-                </div>
+            <form method="post" action="<?php echo get_permalink(); ?>">
+                <div class="row mt-5">
+                    <div class="12">
+                        <h3>Anmeldung zum Workshop</h3>
+                    </div>
 
-                <div class="col-12 mt-3">
-                    <div class="form-group row">
-                        <label for="mse-event-email" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="mse-event-email" name="mse-event-email" placeholder="" required>
+                    <div class="col-12 mt-3">
+                        <div class="form-group row">
+                            <label for="mse-event-email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="mse-event-email" name="mse-event-email" placeholder="" required>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12">
-                    <div class="form-group row">
-                        <label for="mse-event-firstname" class="col-sm-2 col-form-label">Vorname</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="mse-event-firstname" name="mse-event-firstname" placeholder="" required>
+                    <div class="col-12">
+                        <div class="form-group row">
+                            <label for="mse-event-firstname" class="col-sm-2 col-form-label">Vorname</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="mse-event-firstname" name="mse-event-firstname" placeholder="" required>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12">
-                    <div class="form-group row">
-                        <label for="mse-event-lastname" class="col-sm-2 col-form-label">Nachname</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="mse-event-lastname" name="mse-event-lastname" placeholder="" required>
+                    <div class="col-12">
+                        <div class="form-group row">
+                            <label for="mse-event-lastname" class="col-sm-2 col-form-label">Nachname</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="mse-event-lastname" name="mse-event-lastname" placeholder="" required>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12">
-                    <div class="form-group row">
-                        <label for="mse-event-count" class="col-sm-2 col-form-label">Anzahl</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="mse-event-count" name="mse-event-count" placeholder="" required min="1" max="<?php echo $free_seats ?>">
+                    <div class="col-12">
+                        <div class="form-group row">
+                            <label for="mse-event-count" class="col-sm-2 col-form-label">Anzahl</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="mse-event-count" name="mse-event-count" placeholder="" required min="1" max="<?php echo $free_seats ?>">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12 d-flex  justify-content-end align-items-center">
-                    <input type="submit" name="mse-event-register" class="btn btn-primary pr-5 pl-5" value="Verbindlich anmelden" />
+                    <div class="col-12 d-flex  justify-content-end align-items-center">
+                        <input type="submit" name="mse-event-register" class="btn btn-primary pr-5 pl-5" value="Verbindlich anmelden" />
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
         <?php endif; ?>
     </div>
 
 <?php endwhile; ?>
-
-
-<?php } catch (Exception $e) {
-        echo 'Caught exception: ',  $e->getMessage(), "\n";
-} ?>
-
-
 
 <?php get_footer(); ?>
