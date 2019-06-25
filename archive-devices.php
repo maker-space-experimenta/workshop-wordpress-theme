@@ -27,12 +27,12 @@
 
 <div class="container mt-5  pt-5 pt-md-0">
     <div class="row">
-        <div class="col">
+        <div class="col-12 col-md-6">
             <a href="/?post_type=devices&location=makerspace" 
                id="tab-makerspace" 
                class="c-pointer p-3 justify-content-center align-items-center d-flex <?php if($location == 'makerspace') { echo "bg-primary text-light"; } else { echo "border border-secondary"; } ?>">Maker Space</a>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-6">
             <a href="/?post_type=devices&location=sfz" 
                id="tab-sfz" 
                class="c-pointer p-3 justify-content-center align-items-center d-flex  <?php if($location == 'sfz') { echo "bg-primary text-light"; } else { echo "border border-secondary"; } ?>">Schüler Forschungszentrum</a>
