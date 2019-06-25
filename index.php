@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="ms-header d-none d-lg-block">
-    <div style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/header-05.jpg);" class="ms-header-title-image"></div>
+    <div style="background-image: url(<?php echo header_image() ?>); background-position: center;" class="ms-header-title-image"></div>
     <div class="ms-header-prism"></div>
     <div class="ms-header-blog-info d-flex align-items-center">
         <div class="container">
@@ -20,7 +20,7 @@
 <div class="pt-5">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col pt-5 pt-md-0">
                 <h1>Die Werkstatt für alle Maker und Kreativen</h1>
                 <p>
                     Willkommen beim Maker Space der experimenta Heilbronn. Wir sind eine offene Werkstatt, mit vielfältiger Ausstattung.
