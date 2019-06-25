@@ -25,7 +25,7 @@
 
 
 
-<div class="container mt-5">
+<div class="container mt-5  pt-5 pt-md-0">
     <div class="row">
         <div class="col">
             <a href="/?post_type=devices&location=makerspace" 
