@@ -27,6 +27,24 @@ function register_my_menus() {
 add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 
 
+function render_feed_ics () {
+  require( 'feed_ics.php' );
+}
+
+function render_feed_calendar_rss () {
+  require( 'feed_calendar_rss.php');
+}
+
+function add_feeds(){
+  add_feed('calendar', 'render_feed_ics');
+  // add_feed('calendar_rss', 'render_feed_calendar_rss');
+  
+  // add_feed('blog', 'feed_blog');
+
+  flush_rewrite_rules();
+}
+add_action('init', 'add_feeds');
+
 
 require_once(get_template_directory() . '/image-management.php');
 
@@ -87,7 +105,7 @@ function make_href_root_relative($input) {
   return preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $input); 
 }
 function root_relative_permalinks($input) {
-  return make_href_root_relative($input); 
+  return make_href_root_relative($input);
 }
 
 add_filter( 'day_link', 'root_relative_permalinks');

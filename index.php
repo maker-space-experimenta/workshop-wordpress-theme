@@ -279,8 +279,12 @@
 <div class="pt-5 pb-5">
     <div class="container">
         <div class="row pb-3">
-            <div class="col">
+            <div class="col d-flex justify-content-between">
                 <h2>Neuigkeiten aus dem Maker Space</h2>
+
+                <a href="/feed" title="Veranstaltungen als RSS" class="mr-2">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rss_24px.svg">
+                </a>
             </div>
         </div>
         <div class="row">

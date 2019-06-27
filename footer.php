@@ -86,6 +86,23 @@
             <div class="col-12 col-lg-3">
                 <hr style="border-top-color: #6c6d74;" />
 
+                <h6 class="text-uppercase" style="color: #404040;">Feeds und News</h6>
+
+                <ul class="list-group">
+
+                    <li class="list-group-item bg-transparent pl-0 text-light">
+                        <a href="/feed" class="text-white">Blog RSS</a>
+                    </li>
+
+                    <li class="list-group-item bg-transparent pl-0 text-light">
+                        <a href="/workshop/feed" class="text-white">Veranstaltungen RSS</a>
+                    </li>
+
+                    <li class="list-group-item bg-transparent pl-0 text-light">
+                        <a href="<?php echo get_feed_link('calendar'); ?>" class="text-white">Veranstaltungen Kalender</a>
+                    </li>
+
+                </ul>
 
             </div>
 
