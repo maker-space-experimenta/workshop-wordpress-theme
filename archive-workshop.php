@@ -28,7 +28,7 @@ usort($posts, function ($a, $b) {
 
     <div class="row mb-2">
         <div class="col d-flex justify-content-end">
-            <a href="/workshop/feed" title="Veranstaltungen als RSS" class="mr-2">
+            <a href="<?php echo get_feed_link('calendar_rss'); ?>" title="Veranstaltungen als RSS" class="mr-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rss_24px.svg">
             </a>
 

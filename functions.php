@@ -37,7 +37,7 @@ function render_feed_calendar_rss () {
 
 function add_feeds(){
   add_feed('calendar', 'render_feed_ics');
-  // add_feed('calendar_rss', 'render_feed_calendar_rss');
+  add_feed('calendar_rss', 'render_feed_calendar_rss');
   
   // add_feed('blog', 'feed_blog');
 

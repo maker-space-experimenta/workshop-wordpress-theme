@@ -33,7 +33,7 @@ usort($posts, function ($a, $b) {
 
 header("Content-Description: File Transfer");
 header("Content-Disposition: attachment; filename=calender-makerspace.xml");
-header('Content-type: application/rss+xml; charset=utf-8');
+header('Content-type: application/rss+xml; charset=UTF-8');
 header("Pragma: 0");
 header("Expires: 0");
 
@@ -42,9 +42,7 @@ header("Expires: 0");
 const DT_FORMAT = 'Ymd\THis';
 
 
-
-
-echo '<? xml version ="1.0" encoding="UTF-8" ?>';
+echo '<?xml version ="1.0" encoding="UTF-8" ?>';
 echo '<rss version="2.0">';
 echo '    <channel>';
 echo '        <title>Maker Space Veranstaltungen</title>';
@@ -57,7 +55,7 @@ echo '        <ttl>1800</ttl>';
         foreach ($posts as $post) :
 
 echo '            <item>';
-echo '                <title><?php echo htmlspecialchars_decode(get_the_title($post->ID)) ?></title>';
+echo '                <title>'. get_the_title($post->ID) .'</title>';
 echo '                <description>';
 echo '                    Start:'. get_post_meta($post->ID, 'workshop_start', true)->format('Y-m-d H:i:s');
 echo '                    Ende:'. get_post_meta($post->ID, 'workshop_end', true)->format('Y-m-d H:i:s');
@@ -66,7 +64,7 @@ echo htmlspecialchars_decode(get_the_excerpt($post->ID));
 echo '                </description>';
 echo '                <link>'. get_permalink($post->ID) .'</link>';
 echo '                <guid isPermaLink="true">'. get_permalink($post->ID) .'</guid>';
-echo '                <pubDate>'. get_post_meta($post->ID, 'workshop_start', true)->format('D, d M Y H:i:s') .'</pubDate>';
+echo '                <pubDate>'. get_post_meta($post->ID, 'workshop_start', true)->modify('-1 month')->format('D, d M Y H:i:s') .'</pubDate>';
 echo '            </item>';
 
         endforeach;
