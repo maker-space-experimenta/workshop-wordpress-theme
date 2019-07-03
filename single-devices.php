@@ -116,8 +116,6 @@
                     $tags_string .= $tag->slug . ",";
                 endforeach;
 
-                echo $tags_string;
-
                 $args = array('tag' => $tags_string);
                 $wp_query_posts = new WP_Query($args);
                 ?>
