@@ -110,11 +110,13 @@
                 <?php
                 $tags = get_the_tags($post->ID);
 
-                $tags_string = "";
+                $tags_string = $post->post_title.",";
 
                 foreach ($tags as $tag) :
                     $tags_string .= $tag->slug . ",";
                 endforeach;
+
+                // echo $tags_string;
 
                 $args = array('tag' => $tags_string);
                 $wp_query_posts = new WP_Query($args);
