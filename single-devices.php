@@ -122,7 +122,7 @@
                 $wp_query_posts = new WP_Query($args);
                 ?>
 
-                <?php if ( strlen( $tags_string ) == 0 ) : ?>
+                <?php if ( ! $wp_query_posts->have_posts() ) : ?>
                     <div class="col">
                         Aktuell gibt es kein dokumentiertes Projekt zu diesem Gerät. Komm doch vorbei und tue etwas dagegen!
                     </div>
