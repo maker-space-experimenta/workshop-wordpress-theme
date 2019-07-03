@@ -116,47 +116,53 @@
                     $tags_string .= $tag->slug . ",";
                 endforeach;
 
-                $args = array( 'tag' => $tags_string );
+                $args = array('tag' => $tags_string);
                 $wp_query_posts = new WP_Query($args);
-                
                 ?>
 
-                <?php while ($wp_query_posts->have_posts()) : $wp_query_posts->the_post(); ?>
-
-                    <div class="col-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'" style="cursor: pointer;">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="" style="height: 250px; background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
-                        <?php else : ?>
-                            <div class="" style="height: 250px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
-                        <?php endif; ?>
-
-                        <div class="bg-white flex-fill p-2">
-                            <h5 class="">
-                                <?php the_title() ?>
-                            </h5>
-                        </div>
-                        <div class="bg-white p-3 text-truncate text-wrap text-justify" style="max-height: 250px;">
-                            <p>
-                                <?php
-                                if (has_excerpt()) :
-                                    the_excerpt();
-                                else :
-                                    the_content();
-                                endif;
-                                ?>
-                            </p>
-                        </div>
-                        <div class="bg-white p-3 pt-auto" style="font-size: 0.72rem;">
-                            <div class="text-secondary">von
-                                <?php echo get_the_author() ?>
-                            </div>
-                            <div class="text-secondary">veröffentlicht am
-                                <?php echo get_the_date() ?>
-                            </div>
-                        </div>
+                <?php if ( strlen( $tags_string ) > 0 ) : ?>
+                    <div class="col">
+                        Aktuell gibt es kein dokumentiertes Projekt zu diesem Gerät. Komm doch vorbei und tue etwas dagegen!
                     </div>
+                <?php else : ?>
+                    <?php while ($wp_query_posts->have_posts()) : $wp_query_posts->the_post(); ?>
 
-                <?php endwhile; ?>
+                        <div class="col-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'" style="cursor: pointer;">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="" style="height: 250px; background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
+                            <?php else : ?>
+                                <div class="" style="height: 250px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
+                            <?php endif; ?>
+
+                            <div class="bg-white flex-fill p-2">
+                                <h5 class="">
+                                    <?php the_title() ?>
+                                </h5>
+                            </div>
+                            <div class="bg-white p-3 text-truncate text-wrap text-justify" style="max-height: 250px;">
+                                <p>
+                                    <?php
+                                    if (has_excerpt()) :
+                                        the_excerpt();
+                                    else :
+                                        the_content();
+                                    endif;
+                                    ?>
+                                </p>
+                            </div>
+                            <div class="bg-white p-3 pt-auto" style="font-size: 0.72rem;">
+                                <div class="text-secondary">von
+                                    <?php echo get_the_author() ?>
+                                </div>
+                                <div class="text-secondary">veröffentlicht am
+                                    <?php echo get_the_date() ?>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>
