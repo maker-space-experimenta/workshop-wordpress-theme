@@ -46,6 +46,40 @@
         </div>
     </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://google.com/article"
+  },
+  "headline": "<?php the_title() ?>",
+  <?php if ( has_post_thumbnail() ): ?>
+  "image": [
+    "<?php echo get_the_post_thumbnail_url(); ?>"
+   ],
+
+   <?php endif; ?>
+  "datePublished": "<?php echo get_the_date("Y-m-dTH:i:00+02:00", $post); ?>",
+  "dateModified": "<?php echo get_the_date("Y-m-dTH:i:00+02:00", $post); ?>",
+  "author": {
+    "@type": "Person",
+    "name": "<?php the_author_meta('display_name') ?>"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Maker Space Experimenta",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://makerspace.experimenta.science/wp-content/themes/makerspace-wordpress-theme/assets/images/favicon.png"
+    }
+  },
+  "description": "<?php echo get_the_excerpt() ?>"
+}
+</script>
+
 <?php endwhile; ?>
 
 
