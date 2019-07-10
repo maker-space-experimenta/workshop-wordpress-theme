@@ -16,8 +16,12 @@
 
     // check for existing registration for this event
     if (isset($_POST["mse-event-register"])) :
-        $sql_check_email = "SELECT mse_cal_workshop_registration_email FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_registration_email='%s'";
-        $query_check_email = $wpdb->prepare($sql_check_email, $_POST["mse-event-email"]);
+        $sql_check_email = "SELECT mse_cal_workshop_registration_email FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_registration_email='%s' AND mse_cal_workshop_post_id='%d'";
+        $query_check_email = $wpdb->prepare(
+            $sql_check_email, 
+            $_POST["mse-event-email"],
+            $id
+        );
         $result_check_mail = $wpdb->query($query_check_email);
         $error = 1;
 
