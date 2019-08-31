@@ -17,6 +17,33 @@
     </div>
 </div>
 
+<?php 
+
+$announcements = get_posts(array(
+    'post_type'         => 'announcement',
+    'posts_per_page'    =>  -1
+));
+
+foreach ( $announcements as $announcement ):
+?>
+
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-warning" role="alert">
+                    <h3><?php echo get_the_title($announcement); ?></h3>
+                    <p>
+                        <?php echo $announcement->post_content; ?>
+                    </p>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php endforeach; ?>
+
 <div class="pt-5">
     <div class="container">
         <div class="row">

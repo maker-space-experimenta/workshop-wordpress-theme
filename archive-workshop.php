@@ -26,7 +26,7 @@ usort($posts, function ($a, $b) {
 
 <div class="container mt-5 mb-5">
 
-    <div class="row mb-2">
+    <div class="row mb-3">
         <div class="col d-flex justify-content-end">
             <a href="<?php echo get_feed_link('calendar_rss'); ?>" title="Veranstaltungen als RSS" class="mr-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rss_24px.svg">
@@ -35,6 +35,19 @@ usort($posts, function ($a, $b) {
             <a href="<?php echo get_feed_link('calendar'); ?>" title="ICS herunter laden">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/calendar_24px.svg">
             </a>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col text-justify">
+            <p>
+                Workshops sind angeleitete Kurse mit einer Dauer von ca. 4-6 Stunden. In diesen Workshops werden neben Grundlagenwissen auch tiefergehende
+                Fertigkeiten im Umgang mit Material und Werkzeug vermittelt.
+            </p>
+            <p>
+                Wie auch der Maker Space, sind die Workshops für Personen über 14 Jahre ausgelegt. Das begründet sich vor allem darin, dass innerhalb der Workshops
+                eine gewisse Selbstständigkeit vorausgesetzt wird.
+            </p>
         </div>
     </div>
 
@@ -56,16 +69,16 @@ usort($posts, function ($a, $b) {
                         <?php $free_seats = get_post_meta($post->ID, 'workshop_option_free_seats', true)  ?>
 
                         <?php
-                        $sql_registrations = "SELECT SUM(mse_cal_workshop_registration_count) as mse_cal_reg_count FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_post_id = %d";
-                        $count = $wpdb->get_var($wpdb->prepare($sql_registrations, get_the_ID()));
-                        $free_seats = $free_seats - $count;
-                        ?>
+                                $sql_registrations = "SELECT SUM(mse_cal_workshop_registration_count) as mse_cal_reg_count FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_post_id = %d";
+                                $count = $wpdb->get_var($wpdb->prepare($sql_registrations, get_the_ID()));
+                                $free_seats = $free_seats - $count;
+                                ?>
 
                         <a href="<?php echo get_permalink(); ?>" style="padding: 0;" class="list-group-item list-group-item-action mb-3 <?php if ($highlight) {
-                                                                                                                                            echo 'ms-highlight';
-                                                                                                                                        } ?> <?php if (!$free_seats) {
-                                                                                                                                                                                                echo 'ms-full';
-                                                                                                                                                                                            } ?> ">
+                                                                                                                                                    echo 'ms-highlight';
+                                                                                                                                                } ?> <?php if (!$free_seats) {
+                                                                                                                                                                    echo 'ms-full';
+                                                                                                                                                                } ?> ">
                             <div class="d-flex flex-column flex-xl-row">
                                 <div class="col-12 col-xl-2 d-flex flex-row flex-xl-column w-100">
                                     <?php if (has_post_thumbnail()) : ?>
@@ -102,12 +115,12 @@ usort($posts, function ($a, $b) {
                                         <h5 class="mb-1"><?php echo $post->post_title ?></h5>
                                         <span>
                                             <?php
-                                            if ($free_seats > 0) {
-                                                echo $free_seats . ' freie Plätze';
-                                            } else {
-                                                echo "Workshop ausgebucht";
-                                            }
-                                            ?>
+                                                    if ($free_seats > 0) {
+                                                        echo $free_seats . ' freie Plätze';
+                                                    } else {
+                                                        echo "Workshop ausgebucht";
+                                                    }
+                                                    ?>
                                         </span>
                                     </div>
                                     <p class="mb-1"><?php echo get_the_excerpt($post->ID) ?></small></p>
