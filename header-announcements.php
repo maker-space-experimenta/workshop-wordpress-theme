@@ -13,7 +13,7 @@ $announcements = get_posts(array(
     <?php if (get_post_meta($announcement->ID, 'announcement_option_show_global', true)) : ?>
 
         <a href="<?php echo get_permalink($announcement->ID); ?>">
-            <div class="alert alert-danger border-0 m-0" role="alert" style="display: fixed;">
+            <div class="alert alert-danger border-0 m-0" role="alert" style="display: fixed; background-color: #e40033; color: #FFF;">
                 <h4 class="mr-5 font-weight-bold"><?php echo get_the_title($announcement); ?></h4>
                 <span class="">
 

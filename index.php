@@ -27,11 +27,11 @@ $announcements = get_posts(array(
 
 <?php foreach ($announcements as $announcement) : ?>
     <?php if (!get_post_meta($announcement->ID, 'announcement_option_show_global', true)) : ?>
-        <div class="mt-3">
+        <div class="" style="background-color: #ea5b0c;">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="alert alert-warning" role="alert">
+                        <div class="alert alert-warning border-0" role="alert" style="background-color: #ea5b0c; color: #fff;">
                             <h3><?php echo get_the_title($announcement); ?></h3>
                             <p>
                                 <?php echo $announcement->post_content; ?>

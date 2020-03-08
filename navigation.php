@@ -1,6 +1,6 @@
 <div class="ms-navbar w-100">
 
-    <div style="background-color: #f8d7da;">
+    <div style="background-color: #e40033;">
         <div class="container">
             <div class="row">
                 <div class="col">
