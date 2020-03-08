@@ -17,32 +17,57 @@
     </div>
 </div>
 
-<?php 
+<?php
 
 $announcements = get_posts(array(
     'post_type'         => 'announcement',
     'posts_per_page'    =>  -1
 ));
-
-foreach ( $announcements as $announcement ):
 ?>
 
-<div class="">
+<?php foreach ($announcements as $announcement) : ?>
+    <?php if (!get_post_meta($announcement->ID, 'announcement_option_show_global', true)) : ?>
+        <div class="mt-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-warning" role="alert">
+                            <h3><?php echo get_the_title($announcement); ?></h3>
+                            <p>
+                                <?php echo $announcement->post_content; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endforeach; ?>
+
+
+<div class="pt-5">
     <div class="container">
         <div class="row">
+            <div class="col d-flex justify-content-center">
+                <img style="max-height: 250px" src="<?php echo get_template_directory_uri(); ?>/assets/images/MMF_2020_rundesIcon.png" />
+            </div>
             <div class="col">
-                <div class="alert alert-warning" role="alert">
-                    <h3><?php echo get_the_title($announcement); ?></h3>
-                    <p>
-                        <?php echo $announcement->post_content; ?>
-                    </p>
-               </div>
+                <h2>Mini Maker Faire Heilbronn</h2>
+                <p>
+                    „Dein Space, deine Projekte“ ist das Motto des Maker Space der experimenta. Nun, knapp ein Jahr nach der Eröffnung,
+                    können die entstandenen Projekte auf der ersten „Mini Maker Faire Heilbronn“ bewundert werden. Hier dreht sich alles um Technologie, Kunst und Kreativität.
+                </p>
+                <p>
+                    <a href="/mini-maker-faire-2020/">
+                        <button type="button" class="btn btn-outline-secondary">Mehr erfahren</button>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<?php endforeach; ?>
+<hr class="" />
 
 <div class="pt-5">
     <div class="container">
@@ -147,7 +172,7 @@ foreach ( $announcements as $announcement ):
                         Deswegen finden regelmäßig Einführungen in unterschiedliche Inhalte statt.
                         Auch der Umgang mit unseren Geräten und Werkzeugen kann in kompakten Einheiten erlernt werden.
                     </p>
-                    <a href="https://www.experimenta.science/die-experimenta/veranstaltungskalender/veranstaltungskategorie?category=54" class="btn btn-link text-light mt-auto" style="z-index: 20;">Workshops ansehen
+                    <a href="/workshop" class="btn btn-link text-light mt-auto" style="z-index: 20;">Workshops ansehen
                         und buchen</a>
                     <!-- <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(15, 182, 204); width: 50px; height: 50px;"></div> -->
                 </div>
@@ -316,42 +341,57 @@ foreach ( $announcements as $announcement ):
         </div>
         <div class="row">
 
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <div class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'" style="cursor: pointer;">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
-                        <?php else : ?>
-                            <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
-                        <?php endif; ?>
+            <?php
 
-                        <div class="bg-white flex-fill p-2">
-                            <h5 class="">
-                                <?php the_title() ?>
-                            </h5>
+            $posts = get_posts(array(
+                'post_type'         => 'post',
+                'posts_per_page'    =>  9
+            ));
+            ?>
+
+
+            <?php foreach ($posts as $post) : ?>
+
+
+                <div class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'" style="cursor: pointer;">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php the_post_thumbnail_url('medium'); ?>); background-size: cover; background-position: center;"></div>
+                    <?php else : ?>
+                        <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
+                    <?php endif; ?>
+
+                    <div class="bg-white flex-fill p-2">
+                        <h5 class="">
+                            <?php the_title() ?>
+                        </h5>
+                    </div>
+                    <div class="bg-white p-3 text-truncate text-wrap text-justify" style="max-height: 250px;">
+                        <p>
+                            <?php
+                            if (has_excerpt()) :
+                                the_excerpt();
+                            else :
+                                the_content();
+                            endif;
+                            ?>
+                        </p>
+                    </div>
+                    <div class="bg-white p-3 pt-auto" style="font-size: 0.72rem;">
+                        <div class="text-secondary">von
+                            <?php echo get_the_author() ?>
                         </div>
-                        <div class="bg-white p-3 text-truncate text-wrap text-justify" style="max-height: 250px;">
-                            <p>
-                                <?php
-                                if (has_excerpt()) :
-                                    the_excerpt();
-                                else :
-                                    the_content();
-                                endif;
-                                ?>
-                            </p>
-                        </div>
-                        <div class="bg-white p-3 pt-auto" style="font-size: 0.72rem;">
-                            <div class="text-secondary">von
-                                <?php echo get_the_author() ?>
-                            </div>
-                            <div class="text-secondary">veröffentlicht am
-                                <?php echo get_the_date() ?>
-                            </div>
+                        <div class="text-secondary">veröffentlicht am
+                            <?php echo get_the_date() ?>
                         </div>
                     </div>
-                <?php endwhile;
-        endif; ?>
+                </div>
+            <?php endforeach; ?>
 
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary w-100">Für mehr Beiträge hier klicken ... </button>
+            </div>
         </div>
     </div>
 </div>

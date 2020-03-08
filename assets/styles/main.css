@@ -7651,7 +7651,8 @@ a.text-textillabor:hover, a.text-textillabor:focus {
 
 .ms-header {
   height: 100vh;
-  display: block; }
+  display: block;
+  position: relative; }
   .ms-header .ms-header-title-image {
     position: absolute;
     top: 0;

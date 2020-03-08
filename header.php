@@ -22,4 +22,5 @@
 <?php global $used_images; ?>
 <?php $used_images = array(); ?>
 
+
 <?php require 'navigation.php' ?>
