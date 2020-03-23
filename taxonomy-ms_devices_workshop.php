@@ -9,11 +9,16 @@ $posts = get_posts(array(
     'posts_per_page'    =>  -1,
     'orderby'           => 'title',
     'order'              => 'ASC',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'ms_devices_workshop',
+            'field'    => 'slug',
+            'terms'    => get_queried_object()->slug,
+        ),
+    ),
 ));
+
 ?>
-
-
-
 
 <div class="container mt-5  pt-5 pt-md-0">
 
@@ -50,9 +55,6 @@ $posts = get_posts(array(
                         </h5>
                     </div>
                     <div class="p-0 pt-auto">
-                        <div class="p-1 pl-2 pr-2 bg-white text-secondary">
-                            <?php echo get_the_term_list($post->ID, 'ms_devices_workshop', 'Werkstatt ', '')  ?>
-                        </div>
                         <div class="p-1 pl-2 pr-2 bg-white text-secondary">
                             <?php
                             if (has_excerpt()) :
