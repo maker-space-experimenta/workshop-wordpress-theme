@@ -4,12 +4,26 @@
 
 <?php
 
-$posts = get_posts(array(
-    'post_type'         => 'devices',
-    'posts_per_page'    =>  -1,
-    'orderby'           => 'title',
-    'order'              => 'ASC',
-));
+$post = array();
+
+if ( isset($_GET["lab"]) ) {
+
+} else {
+    $posts = get_posts(array(
+        'post_type'         => 'devices',
+        'posts_per_page'    =>  -1,
+        'orderby'           => 'title',
+        'order'              => 'ASC',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'ms_devices_workshop',
+                'field' => 'term_id',
+                'terms' => $_GET["lab"],
+            )
+        )
+    ));
+}
+
 ?>
 
 
