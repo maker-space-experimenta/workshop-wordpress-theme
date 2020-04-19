@@ -45,7 +45,7 @@ $announcements = get_posts(array(
 <?php endforeach; ?>
 
 
-<div class="pt-5">
+<!--<div class="pt-5">
     <div class="container">
         <div class="row">
             <div class="col d-flex justify-content-center">
@@ -65,7 +65,7 @@ $announcements = get_posts(array(
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <hr class="" />
 
