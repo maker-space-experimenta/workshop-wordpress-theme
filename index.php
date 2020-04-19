@@ -65,9 +65,11 @@ $announcements = get_posts(array(
             </div>
         </div>
     </div>
-</div>-->
+</div>
 
 <hr class="" />
+-->
+
 
 <div class="pt-5">
     <div class="container">
