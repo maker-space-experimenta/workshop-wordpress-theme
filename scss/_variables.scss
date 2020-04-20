@@ -1,15 +1,17 @@
 $enable-rounded: false;
 
 $theme-colors: (
-    "primary":    rgb(152, 203, 78),
-    // "secondary":  $secondary,
-    // "success":    $success,
-    // "info":       $info,
-    "warning":       rgb(255, 0,0),
+    "primary":      rgb(152, 203, 78),
+    // "secondary": $secondary,
+    // "success":   $success,
+    // "info":      $info,
+    "warning":      rgb(255, 0,0),
     // "danger":     $danger,
     "light":        rgb(255,255,255),
     "dark":         #212529,
     "black":        #222,
+
+    "link":         rgb(0, 102, 83),
     
     "digital":      rgb(229, 0, 91),
     "elektronik":   rgb(239, 125, 0),

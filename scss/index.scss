@@ -57,3 +57,11 @@ h3 {
 @media (max-width: map-get($grid-breakpoints, 'sm' )) {
     body{font-size: 14px;}
 }
+
+a {
+    color: map-get($map: $theme-colors, $key: 'link') !important;
+}
+
+nav a {
+    color: map-get($map: $theme-colors, $key: 'primary') !important;
+}
