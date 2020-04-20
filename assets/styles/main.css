@@ -7900,6 +7900,6 @@ a {
   color: #006653 !important;
   text-decoration: underline !important; }
 
-nav a {
+nav a, .ms-navbar a, a.btn {
   color: #98cb4e !important;
   text-decoration: none !important; }
