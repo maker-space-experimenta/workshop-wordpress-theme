@@ -7897,7 +7897,9 @@ h3 {
     font-size: 14px; } }
 
 a {
-  color: #006653 !important; }
+  color: #006653 !important;
+  text-decoration: underline !important; }
 
 nav a {
-  color: #98cb4e !important; }
+  color: #98cb4e !important;
+  text-decoration: none !important; }

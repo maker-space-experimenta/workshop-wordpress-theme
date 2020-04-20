@@ -60,8 +60,10 @@ h3 {
 
 a {
     color: map-get($map: $theme-colors, $key: 'link') !important;
+    text-decoration: underline !important;
 }
 
 nav a {
     color: map-get($map: $theme-colors, $key: 'primary') !important;
+    text-decoration: none !important;
 }
