@@ -19,7 +19,7 @@
     </div>
 
     <div class="row">   
-        <div class="col">
+        <div class="col wp-post">
 
                 <h1><?php the_title() ?></h1>
                 <p>

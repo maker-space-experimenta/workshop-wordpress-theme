@@ -4,7 +4,7 @@
 
 <div class="container mt-5 pb-5" style="min-height: 100vh">
     <div class="row">
-        <div class="col">
+        <div class="col wp-post">
             <?php while ( have_posts() ) : the_post(); ?>
 
                 <h1><?php the_title() ?></h1>

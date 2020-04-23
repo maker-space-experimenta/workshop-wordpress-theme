@@ -7896,10 +7896,6 @@ h3 {
   body {
     font-size: 14px; } }
 
-a {
+.wp-post a {
   color: #006653 !important;
   text-decoration: underline !important; }
-
-nav a, .ms-navbar a, a.btn {
-  color: #98cb4e !important;
-  text-decoration: none !important; }

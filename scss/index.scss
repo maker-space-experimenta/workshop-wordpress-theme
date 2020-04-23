@@ -58,12 +58,7 @@ h3 {
     body{font-size: 14px;}
 }
 
-a {
+.wp-post a {
     color: map-get($map: $theme-colors, $key: 'link') !important;
     text-decoration: underline !important;
-}
-
-nav a, .ms-navbar a, a.btn {
-    color: map-get($map: $theme-colors, $key: 'primary') !important;
-    text-decoration: none !important;
 }
