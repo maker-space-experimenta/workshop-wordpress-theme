@@ -34,7 +34,7 @@ usort($posts, function ($a, $b) {
 
     <h1 class="mb-1"><?php echo $post->post_title ?></h1>
 
-    <img src="<?php echo get_the_post_thumbnail_url($post); ?>">
+    <img src="<?php echo get_the_post_thumbnail_url($post); ?>" style="max-width: 100vh;">
 
     <h2>start: <?php echo $start_date->format('Y-m-d') ?></h2>
     <h2>end: <?php echo $end_date->format('Y-m-d') ?></h2>
