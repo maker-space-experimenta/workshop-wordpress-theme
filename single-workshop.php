@@ -52,10 +52,10 @@
             $query_add_registration = $wpdb->prepare(
                 $sql,
                 $id,
-                $_POST["mse-event-email"],
-                $_POST["mse-event-firstname"],
-                $_POST["mse-event-lastname"],
-                $_POST["mse-event-count"]
+                wp_strip_all_tags($_POST["mse-event-email"]),
+                wp_strip_all_tags($_POST["mse-event-firstname"]),
+                wp_strip_all_tags($_POST["mse-event-lastname"]),
+                wp_strip_all_tags($_POST["mse-event-count"])
             );
 
             $result_add_registration = $wpdb->query($query_add_registration);
