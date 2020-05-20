@@ -392,7 +392,7 @@ $announcements = get_posts(array(
         </div>
         <div class="row">
             <div class="col">
-                <button class="btn btn-primary w-100">Für mehr Beiträge hier klicken ... </button>
+                <a href="/blog" class="btn btn-primary w-100">Für mehr Beiträge hier klicken ... </a>
             </div>
         </div>
     </div>
