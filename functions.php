@@ -22,7 +22,7 @@ function register_my_menus() {
     );
     add_theme_support( 'custom-header', $args );
     
-    add_theme_support( 'post-thumbnails', array ( 'post','work','devices', 'workshop' ));
+    add_theme_support( 'post-thumbnails', array ( 'page', 'post','work','devices', 'workshop' ));
 }
 add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 
@@ -38,9 +38,6 @@ function render_feed_calendar_rss () {
 function add_feeds(){
   add_feed('calendar', 'render_feed_ics');
   add_feed('calendar_rss', 'render_feed_calendar_rss');
-  
-  // add_feed('blog', 'feed_blog');
-
   flush_rewrite_rules();
 }
 add_action('init', 'add_feeds');
@@ -128,3 +125,16 @@ add_filter( 'get_template_directory_uri', 'root_relative_permalinks');
 
 
 show_admin_bar(false);
+
+
+
+
+function dayToString($day) {
+  if ($day == 0) return "Sonntag";
+  if ($day == 1) return "Montag";
+  if ($day == 2) return "Dienstag";
+  if ($day == 3) return "Mittwoch";
+  if ($day == 4) return "Donnerstag";
+  if ($day == 5) return "Freitag";
+  if ($day == 6) return "Samstag";
+}
