@@ -1,7 +1,4 @@
-
-
 @import "_variables.scss";
-
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -9,56 +6,54 @@
 @import "wordpress.custom.scss";
 @import "makerspace-theme.scss";
 
-
-// @font-face { font-family: dinot; src: url('../fonts/DINOT.woff2'); } 
+// @font-face { font-family: dinot; src: url('../fonts/DINOT.woff2'); }
 // @font-face { font-family: dinot; font-weight: bold; src: url('../fonts/DINOT-Bold.woff2');}
 
 @font-face {
-    font-family: 'dinot';
-    src: url('../fonts/DINOT.eot?#iefix') format('embedded-opentype'), 
-         url('../fonts/DINOT.woff') format('woff'), 
-         url('../fonts/DINOT.ttf')  format('truetype'),
-         url('../fonts/DINOT.svg#svgFontName') format('svg');
-    }
-
-
+    font-family: "dinot";
+    src: url("../fonts/DINOT.eot?#iefix") format("embedded-opentype"), url("../fonts/DINOT.woff") format("woff"),
+        url("../fonts/DINOT.ttf") format("truetype"), url("../fonts/DINOT.svg#svgFontName") format("svg");
+}
 
 * {
     font-family: dinot;
 }
 
-
-
 body {
-    background: rgba(0,0,0,0.08); /* #f8f9fa!important;*/
+    background: rgba(0, 0, 0, 0.08); /* #f8f9fa!important;*/
 }
-
-
 
 .no-textdecoration {
     text-decoration: none !important;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: dinot;
     font-weight: bold;
 }
 
 h3 {
-    margin-top: .75rem !important;
+    margin-top: 0.75rem !important;
 }
 
-
-
-@media (max-width: map-get($grid-breakpoints, 'xs' )) {
-    body{font-size: 10px;}
+@media (max-width: map-get($grid-breakpoints, "xs" )) {
+    body {
+        font-size: 10px;
+    }
 }
 
-@media (max-width: map-get($grid-breakpoints, 'sm' )) {
-    body{font-size: 14px;}
+@media (max-width: map-get($grid-breakpoints, "sm" )) {
+    body {
+        font-size: 14px;
+    }
 }
 
 .wp-post a {
-    color: map-get($map: $theme-colors, $key: 'link') !important;
+    color: map-get($map: $theme-colors, $key: "link") !important;
     text-decoration: underline !important;
 }
