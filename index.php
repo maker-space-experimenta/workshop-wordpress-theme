@@ -49,7 +49,7 @@ $announcements = get_posts(array(
     <div class="container">
         <div class="row">
             <div class="col d-flex justify-content-center">
-                <img style="max-height: 250px" src="<?php echo get_template_directory_uri(); ?>/assets/images/MMF_2020_rundesIcon.png" />
+                <img style="max-height: 250px" src="<?php echo get_template_directory_uri(); ?>/images/MMF_2020_rundesIcon.png" />
             </div>
             <div class="col">
                 <h2>Mini Maker Faire Heilbronn</h2>
@@ -118,7 +118,7 @@ $announcements = get_posts(array(
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <?php use_image("Löten lernen", "Leon Hellmich", "cc-by-nc") ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/b1.jpg" class="d-block w-100" alt="...">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/b1.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
                                 <h5>löten lernen</h5>
                                 <p>In kleinen Workshops können alle den Umgang mit dem Lötkolben lernen.</p>
@@ -126,7 +126,7 @@ $announcements = get_posts(array(
                         </div>
                         <div class="carousel-item">
                             <?php use_image('LED-Wolf', 'Leon Hellmich', 'cc-by-nc') ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/b2.jpg" class="d-block w-100" alt="...">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/b2.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
                                 <h5>kleine Projekte</h5>
                                 <p>Für den Einstieg haben wir verschiedene Kleinstprojekte in der Schublade.</p>
@@ -134,7 +134,7 @@ $announcements = get_posts(array(
                         </div>
                         <div class="carousel-item">
                             <?php use_image('Mate-Hovercraft', 'Leon Hellmich', 'cc-by-nc') ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/b3.jpg" class="d-block w-100" alt="...">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/b3.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
                                 <h5>eigene Projekte</h5>
                                 <p>Ein fliegender Getränkekasten? Kein Problem.</p>
@@ -142,7 +142,7 @@ $announcements = get_posts(array(
                         </div>
                         <div class="carousel-item">
                             <?php use_image('WLAN-RSSI-Visualizer', 'Franz Imschweiler', 'cc-by-nc') ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/b4.jpg" class="d-block w-100" alt="...">
+                            <img src="<?php echo get_template_directory_uri() ?>/images/b4.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block w-100" style="left: 0; right: 0; background: rgba(0,0,0,0.5)">
                                 <h5>kreativ sein</h5>
                                 <p>Ein Gerät, dass WLAN-Stärke auf farbigen LEDs anzeigt.</p>
@@ -180,7 +180,7 @@ $announcements = get_posts(array(
                 </div>
 
                 <!-- <?php use_image('Workshop auf der Maker Faire 2018', 'Jonathan Günz', 'cc-by-nc') ?>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/images/workshop.jpg" class="mt-auto w-100"
+                <img src="<?php echo get_template_directory_uri() ?>/images/workshop.jpg" class="mt-auto w-100"
                     style="z-index: 5;" /> -->
             </div>
             <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(0, 176, 160);">
@@ -202,7 +202,7 @@ $announcements = get_posts(array(
                 </div>
 
                 <!-- <?php use_image('Matelight', 'Jonathan Günz', 'cc-by-nc') ?>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/images/matelight_header.jpg" class="mt-auto w-100"
+                <img src="<?php echo get_template_directory_uri() ?>/images/matelight_header.jpg" class="mt-auto w-100"
                     style="z-index: 5;" /> -->
             </div>
             <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(161, 198, 57);">
@@ -219,7 +219,7 @@ $announcements = get_posts(array(
                 </div>
 
                 <!-- <?php use_image('3D Drucker', 'Franz Imschweiler', 'cc-by-nc') ?>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/images/3D_printing.jpg" class="mt-auto w-100"
+                <img src="<?php echo get_template_directory_uri() ?>/images/3D_printing.jpg" class="mt-auto w-100"
                     style="z-index: 5;" /> -->
             </div>
 
@@ -273,7 +273,7 @@ $announcements = get_posts(array(
             </div>
 
             <div class="col-12 col-xl-6 order-1 order-xl-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lageplan-3.svg" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/Lageplan-3.svg" />
             </div>
 
 
@@ -337,7 +337,7 @@ $announcements = get_posts(array(
                 <h2>Neuigkeiten aus dem Maker Space</h2>
 
                 <a href="/feed" title="Veranstaltungen als RSS" class="mr-2">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rss_24px.svg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/icons/rss_24px.svg">
                 </a>
             </div>
         </div>
@@ -359,7 +359,7 @@ $announcements = get_posts(array(
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php the_post_thumbnail_url('medium'); ?>); background-size: cover; background-position: center;"></div>
                     <?php else : ?>
-                        <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;"></div>
+                        <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/images/image-missing.png); background-size: cover; background-position: center;"></div>
                     <?php endif; ?>
 
                     <div class="bg-white flex-fill p-2">
