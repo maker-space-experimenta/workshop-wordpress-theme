@@ -1,10 +1,20 @@
 <?php get_header(); ?>
 
-<?php
-
-?>
 
 
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col">
+            <?php while (have_posts()) : the_post(); ?>
+
+                <h1><?php the_title() ?></h1>
+                <p>
+                    <?php the_content(); ?>
+                </p>
+            <?php endwhile; ?>
+        </div>
+    </div>
+</div>
 
 
 
@@ -31,7 +41,7 @@ $labs_main = get_terms(array(
             <div class="col text-justify">
                 <?php while (have_posts()) : the_post(); ?>
 
-                    <h1><?php echo $lab_main->name; ?></h1>
+                    <h2><?php echo $lab_main->name; ?></h2>
                     <p>
                         <?php echo $lab_main->description; ?>
                     </p>

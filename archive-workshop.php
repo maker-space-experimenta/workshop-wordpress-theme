@@ -15,7 +15,7 @@ $posts = get_posts(array(
     'meta_query' => array(
         'order_clause' => array(
             'key' => 'workshop_start',
-			'compare' => 'EXISTS',
+            'compare' => 'EXISTS',
             'type' => 'DATE'
         )
     )
@@ -45,11 +45,12 @@ usort($posts, function ($a, $b) {
     <div class="row mb-3">
         <div class="col d-flex justify-content-end">
             <a href="<?php echo get_feed_link('calendar_rss'); ?>" title="Veranstaltungen als RSS" class="mr-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rss_24px.svg">
+                <!-- <img src="<?php echo get_template_directory_uri(); ?>/icons/rss_24px.svg"> -->
+                <clr-icon shape="rss" size="32"></clr-icon>
             </a>
 
             <a href="<?php echo get_feed_link('calendar'); ?>" title="ICS herunter laden">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/calendar_24px.svg">
+                <clr-icon shape="calendar" size="32"></clr-icon>
             </a>
         </div>
     </div>
@@ -93,8 +94,8 @@ usort($posts, function ($a, $b) {
                         <a href="<?php echo get_permalink(); ?>" style="padding: 0;" class="list-group-item list-group-item-action mb-3 <?php if ($highlight) {
                                                                                                                                             echo 'ms-highlight';
                                                                                                                                         } ?> <?php if (!$free_seats) {
-                                                                                                                                                            echo 'ms-full';
-                                                                                                                                                        } ?> ">
+                                                                                                                                                    echo 'ms-full';
+                                                                                                                                                } ?> ">
                             <div class="d-flex flex-column flex-xl-row">
                                 <div class="col-12 col-xl-2 d-flex flex-row flex-xl-column w-100">
                                     <?php if (has_post_thumbnail()) : ?>

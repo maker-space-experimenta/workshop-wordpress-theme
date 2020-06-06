@@ -32,3 +32,16 @@
   }
 }
 
+
+@media (max-width: map-get($grid-breakpoints, 'xs' )) {
+  .ms-navbar { position: relative !important; }
+}
+
+@media (max-width: map-get($grid-breakpoints, 'sm' )) {
+  .ms-navbar { position: relative !important; }
+}
+
+@media (max-width: map-get($grid-breakpoints, 'md' )) {
+  .ms-navbar { position: relative !important; }
+}
+

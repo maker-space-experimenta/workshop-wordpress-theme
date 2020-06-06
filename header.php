@@ -6,14 +6,25 @@
     <meta name="google-site-verification" content="xGu-GJN36MCN0-9aTYEr38Ttyvaidkk0ZnRYACsdTTU" />
     <meta name="google" value="notranslate">
 
-    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/assets/images/favicon.png">
-    <!-- <link href="<?php echo get_template_directory_uri() ?>/assets/styles/bootstrap.css" rel="stylesheet"> -->
-    <link href="<?php echo get_template_directory_uri() ?>/assets/styles/main.css" rel="stylesheet">
 
-    <script src="<?php echo get_template_directory_uri() ?>/assets/scripts/jquery.slim.min.js"></script>
-    <script src="<?php echo get_template_directory_uri() ?>/assets/scripts/popper.min.js"></script>
-    <script src="<?php echo get_template_directory_uri() ?>/assets/scripts/bootstrap.min.js"></script>
-    <script src="<?php echo get_template_directory_uri() ?>/assets/scripts/svg.min.js"></script>
+    <!--CLARITY ICONS STYLE-->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/node_modules/@clr/icons/clr-icons.min.css">
+
+    <!--CLARITY ICONS DEPENDENCY: CUSTOM ELEMENTS POLYFILL-->
+    <script src="<?php echo get_template_directory_uri() ?>/node_modules/@webcomponents/custom-elements/custom-elements.min.js"></script>
+
+    <!--CLARITY ICONS API & ALL ICON SETS-->
+    <script src="<?php echo get_template_directory_uri() ?>/node_modules/@clr/icons/clr-icons.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/scripts/main.js"></script>
+
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/images/favicon.png">
+
+    <link href="<?php echo get_template_directory_uri() ?>/styles/main.css" rel="stylesheet">
+
+    <script src="<?php echo get_template_directory_uri() ?>/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/scripts/svg.min.js"></script>
 
     <?php wp_head(); ?>
 

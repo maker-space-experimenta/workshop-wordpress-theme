@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-sass": "node-sass scss/index.scss assets/styles/main.css",
+    "build-sass": "node-sass scss/index.scss styles/main.css",
+    "build-sass-admin": "node-sass scss/admin.scss styles/admin.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,15 @@
   },
   "homepage": "https://github.com/harmoniemand/makerspace-wordpress-theme#readme",
   "dependencies": {
+    "@clr/angular": "^3.1.3",
+    "@clr/core": "^3.1.3",
+    "@clr/icons": "^3.1.3",
+    "@clr/ui": "^3.1.3",
+    "@popperjs/core": "^2.4.0",
+    "@webcomponents/custom-elements": "^1.0.0",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
     "bootstrap": "^4.3.0",
+    "jquery": "^3.5.1",
     "node-sass": "^4.12.0"
   }
 }

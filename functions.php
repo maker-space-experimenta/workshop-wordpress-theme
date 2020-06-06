@@ -11,9 +11,16 @@ function register_my_menus() {
  add_action( 'init', 'register_my_menus' );
 
 
+ 
+function admin_style() {
+  wp_enqueue_style('admin-styles', get_template_directory_uri().'/styles/admin.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
+
+
  function themename_custom_header_setup() {
     $args = array(
-        'default-image'      => get_template_directory_uri() . '/assets/images/default-header-image.jpg',
+        'default-image'      => get_template_directory_uri() . '/images/default-header-image.jpg',
         'default-text-color' => '000',
         'width'              => 1000,
         'height'             => 250,
