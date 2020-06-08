@@ -23,7 +23,7 @@
 
     <script src="<?php echo get_template_directory_uri() ?>/node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="<?php echo get_template_directory_uri() ?>/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="<?php echo get_template_directory_uri() ?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo get_template_directory_uri() ?>/scripts/svg.min.js"></script>
 
     <?php wp_head(); ?>
