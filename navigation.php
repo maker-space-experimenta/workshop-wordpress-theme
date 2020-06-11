@@ -52,7 +52,7 @@
         <div class="d-none d-md-block" style="position: absolute; right: 10px;">
             <?php if (!is_user_logged_in()) : ?>
 
-                <a class="nav-link" href="/wp-admin">login</a>
+                <a class="nav-link" href="/login">login</a>
 
             <?php else : ?>
 
