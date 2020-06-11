@@ -12,7 +12,7 @@
 
     <div class="d-flex align-items-center w-100">
 
-        <div class="container w-100">
+        <div class="container-fluid w-100">
 
             <nav class="ms-navigation ms-nav-dark-color pl-0 navbar navbar-expand-lg navbar-dark bg-none ">
 
@@ -43,34 +43,37 @@
                             </li>
 
                         <?php endforeach; ?>
+
+
+                        <?php if (!is_user_logged_in()) : ?>
+
+                            <li class="nav-item ml-0 ml-md-auto mt-3 mt-md-0">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+
+                        <?php else : ?>
+
+                            <li class="nav-item dropdown dropleft ml-0 ml-md-auto mt-3 mt-md-0">
+
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="nav-img" src="<?php echo get_avatar_url(get_current_user_id())  ?>" />
+                                    <?php echo get_the_author_meta('display_name', get_current_user_id())  ?>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/wp-admin">Mein Dashboard</a>
+                                    <a class="dropdown-item" href="/wp-admin/profile.php">Mein Profil</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/wp-login.php?action=logout">Logout</a>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+
+
                     </ul>
                 </div>
             </nav>
 
         </div>
-
-        <div class="d-none d-md-block" style="position: absolute; right: 10px;">
-            <?php if (!is_user_logged_in()) : ?>
-
-                <a class="nav-link" href="/login">login</a>
-
-            <?php else : ?>
-
-                <div class="ml-auto dropdown dropleft">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="nav-img" src="<?php echo get_avatar_url(get_current_user_id())  ?>" />
-                        <?php echo get_the_author_meta('display_name', get_current_user_id())  ?>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/wp-admin">Mein Dashboard</a>
-                        <a class="dropdown-item" href="/wp-admin/profile.php">Mein Profil</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/wp-login.php?action=logout">Logout</a>
-                    </div>
-                </div>
-            <?php endif; ?>
-        </div>
-
 
     </div>
 </div>
