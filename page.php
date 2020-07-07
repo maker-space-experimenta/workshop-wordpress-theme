@@ -2,7 +2,12 @@
 
 
 <?php if (has_post_thumbnail()) : ?>
-    <div class="" style="height: 450px; background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;"></div>
+
+<div>
+    <img src="<?php echo get_the_post_thumbnail_url(); ?>" style="min-width: 100%; max-width: 100%;" />
+</div>
+
+    <!-- <div class="" style="height: 450px; background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: contain; background-repeat: no-repeat; background-position: center;"></div> -->
 <?php endif; ?>
 
 <div class="container mt-5 pb-5" style="min-height: 100vh">
