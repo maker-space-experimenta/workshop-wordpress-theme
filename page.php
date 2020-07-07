@@ -3,7 +3,7 @@
 
 <?php if (has_post_thumbnail()) : ?>
 
-<div>
+<div style="max-height: 450px; overflow: hidden;">
     <img src="<?php echo get_the_post_thumbnail_url(); ?>" style="min-width: 100%; max-width: 100%;" />
 </div>
 
