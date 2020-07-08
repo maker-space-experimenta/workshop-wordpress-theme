@@ -217,8 +217,6 @@ $labs = get_terms(array(
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/05/GreenScreenSuperWoman-scaled.jpg);"></div>
                         <?php elseif ($lab->name == "Tonstudio") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Medienwerkstatt-scaled.jpg);"></div>
-                        <?php elseif ($lab->name == "4-146") : ?>
-                            <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/07/Chemie-1_K0A9903-4-scaled.jpg);"></div>
                         <?php else : ?>
                             <div class="device-card-thumbnail" style="background-image: url();"></div>
                         <?php endif; ?>
@@ -281,8 +279,11 @@ $labs = get_terms(array(
                         <div class="device-card-thumbnail" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);">
                         </div>
                     <?php else : ?>
-                        <div class="" style="height: 250px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;">
-                        </div>
+                        <?php if ($lab->name == "Chemie 1") : ?>
+                            <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/07/Chemie-1_K0A9903-4-scaled.jpg);"></div>
+                        <?php else : ?>
+                            <div class="device-card-thumbnail" style="background-image: url();"></div>
+                        <?php endif; ?>
                     <?php endif; ?>
 
                     <div class="bg-white flex-fill p-2 overflow-hidden text-nowrap">
