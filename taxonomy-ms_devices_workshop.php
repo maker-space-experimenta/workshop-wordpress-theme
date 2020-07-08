@@ -55,7 +55,7 @@ $labs = get_terms(array(
         </div>
     </div>
 
-    
+
 
     <?php
     $offset = isset($_GET["offset_days"]) ? $_GET["offset_days"] : 0;
@@ -217,6 +217,8 @@ $labs = get_terms(array(
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/05/GreenScreenSuperWoman-scaled.jpg);"></div>
                         <?php elseif ($lab->name == "Tonstudio") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Medienwerkstatt-scaled.jpg);"></div>
+                        <?php elseif ($lab->name == "Chemie 1") : ?>
+                            <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/07/Chemie-1_K0A9903-4-scaled.jpg);"></div>
                         <?php else : ?>
                             <div class="device-card-thumbnail" style="background-image: url();"></div>
                         <?php endif; ?>
