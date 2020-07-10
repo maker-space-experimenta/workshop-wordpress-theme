@@ -68,14 +68,19 @@ $labs_main = get_terms(array(
             <?php foreach ($labs as $lab) : ?>
 
 
-                <?php $link = get_term_link($lab, 'ms_devices_workshop'); ?>
+                <?php
+                $link = get_term_link($lab, 'ms_devices_workshop');
+                $term_image = get_term_meta($lab->term_id, "thumbnail", true);
+                ?>
 
+                <a href="<?php echo $link; ?>" class="col col-xl-4 col-md-6 text-dark" style="text-decoration: none;">
 
-                <div class="col col-xl-4 col-md-6" onclick="window.location.href = '<?php echo $link; ?>'">
 
                     <div class="device-card mb-5 d-flex flex-column" style="cursor: pointer;">
 
-                        <?php if ($lab->name == "Digitalwerkstatt") : ?>
+                        <?php if (!empty($term_image)) : ?>
+                            <div class="device-card-thumbnail" style="background-image: url(<?php echo $term_image ?>);"></div>
+                        <?php elseif ($lab->name == "Digitalwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Digitalwerkstatt-scaled.jpg);"></div>
                         <?php elseif ($lab->name == "Elektronikwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Elektrotechnik-scaled.jpg);"></div>
@@ -102,7 +107,7 @@ $labs_main = get_terms(array(
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
             <?php endforeach; ?>
 

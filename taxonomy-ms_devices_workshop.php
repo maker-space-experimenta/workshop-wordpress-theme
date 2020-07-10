@@ -198,8 +198,7 @@ $labs = get_terms(array(
 
                 <?php $link = get_term_link($lab, 'ms_devices_workshop'); ?>
 
-
-                <div class="col col-xl-4 col-md-6" onclick="window.location.href = '<?php echo $link; ?>'">
+                <a href="<?php echo $link; ?>" class="col col-xl-4 col-md-6 text-dark" style="text-decoration: none;">
 
                     <div class="device-card mb-5 d-flex flex-column" style="cursor: pointer;">
 
@@ -234,7 +233,7 @@ $labs = get_terms(array(
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
             <?php endforeach; ?>
         </div>
@@ -261,7 +260,8 @@ $labs = get_terms(array(
             <?php $rooms = get_the_terms($post->ID, 'locations')  ?>
             <?php $device_categories = get_the_terms($post->ID, 'device_categories')  ?>
 
-            <div class="col col-xl-3 col-md-6" onclick="window.location.href = '<?php echo get_permalink(); ?>'">
+            <a href="<?php echo get_permalink(); ?>" class="col col-xl-4 col-md-6 text-dark" style="text-decoration: none;">
+
 
                 <div class="device-card mb-5 d-flex flex-column" data-rooms="<?php foreach ($rooms as $room) {
                                                                                     echo $room->term_id . ',';
@@ -279,11 +279,8 @@ $labs = get_terms(array(
                         <div class="device-card-thumbnail" style="background-image: url(<?php the_post_thumbnail_url('medium'); ?>);">
                         </div>
                     <?php else : ?>
-                        <?php if ($lab->name == "Chemie 1") : ?>
-                            <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/07/Chemie-1_K0A9903-4-scaled.jpg);"></div>
-                        <?php else : ?>
-                            <div class="device-card-thumbnail" style="background-image: url();"></div>
-                        <?php endif; ?>
+                        <div class="" style="height: 250px; background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/image-missing.png); background-size: cover; background-position: center;">
+                        </div>
                     <?php endif; ?>
 
                     <div class="bg-white flex-fill p-2 overflow-hidden text-nowrap">
@@ -301,7 +298,7 @@ $labs = get_terms(array(
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         <?php endforeach; ?>
     </div>
 </div>

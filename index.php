@@ -185,19 +185,15 @@ $announcements = get_posts(array(
             </div>
             <div class="col-12 col-xl-4 p-0 d-flex flex-column" style="background: rgb(0, 176, 160);">
                 <div class=" p-4 d-flex flex-column flex-fill">
-                    <div class="text-white" style="z-index: 20;">
-                        <h2>Projekte</h2>
-                    </div>
-                    <div class="text-white flex-fill" style="z-index: 20;">
+                    <h2 class="text-white" style="z-index: 20;">Projekte</h2>
+                    <p class="text-white flex-fill" style="z-index: 20;">
                         Im Maker Space dreht sich alles um Projekte. Jeder kann sich verwirklichen und seine Ideen nach eigenen Vorstellungen voranbringen.
                         Es wird eigenverantwortlich gearbeitet, und dennoch wird gegenseitige Unterstützung innerhalb der Community großgeschrieben.
                         Alle Themen und Ideen sind willkommen.
-                    </div>
-                    <div class="mt-auto" style="z-index: 20;">
-                        <a href="/category/projekte/" class="btn btn-link text-light mt-auto">
-                            Abgeschlossene Projekte ansehen
-                        </a>
-                    </div>
+                    </p>
+                    <a href="/category/projekte/" class="btn btn-link text-light mt-auto">
+                        Abgeschlossene Projekte ansehen
+                    </a>
                     <!-- <div class="d-none d-xl-block" style="z-index: 10; position: absolute; bottom: 200px; left: calc(50% - 25px); transform: rotate(45deg); background: rgb(0, 102, 83); width: 50px; height: 50px;"></div> -->
                 </div>
 
@@ -355,7 +351,7 @@ $announcements = get_posts(array(
             <?php foreach ($posts as $post) : ?>
 
 
-                <div class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column" onclick="window.location.href = '<?php echo get_permalink(); ?>'" style="cursor: pointer;">
+                <a href="<?php echo get_permalink(); ?>" class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column text-dark" style="text-decoration: none;">
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php the_post_thumbnail_url('medium'); ?>); background-size: cover; background-position: center;"></div>
                     <?php else : ?>
@@ -386,7 +382,7 @@ $announcements = get_posts(array(
                             <?php echo get_the_date() ?>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php endforeach; ?>
 
         </div>
