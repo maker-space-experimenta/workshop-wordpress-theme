@@ -8,7 +8,7 @@
                 <h2>Neuigkeiten aus dem Maker Space</h2>
 
                 <a href="/feed" title="Veranstaltungen als RSS" class="mr-2">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rss_24px.svg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/icons/rss_24px.svg">
                 </a>
             </div>
         </div>
@@ -50,9 +50,7 @@
                         </p>
                     </div>
                     <div class="bg-white p-3 pt-auto" style="font-size: 0.72rem;">
-                        <div class="text-secondary">von
-                            <?php echo get_the_author() ?>
-                        </div>
+                        <div class="text-secondary">von <?php the_author_meta('display_name', $post->post_author) ?></div>
                         <div class="text-secondary">veröffentlicht am
                             <?php echo get_the_date() ?>
                         </div>

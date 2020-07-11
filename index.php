@@ -375,9 +375,7 @@ $announcements = get_posts(array(
                         </p>
                     </div>
                     <div class="bg-white p-3 pt-auto" style="font-size: 0.72rem;">
-                        <div class="text-secondary">von
-                            <?php echo get_the_author() ?>
-                        </div>
+                        <div class="text-secondary">von <?php the_author_meta('display_name', $post->post_author) ?></div>
                         <div class="text-secondary">veröffentlicht am
                             <?php echo get_the_date() ?>
                         </div>
