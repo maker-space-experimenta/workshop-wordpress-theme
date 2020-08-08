@@ -56,7 +56,7 @@
                             <li class="nav-item dropdown dropleft ml-0 ml-md-auto mt-3 mt-md-0">
 
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img class="nav-img" src="<?php echo get_avatar_url(get_current_user_id())  ?>" />
+                                    <img class="nav-img" src="<?php echo get_avatar_url(get_current_user_id())  ?>" alt="Dein Profilbild" />
                                     <?php echo get_the_author_meta('display_name', get_current_user_id())  ?>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
