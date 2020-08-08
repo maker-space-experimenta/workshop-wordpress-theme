@@ -269,7 +269,7 @@ $announcements = get_posts(array(
             </div>
 
             <div class="col-12 col-xl-6 order-1 order-xl-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/Lageplan-3.svg" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/Lageplan-3.svg" alt="Lageplan Maker Space" />
             </div>
 
 
@@ -333,7 +333,7 @@ $announcements = get_posts(array(
                 <h2>Neuigkeiten aus dem Maker Space</h2>
 
                 <a href="/feed" title="Veranstaltungen als RSS" class="mr-2">
-                    <img src="<?php echo get_template_directory_uri(); ?>/icons/rss_24px.svg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/icons/rss_24px.svg" alt="RSS Feed">
                 </a>
             </div>
         </div>

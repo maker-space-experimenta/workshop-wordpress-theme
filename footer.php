@@ -7,14 +7,14 @@
                     <span style="color: white;">Gefördert durch:</span>
                 </div>
                 <div class="p-0 mb-5">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dss-logo-weiss-964d9da7.png" style="width: 150px;">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/dss-logo-weiss-964d9da7.png" style="width: 150px;" alt="Logo der Dieter Schwarz Stiftung">
                 </div>
 
                 <div class="p-0 mb-3">
                     <span style="color: white;">Premiumpartner:</span>
                 </div>
                 <div class="p-0">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/Logo_SchwarzGruppe-5b4538c1.png" style="width: 150px;">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Logo_SchwarzGruppe-5b4538c1.png" style="width: 150px;" alt="Logos der Schwarz-Gruppe">
                 </div>
             </div>
 
