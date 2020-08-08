@@ -19,15 +19,15 @@
   },
   "homepage": "https://github.com/harmoniemand/makerspace-wordpress-theme#readme",
   "dependencies": {
-    "@clr/angular": "^3.1.3",
-    "@clr/core": "^3.1.3",
-    "@clr/icons": "^3.1.3",
-    "@clr/ui": "^3.1.3",
-    "@popperjs/core": "^2.4.0",
-    "@webcomponents/custom-elements": "^1.0.0",
-    "@webcomponents/webcomponentsjs": "^2.4.3",
-    "bootstrap": "^4.3.0",
+    "@clr/angular": "^3.1.5",
+    "@clr/core": "^3.1.5",
+    "@clr/icons": "^3.1.5",
+    "@clr/ui": "^3.1.5",
+    "@popperjs/core": "^2.4.4",
+    "@webcomponents/custom-elements": "^1.4.2",
+    "@webcomponents/webcomponentsjs": "^2.4.4",
+    "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.14.1"
   }
 }

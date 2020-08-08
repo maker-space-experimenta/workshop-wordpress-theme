@@ -9,6 +9,8 @@
     <meta name="google-site-verification" content="xGu-GJN36MCN0-9aTYEr38Ttyvaidkk0ZnRYACsdTTU" />
     <meta name="google" value="notranslate">
 
+    <meta name="description" content="Der Maker Space der experimenta in Heilbronn">
+
 
     <!--CLARITY ICONS STYLE-->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/node_modules/@clr/icons/clr-icons.min.css">
