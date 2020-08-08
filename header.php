@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html style="margin: 0 !important;" lang="de">
 
 <head>
     <title>Maker Space</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="xGu-GJN36MCN0-9aTYEr38Ttyvaidkk0ZnRYACsdTTU" />
     <meta name="google" value="notranslate">
 
