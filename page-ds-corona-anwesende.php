@@ -38,9 +38,10 @@
 
     global $wpdb;
 
-    global $wpdb;
+    $from = (get_datetime()->setTime(0, 0, 0));
+    $to = (get_datetime()->setTime(23, 59, 59));
 
-        $logged_in_sql = "
+    $logged_in_sql = "
         SELECT count(*) as count FROM (
             SELECT 
                 mpl_user_id,
@@ -55,13 +56,13 @@
             WHERE log_count > 0
         ";
 
-        $logged_in_count = $wpdb->get_var($wpdb->prepare(
-            $logged_in_sql,
-            $from->format("Y-m-d H:i:s"),
-            $to->format("Y-m-d H:i:s")
-        ));
+    $logged_in_count = $wpdb->get_var($wpdb->prepare(
+        $logged_in_sql,
+        $from->format("Y-m-d H:i:s"),
+        $to->format("Y-m-d H:i:s")
+    ));
 
-        $logged_in_sql = "
+    $logged_in_sql = "
         SELECT count(*) as count FROM (
             SELECT 
                 mpl_temp_visitor_id,
@@ -76,11 +77,11 @@
             WHERE log_count > 0
         ";
 
-        $logged_in_count += $wpdb->get_var($wpdb->prepare(
-            $logged_in_sql,
-            $from->format("Y-m-d H:i:s"),
-            $to->format("Y-m-d H:i:s")
-        ));
+    $logged_in_count += $wpdb->get_var($wpdb->prepare(
+        $logged_in_sql,
+        $from->format("Y-m-d H:i:s"),
+        $to->format("Y-m-d H:i:s")
+    ));
 
 
 
