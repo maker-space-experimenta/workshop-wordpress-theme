@@ -31,6 +31,8 @@
     <script src="<?php echo get_template_directory_uri() ?>/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo get_template_directory_uri() ?>/scripts/svg.min.js"></script>
 
+    
+    <!-- for auto logout at forum wissensstation -->
     <script>
         function sendResetAction() {
             window.parent.postMessage({
