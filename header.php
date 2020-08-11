@@ -31,11 +31,39 @@
     <script src="<?php echo get_template_directory_uri() ?>/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo get_template_directory_uri() ?>/scripts/svg.min.js"></script>
 
+    <script>
+        function sendResetAction() {
+            window.parent.postMessage({
+                type: 'DVS_Tick'
+            }, '*')
+        }
+
+        function startup() {
+            const query = window.location.search
+            const params = {}
+
+            for (let param of query.substr(1).split('&')) {
+                const split = param.split('=')
+
+                params[split[0]] = split[1]
+            }
+
+            const lang = document.getElementById('language')
+
+            lang.innerText = params.l
+
+            window.addEventListener('mousedown', sendResetAction)
+            window.addEventListener('mousewheel', sendResetAction)
+            window.addEventListener('touchstart', sendResetAction)
+
+        }
+    </script>
+
     <?php wp_head(); ?>
 
 </head>
 
-<body>
+<body onload="startup()">
 
     <?php global $used_images; ?>
     <?php $used_images = array(); ?>
