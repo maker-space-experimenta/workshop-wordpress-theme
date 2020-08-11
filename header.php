@@ -48,9 +48,8 @@
                 params[split[0]] = split[1]
             }
 
-            const lang = document.getElementById('language')
-
-            lang.innerText = params.l
+            // const lang = document.getElementById('language')
+            // lang.innerText = params.l
 
             window.addEventListener('mousedown', sendResetAction)
             window.addEventListener('mousewheel', sendResetAction)
