@@ -353,9 +353,9 @@ $announcements = get_posts(array(
 
                 <a href="<?php echo get_permalink(); ?>" class="col-12 col-md-6 col-xl-4 mb-5 d-flex flex-column text-dark" style="text-decoration: none;">
                     <?php if (has_post_thumbnail()) : ?>
-                        <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php the_post_thumbnail_url('medium'); ?>); background-size: cover; background-position: center;"></div>
+                        <div class="" style="min-height: 250px;max-height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php the_post_thumbnail_url('medium'); ?>); background-size: cover; background-position: center;"></div>
                     <?php else : ?>
-                        <div class="" style="height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/images/image-missing.png); background-size: cover; background-position: center;"></div>
+                        <div class="" style="min-height: 250px;max-height: 250px; background-color: rgb(0,0,0,0.3); background-image: url(<?php echo get_template_directory_uri(); ?>/images/image-missing.png); background-size: cover; background-position: center;"></div>
                     <?php endif; ?>
 
                     <div class="bg-white flex-fill p-2">
@@ -363,13 +363,13 @@ $announcements = get_posts(array(
                             <?php the_title() ?>
                         </h5>
                     </div>
-                    <div class="bg-white p-3 text-truncate text-wrap text-justify" style="max-height: 250px;">
+                    <div class="bg-white p-3 text-truncate text-wrap text-justify" style="max-height: 250px; height: 100%;">
                         <p>
                             <?php
                             if (has_excerpt()) :
                                 the_excerpt();
-                            else :
-                                the_content();
+                            // else :
+                            //     the_content();
                             endif;
                             ?>
                         </p>
