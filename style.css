@@ -9,3 +9,17 @@ Tags: bootstrap
 .c-pointer {
     cursor: pointer;
 }
+
+
+.datatable {
+    border: solid 1px gray;
+}
+
+.datatable table tr:nth-child(even)  {
+    background: rgba(0,0,0,0.1);
+}
+
+.datatable table td {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
