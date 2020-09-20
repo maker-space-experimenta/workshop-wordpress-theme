@@ -269,7 +269,7 @@ $labs = get_terms(array(
             <?php $rooms = get_the_terms($post->ID, 'locations')  ?>
             <?php $device_categories = get_the_terms($post->ID, 'device_categories')  ?>
 
-            <a href="<?php echo get_permalink(); ?>" class="col col-xl-4 col-md-6 text-dark" style="text-decoration: none;">
+            <a href="<?php echo get_permalink(); ?>" class="col-12 col-xl-4 col-md-6 text-dark" style="text-decoration: none;">
 
 
                 <div class="device-card mb-5 d-flex flex-column" data-rooms="<?php foreach ($rooms as $room) {
