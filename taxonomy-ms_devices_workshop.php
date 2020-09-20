@@ -207,7 +207,7 @@ $labs = get_terms(array(
                       
                         <?php elseif ($lab->name == "Elektronikwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Elektrotechnik-scaled.jpg);"></div>
-                        <?php elseif ($lab->name == "02-003") : ?>
+                        <?php elseif ($lab->slug == "02-003") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/09/20200920_215642-scaled.jpg);"></div>
                         
                         <?php elseif ($lab->name == "Holzwerkstatt") : ?>
