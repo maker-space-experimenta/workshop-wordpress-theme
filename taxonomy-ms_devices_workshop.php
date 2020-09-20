@@ -204,18 +204,27 @@ $labs = get_terms(array(
 
                         <?php if ($lab->name == "Digitalwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Digitalwerkstatt-scaled.jpg);"></div>
+                      
                         <?php elseif ($lab->name == "Elektronikwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Elektrotechnik-scaled.jpg);"></div>
+                        <?php elseif ($lab->name == "02-003") : ?>
+                            <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/09/20200920_215642-scaled.jpg);"></div>
+                        
                         <?php elseif ($lab->name == "Holzwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Holzwerkstatt-scaled.jpg);"></div>
+                      
                         <?php elseif ($lab->name == "Medienwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Medienwerkstatt-scaled.jpg);"></div>
+                      
                         <?php elseif ($lab->name == "Textilwerkstatt") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Medienwerkstatt-scaled.jpg);"></div>
+                      
                         <?php elseif ($lab->name == "Fotostudio") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/05/GreenScreenSuperWoman-scaled.jpg);"></div>
+                      
                         <?php elseif ($lab->name == "Tonstudio") : ?>
                             <div class="device-card-thumbnail" style="background-image: url(https://makerspace.experimenta.science/wp-content/uploads/2020/03/Medienwerkstatt-scaled.jpg);"></div>
+
                         <?php else : ?>
                             <div class="device-card-thumbnail" style="background-image: url();"></div>
                         <?php endif; ?>
