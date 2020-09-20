@@ -198,7 +198,7 @@ $labs = get_terms(array(
 
                 <?php $link = get_term_link($lab, 'ms_devices_workshop'); ?>
 
-                <a href="<?php echo $link; ?>" class="col col-xl-4 col-md-6 text-dark" style="text-decoration: none;">
+                <a href="<?php echo $link; ?>" class="col-12 col-xl-4 col-md-6 text-dark" style="text-decoration: none;">
 
                     <div class="device-card mb-5 d-flex flex-column" style="cursor: pointer;">
 
