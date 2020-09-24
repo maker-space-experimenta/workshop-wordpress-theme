@@ -11,6 +11,8 @@
     <?php
     $free_seats = get_post_meta($post->ID, 'workshop_option_free_seats', true);
     $register_successfull = false;
+    $registration_url = get_post_meta($post->ID, 'workshop_option_registration_url', true);
+
 
     $id = get_the_ID();
 
@@ -18,7 +20,7 @@
     if (isset($_POST["mse-event-register"])) :
         $sql_check_email = "SELECT mse_cal_workshop_registration_email FROM makerspace_calendar_workshop_registrations WHERE mse_cal_workshop_registration_email='%s' AND mse_cal_workshop_post_id='%d'";
         $query_check_email = $wpdb->prepare(
-            $sql_check_email, 
+            $sql_check_email,
             $_POST["mse-event-email"],
             $id
         );
@@ -36,7 +38,7 @@
                     </div>
                 </div>
             </div>
-        <?php
+            <?php
         else :
 
             // add registration for this event
@@ -60,7 +62,7 @@
 
             $result_add_registration = $wpdb->query($query_add_registration);
             if ($result_add_registration) :
-                ?>
+            ?>
                 <div class="alert alert-success mt-3" role="alert">
                     <div class="container">
                         <div class="row">
@@ -68,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-            <?php
+    <?php
             endif;
         endif;
 
@@ -99,7 +101,7 @@
                         <?php the_content(); ?>
                     </div>
                     <div>
-                        <?php if ($free_seats > 0) : ?>
+                        <?php if ($free_seats > 0 && empty($registration_url)) : ?>
                             <form method="post" action="<?php echo get_permalink(); ?>">
                                 <div class="row mt-5">
                                     <div class="12">
@@ -179,18 +181,35 @@
                                     </tr>
                                 <?php endif; ?>
 
-                                <tr>
-                                    <td>Freie Plätze:</td>
-                                    <td>
-                                        <?php
-                                        if ($free_seats > 0) {
-                                            echo $free_seats . ' freie Plätze';
-                                        } else {
-                                            echo "Workshop ausgebucht";
-                                        }
-                                        ?>
-                                    </td>
-                                </tr>
+
+                                <?php if (empty($registration_url)) : ?>
+
+                                    <tr>
+                                        <td>Freie Plätze:</td>
+                                        <td>
+                                            <?php
+                                            if ($free_seats > 0) {
+                                                echo $free_seats . ' freie Plätze';
+                                            } else {
+                                                echo "Workshop ausgebucht";
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
+
+                                <?php else : ?>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <?php
+                                            if (!empty($registration_url)) {
+                                                echo '<a class="btn btn-primary w-100" href="' . $registration_url . '">Zur Anmeldung</a>';
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
+
+                                <?php endif; ?>
                             <tbody>
                         </table>
 
