@@ -237,8 +237,8 @@
 
     $ldData = (object) array(
         "description" => $description,
-        "start_date" => get_the_date("Y-m-dTH:i:00+02:00", get_post_meta($post->ID, 'workshop_start', true)),
-        "end_date" => get_the_date("Y-m-dTH:i:00+02:00", get_post_meta($post->ID, 'workshop_end', true))
+        "start_date" => get_post_meta($post->ID, 'workshop_start', true)->formate("Y-m-dTH:i:00+02:00"),
+        "end_date" => get_post_meta($post->ID, 'workshop_end', true)->formate("Y-m-dTH:i:00+02:00")
     );
 
     ?>
