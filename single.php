@@ -47,6 +47,20 @@
     </div>
 </div>
 
+<?php
+
+  $description = get_the_excerpt();
+  $description = str_replace('"', '\'', $description);
+  $description = str_replace('\r', ' ', $description);
+  $description = str_replace('\n', ' ', $description);
+  $description = trim($description);
+
+  $ldData = (object) array(
+    "description" => $description
+  );
+
+?>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -76,7 +90,7 @@
       "url": "https://makerspace.experimenta.science/wp-content/themes/makerspace-wordpress-theme/assets/images/favicon.png"
     }
   },
-  "description": "<?php echo get_the_excerpt() ?>"
+  "description": "<?php echo $ldData->description ?>"
 }
 </script>
 
