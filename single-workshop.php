@@ -226,6 +226,64 @@
         </div>
     </div>
 
+    <?php
+
+    $description = get_the_excerpt();
+    $description = str_replace('"', '\'', $description);
+    $description = str_replace('\r', ' ', $description);
+    $description = str_replace('\n', ' ', $description);
+    $description = trim($description);
+
+    $ldData = (object) array(
+        "description" => $description
+    );
+
+    ?>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "The Adventures of Kira and Morrison",
+            "startDate": "<?php echo get_the_date("Y-m-dTH:i:00+02:00", $start_date); ?>",
+            "endDate": "<?php echo get_the_date("Y-m-dTH:i:00+02:00", $end_date); ?>",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+                "@type": "Place",
+                "name": "Maker Space",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Experimentaplatz",
+                    "addressLocality": "Maker Space",
+                    "postalCode": "74072",
+                    "addressRegion": "BW",
+                    "addressCountry": "DE"
+                }
+            },
+            "image": [
+                "<?php echo get_the_post_thumbnail_url(); ?>"
+            ],
+            "description": "<?php echo $description; ?>",
+            "offers": {
+                "@type": "Offer",
+                "url": "<?php echo get_post_permalink() ?>",
+                "price": "0",
+                "priceCurrency": "Eur"
+            },
+            "performer": {
+                "@type": "PerformingGroup",
+                "name": "<?php the_author_meta('display_name') ?>"
+            },
+            "organizer": {
+                "@type": "Organization",
+                "name": "Maker Space",
+                "url": "https://makerspace.experimenta.science"
+            }
+        }
+    </script>
+
+
 <?php endwhile; ?>
 
 <?php get_footer(); ?>
