@@ -234,8 +234,11 @@
     $description = str_replace('\n', ' ', $description);
     $description = trim($description);
 
+
     $ldData = (object) array(
-        "description" => $description
+        "description" => $description,
+        "start_date" => get_the_date("Y-m-dTH:i:00+02:00", get_post_meta($post->ID, 'workshop_start', true)),
+        "end_date" => get_the_date("Y-m-dTH:i:00+02:00", get_post_meta($post->ID, 'workshop_enc', true))
     );
 
     ?>
@@ -245,8 +248,8 @@
             "@context": "https://schema.org",
             "@type": "Event",
             "name": "The Adventures of Kira and Morrison",
-            "startDate": "<?php echo get_the_date("Y-m-dTH:i:00+02:00", $start_date); ?>",
-            "endDate": "<?php echo get_the_date("Y-m-dTH:i:00+02:00", $end_date); ?>",
+            "startDate": "<?php echo $ldData->start_date ?>",
+            "endDate": "<?php echo $ldData->end_date ?>",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "eventStatus": "https://schema.org/EventScheduled",
             "location": {
