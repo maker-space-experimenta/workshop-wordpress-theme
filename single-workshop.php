@@ -247,7 +247,7 @@
         {
             "@context": "https://schema.org",
             "@type": "Event",
-            "name": "The Adventures of Kira and Morrison",
+            "name": "<?php the_title() ?>",
             "startDate": "<?php echo $ldData->start_date ?>",
             "endDate": "<?php echo $ldData->end_date ?>",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
