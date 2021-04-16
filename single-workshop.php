@@ -277,8 +277,7 @@
                 "price": "0",
                 "priceCurrency": "Eur",
                 "availability": "<?php echo $ldData->availability ?>",
-                "validFrom": <?php echo $ldData->created_at ?>
-
+                "validFrom": "<?php echo $ldData->created_at ?>"
             },
             "performer": {
                 "@type": "PerformingGroup",
