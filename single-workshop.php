@@ -238,7 +238,10 @@
     $ldData = (object) array(
         "description" => $description,
         "start_date" => get_post_meta($post->ID, 'workshop_start', true)->format("Y-m-dTH:i:00+02:00"),
-        "end_date" => get_post_meta($post->ID, 'workshop_end', true)->format("Y-m-dTH:i:00+02:00")
+        "end_date" => get_post_meta($post->ID, 'workshop_end', true)->format("Y-m-dTH:i:00+02:00"),
+        "created_at" => get_post_datetime()->format("Y-m-dTH:i:00+02:00"),
+        "availability" => $free_seats > 0 ? "https://schema.org/InStock" : "https://schema.org/SoldOut",
+
     );
 
     ?>
@@ -272,7 +275,10 @@
                 "@type": "Offer",
                 "url": "<?php echo get_post_permalink() ?>",
                 "price": "0",
-                "priceCurrency": "Eur"
+                "priceCurrency": "Eur",
+                "availability": "<?php echo $ldData->availability ?>",
+                "validFrom": <?php echo $ldData->created_at ?>
+
             },
             "performer": {
                 "@type": "PerformingGroup",
