@@ -1,13 +1,4 @@
-<?php
-
-if (isset($_GET["profile"]) && !empty($_GET['profile'])) :
-
-    require(dirname(__FILE__) . "/single-devices-profile.php");
-    exit();
-
-endif; ?>
-
-<?php get_header(); ?>
+    
 
 <?php while (have_posts()) : the_post(); ?>
 
@@ -42,7 +33,7 @@ endif; ?>
 
                                         $key = str_replace("table_", "", $key);
                                         $key = str_replace("_", " ", $key);
-                                ?>
+                                        ?>
 
                                         <tr>
                                             <td class="pr-5 pb-3"><?php echo $key ?></td>
@@ -50,7 +41,7 @@ endif; ?>
                                             <?php else : ?><td class="pb-3"><?php echo $value ?></td><?php endif; ?>
                                         </tr>
 
-                                <?php endif;
+                                    <?php endif;
                                 endforeach; ?>
                             <tbody>
                         </table>
@@ -70,7 +61,7 @@ endif; ?>
             <?php
             $betriebsanweisung_id = get_post_meta($post->ID, 'betriebsanweisung_attachment_id', true);
             if (!empty($betriebsanweisung_id)) :
-            ?>
+                ?>
                 <div class="row">
                     <div class="col-3">Betriebsanweisung</div>
                     <div class="col">
@@ -83,7 +74,7 @@ endif; ?>
             <?php
             $datenblatt_id = get_post_meta($post->ID, 'datenblatt_attachment_id', true);
             if (!empty($datenblatt_id)) :
-            ?>
+                ?>
                 <div class="row">
                     <div class="col-3">Datenblatt</div>
                     <div class="col">
@@ -96,7 +87,7 @@ endif; ?>
             <?php
             $bedienungsanleitung_id = get_post_meta($post->ID, 'bedienungsanleitung_attachment_id', true);
             if (!empty($bedienungsanleitung_id)) :
-            ?>
+                ?>
                 <div class="row">
                     <div class="col-3">Bedienungsanleitung</div>
                     <div class="col">
@@ -119,7 +110,7 @@ endif; ?>
                 <?php
                 $tags = get_the_tags($post->ID);
 
-                $tags_string = $post->post_title . ",";
+                $tags_string = $post->post_title.",";
 
                 foreach ($tags as $tag) :
                     $tags_string .= $tag->slug . ",";
@@ -131,7 +122,7 @@ endif; ?>
                 $wp_query_posts = new WP_Query($args);
                 ?>
 
-                <?php if (!$wp_query_posts->have_posts()) : ?>
+                <?php if ( ! $wp_query_posts->have_posts() ) : ?>
                     <div class="col">
                         Aktuell gibt es kein dokumentiertes Projekt zu diesem Gerät. Komm doch vorbei und tue etwas dagegen!
                     </div>
@@ -180,5 +171,3 @@ endif; ?>
 
 
 <?php endwhile; ?>
-
-<?php get_footer(); ?>
