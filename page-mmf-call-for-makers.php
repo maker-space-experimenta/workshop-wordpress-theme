@@ -170,7 +170,7 @@ if ($entry == null) {
 <div class="container mt-5 pb-5" style="min-height: 100vh">
     <div class="row">
         <div class="col">
-            <h1>Standanmeldung für die Mini Maker Faire Heilbronn 2020</h1>
+            <h1>Standanmeldung für die Maker Faire Heilbronn 2021</h1>
         </div>
     </div>
     <div class="row">
@@ -188,7 +188,7 @@ if ($entry == null) {
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="mmsr_reg_projektname">Wie heist dein Projekt?</label>
+                            <label for="mmsr_reg_projektname">Wie hei&szlig;t dein Projekt?</label>
                             <input type="text" class="form-control" id="mmsr_reg_projektname" name="mmsr_reg_projektname" placeholder="Projektname" value="<?php echo $entry->mmsr_reg_projektname; ?>">
                         </div>
                     </div>
@@ -242,20 +242,16 @@ if ($entry == null) {
                         </div>
                         <div class="form-group">
                             <label for="mmsr_reg_standtyp_other">Etwas anderes</label>
-                            <input type="text" class="form-control" id="mmsr_reg_standtyp_other" name="mmsr_reg_standtyp_other" placeholder="sonstiges" value="<?php echo $entry->mmsr_reg_standtyp_other ?>">
+                            <input type="text" class="form-control" id="mmsr_reg_standtyp_other" name="mmsr_reg_standtyp_other" placeholder="Sonstiges" value="<?php echo $entry->mmsr_reg_standtyp_other ?>">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group w-100">
-                            <label for="mmsr_reg_website">Link zu eurer Website</label>
-                            <input type="text" class="form-control w-100" id="mmsr_reg_website" name="mmsr_reg_website" placeholder="website" value="<?php echo $entry->mmsr_reg_website ?>">
-                        </div>
+                    <div class="form-group w-100">
+                        <label for="mmsr_reg_website">Link zu eurer Website</label>
+                        <input type="text" class="form-control w-100" id="mmsr_reg_website" name="mmsr_reg_website" placeholder="Website" value="<?php echo $entry->mmsr_reg_website ?>">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group w-100">
-                            <label for="mmsr_reg_twitter"> Euer Twitter-Account </label>
-                            <input type="text" class="form-control" id="mmsr_reg_twitter" name="mmsr_reg_twitter" placeholder="Twitter" value="<?php echo $entry->mmsr_reg_twitter ?>">
-                        </div>
+                    <div class="form-group w-100">
+                        <label for="mmsr_reg_twitter"> Euer Twitter-Account </label>
+                        <input type="text" class="form-control" id="mmsr_reg_twitter" name="mmsr_reg_twitter" placeholder="Twitter" value="<?php echo $entry->mmsr_reg_twitter ?>">
                     </div>
                     <div class="form-group">
                         <label for="mmsr_reg_historie">Warst du/dein Team bereits Aussteller auf einer (Mini) Maker Faire? </label>
@@ -273,17 +269,13 @@ if ($entry == null) {
                         experimenta gGmbH. Die Daten werden spätestens 2 Monate nach dem Event gelöscht sofern nicht mehr zu Absprachen und Klärung zur Nachbereitung notwendig.
                     </p>
 
-                    <div class="form-row">
-                        <div class="form-group w-100">
-                            <label for="mmsr_reg_email">E-Mail Adresse</label>
-                            <input type="email" class="form-control" id="mmsr_reg_email" name="mmsr_reg_email" placeholder="E-Mail" value="<?php echo $entry->mmsr_reg_email ?>">
-                        </div>
+                    <div class="form-group w-100">
+                        <label for="mmsr_reg_email">E-Mail Adresse</label>
+                        <input type="email" class="form-control" id="mmsr_reg_email" name="mmsr_reg_email" placeholder="E-Mail" value="<?php echo $entry->mmsr_reg_email ?>">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group w-100">
-                            <label for="mmsr_reg_ansprechpartner">Ansprechpartner*in</label>
-                            <input type="text" class="form-control" id="mmsr_reg_ansprechpartner" name="mmsr_reg_ansprechpartner" placeholder="" value="<?php echo $entry->mmsr_reg_ansprechpartner ?>">
-                        </div>
+                    <div class="form-group w-100">
+                        <label for="mmsr_reg_ansprechpartner">Ansprechpartnerin</label>
+                        <input type="text" class="form-control" id="mmsr_reg_ansprechpartner" name="mmsr_reg_ansprechpartner" placeholder="Vorname Name" value="<?php echo $entry->mmsr_reg_ansprechpartner ?>">
                     </div>
 
 
